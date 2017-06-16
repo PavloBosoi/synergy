@@ -1,0 +1,41 @@
+/* ==|====================
+   Layout/Tools
+   ======================= */
+
+.icon {
+    display: inline-block;
+    background-repeat: no-repeat;
+}
+/*.parent{
+    font-size: 0;
+    line-height: 0;
+    letter-spacing: -7px;
+}
+.parent > .item{
+    font-size: 14px;
+    line-height: 24px;
+    letter-spacing: normal;
+    display: inline-block;
+}*/
+.item-img img{
+  max-width: 100%;
+}
+.item-img a img:hover{
+  opacity: .5;
+}
+/* .item-img{
+  overflow: hidden;
+}
+.item-img img{
+  width: 100%;
+}
+.item-img a img:hover,
+.item-img > img:hover{
+  transform: scale(1.1);
+} */
+.right{
+    float: right;
+}
+.left{
+    float: left;
+}

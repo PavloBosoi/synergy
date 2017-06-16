@@ -1,0 +1,315 @@
+/* ==|====================
+   Module/Responsive
+   ======================= */
+
+@media only screen and (max-width: 1999px) {
+
+}
+
+@media only screen and (max-width: 1679px) {
+    .process-list ol{
+        width: 80%;
+    }
+    .risk-info{
+        line-height: 52px;
+        line-height: 5.2rem;
+    }
+    #section7 .overall-block {
+        margin: 9.5vw 0 0 0;
+    }
+    .risk-parent {
+        margin: 220px 0 0;
+        margin: 22rem 0rem 0rem;
+    }
+    html{
+        font-size: 9px;
+    }
+}
+
+@media only screen and (max-width: 1366px) {
+    .feedback-logo {
+        margin: 0;
+    }
+
+    /*.feedback {
+        margin: 400px 0 100px;
+        margin: 40rem 0rem 10rem;
+    }*/
+
+
+    #section7 .overall-block {
+        width: 500px;
+        margin: 9vw 0 0 0;
+    }
+    .company-img{
+        bottom: 0;
+    }
+    .cprocess-block{
+        padding: 20px 0;
+        padding: 2rem 0rem;
+    }
+    .cprocess-slogan,
+    .cprocess-info{
+        padding: 0 50px;
+        padding: 0rem 5rem;
+    }
+    .risk-parent {
+        margin: 290px 0 0;
+        margin: 29rem 0rem 0rem;
+    }
+    .cprocess-info h2{
+        margin: 20px 0 0 0;
+        margin: 2rem 0rem 0rem 0rem;
+    }
+/*    .process-container,
+    .features-container{
+        @include ptr(padding,20 0 0 0);
+    }
+    .process-title{
+        top: -1%;
+    }
+    .features-title{
+        @include ptr(top,10);
+    }*/
+
+    html {
+        font-size: 8px;
+    }
+}
+
+@media only screen and (max-width: 1280px) {
+    .risk-parent {
+        margin: 250px 0 0;
+        margin: 25rem 0rem 0rem;
+    }
+}
+
+@media only screen and (max-width: 1199px) {
+    .text_edit ol li {
+        margin-top: 10px;
+        margin-top: 1rem;
+    }
+
+    .text_edit p {
+        margin-top: 50px;
+        margin-top: 5rem;
+    }
+
+    .overall-block {
+        padding: 0 5%;
+    }
+
+    #section7 .overall-block {
+        width: 450px;
+    }
+
+    .overall-title {
+        margin: 0 0 10px 0;
+        margin: 0rem 0rem 1rem 0rem;
+        padding: 0 0 15px 0;
+        padding: 0rem 0rem 1.5rem 0rem;
+    }
+    .preview-text{
+        @include ptr(width,500);
+    }
+
+    html {
+        font-size: 9px;
+    }
+}
+
+@media only screen and (max-width: 1024px) {
+    .text_edit ol {
+        line-height: 30px;
+        line-height: 3rem;
+    }
+
+    .risk-parent {
+        margin: 180px 0 0;
+        margin: 18rem 0rem 0rem;
+    }
+
+    .risk-title {
+        padding: 0 20px;
+        padding: 0rem 2rem;
+    }
+    .logo-mini{
+        width: 120px;
+    }
+
+    #section7 .overall-block {
+        margin: 8.5vw 0 0 0;
+    }
+    .feedback-block,
+    .feedback-form {
+        width: 340px;
+    }
+    .preview-text{
+        @include ptr(width,400);
+    }
+    .process-list{
+        width: 50%;
+    }
+    .process-list ol{
+        width: auto;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .feedback-block,
+    .feedback-form {
+        margin: 50px auto;
+    }
+
+    .process-list {
+        top: 80px;
+        top: 8rem;
+    }
+
+    .risk-title {
+        margin: 12vw 0 0 0;
+        padding: 10px;
+        padding: 1rem;
+    }
+
+    #section7 .overall-block {
+        width: 400px;
+        margin: 7.5vw 0 0 0;
+    }
+
+    .features-parent {
+        margin: 30px auto 0;
+        margin: 3rem auto 0;
+    }
+
+    .features-item {
+        flex-direction: column;
+    }
+
+    .features-img,
+    .overall-block {
+        width: 100%;
+    }
+    .company-img{
+        bottom: 0;
+    }
+    .risk-info {
+        line-height: 42px;
+        line-height: 4.2rem;
+    }
+    .cprocess-block{
+        text-align: center;
+    }
+    .cprocess-slogan,
+    .cprocess-info {
+        width: 100%;
+        margin: auto;
+        padding: 15px;
+    }
+    /*.feedback{
+        margin: 130px 0;
+        margin: 13rem 0rem;
+    }*/
+    html{
+        font-size: 8px;
+    }
+}
+
+@media only screen and (max-width: 639px) {
+    #section7 .overall-block {
+        width: 320px;
+        margin: 6vw 0 0 0;
+    }
+
+    .risk-fcontainer {
+        padding: 0 15px;
+    }
+
+    .process-list {
+        position: static;
+        width: 100%;
+        margin: 20px 0 0 0;
+    }
+    .logo-mini{
+        width: 80px;
+    }
+    .preview-text{
+        @include ptr(width,300);
+    }
+    .risk-info-text li::before{
+        font-size: 12px;
+        top: 6px;
+    }
+}
+
+@media only screen and (max-width: 479px) {
+
+
+    #line1 {
+        width: 150%;
+    }
+
+    #team {
+        display: none;
+    }
+
+    .cprocess-title {
+        margin: -4% 0 0 5%;
+    }
+
+    .cprocess-slogan {
+        bottom: 45%;
+    }
+
+    .preview-info {
+        text-align: center;
+    }
+
+    .preview-text {
+        width: 100%;
+    }
+
+    #section7 .overall-block {
+        width: 100%;
+        margin: 50px 0 0 0;
+    }
+
+    .feedback-block,
+    .feedback-form {
+        width: 100%;
+    }
+
+/*    .feedback {
+        margin: 100px 0;
+        margin: 10rem 0rem;
+    }*/
+
+    .feedback-logo {
+        width: 150px;
+    }
+    .logo-mini{
+        width: 50px;
+    }
+    .features-title{
+        left: 1%;
+    }
+    .risk-info{
+        text-align: left;
+        font-size: 16px;
+    }
+    .risk-svg{
+        width: 100%;
+        margin: 20px 0 0 0;
+    }
+    .risk-title{
+        margin: 5vw 0 0 0;
+    }
+    .risk-parent {
+        margin: 90px 0 0;
+        margin: 9rem 0rem 0rem;
+    }
+
+    html {
+        font-size: 7px;
+    }
+}

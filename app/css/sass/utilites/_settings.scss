@@ -1,0 +1,127 @@
+@charset "UTF-8";
+
+// ----------------------
+// == Site settings
+// ----------------------
+
+//start font-size for rem
+$fz: 10;
+
+// Fonts
+$font1: 'Circle', sans-serif;
+/*$font2: 'Roboto Slab', serif;*/
+$font2: 'CoreSans', serif;
+$font3: 'Comfortaa','cursive';
+
+// = Colors
+// -----------------------------
+
+// Graphic chart
+
+$color1: #ec1f27;
+$color2: #1e1e21;
+$color3: #f5f5f9;
+
+// = Transitions
+// -----------------------------
+$linear: all .5s linear;
+
+// = Inline grid
+// -----------------------------
+%parent{
+  font-size: 0;
+  line-height: 0;
+  letter-spacing: -7px;
+}
+%child{
+  font-size: 14px;
+  line-height: 18px;
+  letter-spacing: normal;
+  display: inline-block;
+}
+%align-middle{
+	display: inline-block;
+	vertical-align: middle;
+	line-height: normal;
+}
+
+//all property in px and rem
+@mixin ptr($property,$values){
+    $max: length($values);
+    $pxValues: '';
+    $remValues: '';
+    @if $max > 1{
+        @for $i from 1 through $max{
+            $value: nth($values, $i);
+            $pxValues: #{$pxValues + $value}px;
+            $remValues: #{$remValues + $value/$fz}rem;
+            @if $i < $max {
+                $pxValues: #{$pxValues + ' '};
+                $remValues: #{$remValues + ' '};
+            }
+        }
+        #{$property}:$pxValues;
+        #{$property}:$remValues;
+    }
+    @else{
+        #{$property}:#{$values + px};
+        #{$property}:#{$values/$fz + rem};
+    }
+}
+
+//фонт в пикселях и ремах
+@mixin ptrFont($property,$fw,$fs,$lh,$font){
+    #{$property}:$fw #{$fs+px/$lh+px} $font;
+    #{$property}:$fw #{($fs/$fz)+rem/($lh/$fz)+rem} $font;
+}
+
+//цвет плейсхолдров
+@mixin input-placeholder {
+    &.placeholder { @content; }
+    &:-moz-placeholder { @content; }
+    &::-moz-placeholder { @content; }
+    &:-ms-input-placeholder { @content; }
+    &::-webkit-input-placeholder { @content; }
+}
+
+//убираем единици измерения
+@function strip-unit($number) {
+    @if type-of($number) == 'number' and not unitless($number){
+        @return $number / ($number * 0 + 1);
+    }
+
+    @return $number;
+}
+
+//функция динамического изменения единиц шрифта
+@function calcFluidFontSize($f-min, $f-max, $w-min, $w-max, $units: px){
+    $f-min: strip-unit($f-min);
+    $f-max: strip-unit($f-max);
+    $w-min: strip-unit($w-min);
+    $w-max: strip-unit($w-max);
+
+    $k: ($f-max - $f-min)/($w-max - $w-min);
+    $b: $f-min - $k * $w-min;
+
+    $b: $b + $units;
+
+    @return calc( #{$k} * 100vw + #{$b} );
+}
+
+@mixin fluidFontSize($f-min, $f-max, $w-min, $w-max, $lh, $fallback: false) {
+
+    font-size: $f-max;
+    line-height: $lh;
+    @media only screen and (max-width: $w-max) {
+        @if ($fallback) {
+            font-size: $fallback;
+            line-height: $fallback + 4;
+        }
+        font-size: calcFluidFontSize($f-min, $f-max, $w-min, $w-max, px);
+        line-height: calcFluidFontSize($f-min + 4, $lh, $w-min, $w-max, px);
+    }
+    @media only screen and (max-width: $w-min) {
+        font-size: $f-min;
+        line-height: $f-min + 4;
+    }
+}

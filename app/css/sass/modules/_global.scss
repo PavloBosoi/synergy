@@ -1,0 +1,32 @@
+/* ==|====================
+   Module/Global
+   ======================= */
+
+/*===titles===*/
+.title-main{
+    position: relative;
+    font-family: $font1;
+    font-weight: bold;
+    padding-left: 11%;
+    @include fluidFontSize(12px,14px,480px,1680px,18px,13px);
+    h1,h2,h3,h4{
+        font-weight: bold;
+    }
+    &::before{
+        content: '';
+        position: absolute;
+        top: 80%;
+        left: 0;
+        width: 10%;
+        height: 1px;
+        background-color: $color1;
+    }
+}
+.title-big{
+    @include fluidFontSize(18px,52px,480px,1680px,68px,36px);
+    padding-left: 15.5%;
+    &::before{
+        top: 40%;
+        width: 15%;
+    }
+}

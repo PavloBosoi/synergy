@@ -1,0 +1,136 @@
+//===addition-mixins===//
+//all property in px and rem
+@mixin ptr($property,$values){
+    $max: length($values);
+    $pxValues: '';
+    $remValues: '';
+    @if $max > 1{
+        @for $i from 1 through $max{
+            $value: nth($values, $i);
+            $pxValues: #{$pxValues + $value}px;
+            $remValues: #{$remValues + $value/$fz}rem;
+            @if $i < $max {
+                $pxValues: #{$pxValues + ' '};
+                $remValues: #{$remValues + ' '};
+            }
+        }
+        #{$property}:$pxValues;
+        #{$property}:$remValues;
+    }
+    @else{
+        #{$property}:#{$values + px};
+        #{$property}:#{$values/$fz + rem};
+    }
+}
+
+
+//===base===//
+@mixin html-fz(){
+    font-size: $fz + px;
+}
+
+//===properties===//
+@mixin direction($direction){
+    flex-direction: $direction;
+}
+@mixin j-content($j-content){
+    justify-content: $j-content;
+}
+@mixin align-items($align-items){
+    align-items: $align-items;
+}
+
+@mixin vertical(){
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+//===containers===//
+@mixin container(){
+    width: $container - ($gutter-container - $gutter-container/$fz) + px;
+    @include ptr(padding-left,$gutter);
+    @include ptr(padding-right,$gutter);
+    /*padding-left: $gutter/$fz + rem;
+    padding-right: $gutter/$fz + rem;*/
+    margin: 0 auto;
+    @media only screen and (max-width: $media-lg + px){
+        width: $media-md - ($gutter-container - $gutter-container/$fz) + px;
+    }
+    @media only screen and (max-width: $media-md + px){
+        width: $media-sm - ($gutter-container - $gutter-container/$fz) + px;
+    }
+    @media only screen and (max-width: $media-sm + px){
+        width: 100%;
+    }
+}
+@mixin container-fluid(){
+    width: 100%;
+    margin-right: auto;
+    margin-left: auto;
+    @include ptr(padding-left,$gutter);
+    @include ptr(padding-right,$gutter);
+}
+
+//===row===//
+@mixin row($display, $direction: false, $wrap: false, $j-content: false, $align-items: false){
+    @if ($direction) {
+        flex-direction: $direction;
+    }
+    @if ($wrap) {
+        flex-wrap: $wrap;
+    }
+    @if ($j-content) {
+        justify-content: $j-content;
+    }
+    @if ($align-items) {
+        align-items: $align-items;
+    }
+    display: $display;
+    @include ptr(margin-left,-$gutter);
+    @include ptr(margin-right,-$gutter);
+}
+
+//===col===//
+@mixin colWidth($column,$space:true){
+    /*$percentItem: 100/$grid*$column#{'%'};*/
+    $percentItem: (100/$column)#{'%'};
+    $gutterItem: $gutter*2/$fz + rem;
+    @if($space) {
+        width: calc(#{$percentItem} - #{$gutterItem});
+    }
+    @else{
+        width: $percentItem;
+    }
+}
+@mixin col($column,$space:true){
+    @include colWidth($column,$space);
+    @if($space){
+        margin-left: $gutter/$fz + rem;
+        margin-right: $gutter/$fz + rem;
+    }
+}
+@mixin col-lg($column,$space:true){
+    @media only screen and (max-width: $media-lg + px){
+        @include colWidth($column,$space);
+    }
+}
+@mixin col-md($column,$space:true){
+    @media only screen and (max-width: $media-md + px){
+        @include colWidth($column,$space);
+    }
+}
+@mixin col-sm($column,$space:true){
+    @media only screen and (max-width: $media-sm + px){
+        @include colWidth($column,$space);
+    }
+}
+@mixin col-sl($column,$space:true){
+    @media only screen and (max-width: $media-sl + px){
+        @include colWidth($column,$space);
+    }
+}
+@mixin col-xs($column,$space:true){
+    @media only screen and (max-width: $media-xs + px){
+        @include colWidth($column,$space);
+    }
+}

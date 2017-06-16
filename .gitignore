@@ -1,0 +1,29 @@
+# ������, ������������
+*.7z
+*.dmg
+*.gz
+*.iso
+*.jar
+*.rar
+*.tar
+*.zip
+
+# ���� ������, ����
+*.log
+*.sql
+*.sqlite
+
+# ��������� ������������ ������
+Thumbs.db
+Desktop.ini
+.DS_Store*
+ehthumbs.db
+Icon?
+
+# ��������� phpStorm
+.idea
+# ������ Node, ���� npm
+node_modules
+npm-debug.log
+bower_components
+#dist

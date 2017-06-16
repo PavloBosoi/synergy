@@ -1,0 +1,89 @@
+/* ==|====================
+   Module/Popups
+   ======================= */
+.fancybox-slide>*{
+	padding: 0;
+}
+.fancybox-close-small{
+	@include ptr(top,14);
+	@include ptr(width,30);
+	@include ptr(height,30);
+	&::after{
+		top: 0;
+	}
+}
+.popup-block{
+	display: none;
+}
+.popup-title{
+	background-color: #fff;
+	@include ptr(padding,15 10);
+	text-align: center;
+	h5{
+		font-weight: 300;
+		@include fluidFontSize(18px,24px,480px,1024px,28px,20px);
+		@include ptr(padding,0 20);
+		color: $color2;
+	}
+}
+
+.popup-portfolio{
+	@include ptr(width,500);
+	.parent{
+		display: flex;
+		flex-wrap: wrap;
+		background-color: $color2;
+		@include ptr(padding,40 20);
+		overflow: hidden;
+	}
+	.item-img,
+	.item-text{
+		width: 50%;
+	}
+	.item-img{
+		a{
+			display: block;
+			@include ptr(padding,5);
+			border: 1px solid #fff;
+		}
+		img{
+			width: 100%;
+			height: auto;
+			display: block;
+			&:hover{
+				opacity: .5;
+			}
+		}
+	}
+	.item-text {
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		.text-block {
+			color: #fff;
+			p{
+				@include fluidFontSize(10px,12px,480px,1024px,16px,11px);
+				font-weight: 600;
+				text-transform: uppercase;
+			}
+			span{
+				@include fluidFontSize(12px,16px,480px,1024px,20px,14px);
+				font-weight: 300;
+				display: block;
+				@include ptr(margin,5 0 0 0);
+				a{
+					color: #777;
+					text-decoration: none;
+					&:hover{
+						text-decoration: none;
+						color: #fff;
+					}
+				}
+			}
+		}
+	}
+}
+.popup-portfolio .item-text .text-block span a:hover{
+	text-decoration: none;
+	color: #fff;
+}

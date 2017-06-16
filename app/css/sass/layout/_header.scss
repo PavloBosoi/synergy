@@ -1,0 +1,51 @@
+/* ==|====================
+   Layout/Header
+   ======================= */
+
+.header{
+    @include ptr(height,115);
+    border-bottom: 1px solid #e8e8f0;
+    .container{
+        height: 100%;
+    }
+}
+.h-parent{
+    @include row(flex);
+    align-items: center;
+    justify-content: space-between;
+    height: 100%;
+}
+.logo{
+    img{
+        @include ptr(width,148);
+    }
+}
+.menu{
+    height: 100%;
+    ul{
+        display: flex;
+        height: 100%;
+        li{
+            height: 100%;
+            a{
+                @include fluidFontSize(14px,18px,480px,1680px,22px,16px);
+                @include ptr(padding,0 38);
+                display: flex;
+                align-items: center;
+                height: 100%;
+                color: $color2;
+                font-weight: bold;
+                &:hover{
+                    background-color: $color2;
+                    color: $color1;
+                }
+            }
+            ul{
+                display: none;
+            }
+        }
+    }
+}
+.h-estimate{
+    text-align: right;
+}
