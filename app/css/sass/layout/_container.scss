@@ -10,8 +10,9 @@
 }
 .content{
 /*    padding: 0 0 140px;*/
+    @include ptr(margin-top,115);
 }
-.container{
+.container-s{
     width: 100%;
     @include ptr(padding, 0 170);
 }

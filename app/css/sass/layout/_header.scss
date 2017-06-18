@@ -1,19 +1,40 @@
 /* ==|====================
    Layout/Header
    ======================= */
-
 .header{
-    @include ptr(height,115);
-    border-bottom: 1px solid #e8e8f0;
-    .container{
-        height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #fff;
+    z-index: 4;
+    &::before,
+    &::after{
+        content: '';
+        position: absolute;
+        bottom: 0;
+        width: 0;
+        height: 1px;
+        background-color: #e8e8f0;
+        transition: $linear;
+    }
+    &::before{
+        left: 50%;
+    }
+    &::after{
+        right: 50%;
+    }
+}
+.header.active{
+    &::before,
+    &::after{
+        width: 50%;
     }
 }
 .h-parent{
-    @include row(flex);
+    display: flex;
     align-items: center;
     justify-content: space-between;
-    height: 100%;
 }
 .logo{
     img{
@@ -21,18 +42,16 @@
     }
 }
 .menu{
-    height: 100%;
-    ul{
+    >ul{
         display: flex;
-        height: 100%;
-        li{
-            height: 100%;
-            a{
+        >li{
+            position: relative;
+            >a{
                 @include fluidFontSize(14px,18px,480px,1680px,22px,16px);
                 @include ptr(padding,0 38);
+                @include ptr(height,115);
                 display: flex;
                 align-items: center;
-                height: 100%;
                 color: $color2;
                 font-weight: bold;
                 &:hover{
@@ -40,8 +59,40 @@
                     color: $color1;
                 }
             }
+            &.hover{
+                >a{
+                    background-color: $color2;
+                    color: $color1;
+                }
+            }
             ul{
                 display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                li{
+                    opacity: 0;
+                    transform: rotateY(180deg);
+                    transition: $linear;
+                    &.rotate{
+                        opacity: 1;
+                        transform: rotateY(0deg);
+                    }
+                    a{
+                        @include ptr(padding,0 38);
+                        background-color: $color2;
+                        @include ptr(height,60);
+                        color: #fff;
+                        display: flex;
+                        align-items: center;
+                        white-space: nowrap;
+                    }
+                }
+            }
+            &.hover{
+                ul{
+                    display: flex;
+                }
             }
         }
     }

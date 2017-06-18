@@ -22,7 +22,7 @@ body{
     height: 100%;
     font-family: $font1;
     font-weight: 300;
-    @include fluidFontSize(18px,30px,480px,1680px,34px,24px);
+    @include fluidFontSize(14px,18px,480px,1680px,22px,16px);
 }
 li{
     list-style-type: none;

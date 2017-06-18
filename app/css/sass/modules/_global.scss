@@ -8,6 +8,7 @@
     font-family: $font1;
     font-weight: bold;
     padding-left: 11%;
+    width: 100%;
     @include fluidFontSize(12px,14px,480px,1680px,18px,13px);
     h1,h2,h3,h4{
         font-weight: bold;
@@ -24,9 +25,9 @@
 }
 .title-big{
     @include fluidFontSize(18px,52px,480px,1680px,68px,36px);
-    padding-left: 15.5%;
+    padding-left: 14.5%;
     &::before{
         top: 40%;
-        width: 15%;
+        width: 13%;
     }
 }
