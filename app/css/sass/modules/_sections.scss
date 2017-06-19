@@ -29,7 +29,7 @@
         height: 100%;
         top: 0;
         left: 0;
-        background-color: rgba(0,0,0,.6);
+        background-color: rgba(0,0,0,.85);
         z-index: 2;
     }
 }
@@ -68,5 +68,161 @@
         width: 100% !important;
         height: 100% !important;
         z-index: 2;
+    }
+}
+
+/*===SECTION ABOUT US===*/
+.about-us{
+    @include ptr(padding,150 0 195 0);
+}
+.about-us-info{
+    @include fluidFontSize(14px,18px,480px,1680px,28px,16px);
+    font-weight: 300;
+    @include ptr(width,371);
+    margin-left: 26%;
+    @include ptr(margin-top,-40);
+    p{
+        @include ptr(margin,20 0 0 0);
+    }
+}
+.about-us-experience{
+    @include ptr(margin,145 0 0 0);
+    display: flex;
+    justify-content: space-between;
+}
+.experience-item{
+    display: flex;
+    i{
+        font-style: normal;
+        color: $color1;
+    }
+    span{
+        @include fluidFontSize(48px,72px,480px,1680px,76px,56px);
+        color: $color1;
+        font-weight: 100;
+        display: inline-block;
+    }
+}
+.experience-item-info{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    @include ptr(padding,0 0 12 25);
+}
+
+/*===SECTION CASES===*/
+.cases{
+    @include ptr(padding,100 0);
+    background-color: $color3;
+    position: relative;
+    .btn-empty{
+        float: right;
+        @include ptr(margin,-120 0 0 0);
+    }
+}
+.case{
+    display: flex;
+    align-items: center;
+    @include ptr(margin,100 0 0 0);
+}
+.case:nth-child(even){
+    flex-direction: row-reverse;
+}
+.case-info{
+    @include ptr(margin,130 0 0 120);
+    @include ptr(width,331);
+    position: relative;
+    .btn-full{
+        @include ptr(margin,47 0 0 0);
+        i{
+            fill: $color2;
+        }
+    }
+}
+.case-tags{
+    @include ptr(margin,0 0 10 0);
+    position: relative;
+    &::before{
+        content: '';
+        position: absolute;
+        @include ptr(bottom,8);
+        @include ptr(left,-55);
+        @include ptr(width,40);
+        @include ptr(height,1);
+        background-color: $color2;
+    }
+    span{
+        position: relative;
+        display: inline-block;
+        text-transform: uppercase;
+        @include fluidFontSize(12px,14px,480px,1680px,18px,13px);
+        font-weight: bold;
+        @include ptr(padding,0 0 0 15);
+        @include ptr(margin,0 0 0 10);
+        &:first-child{
+            padding: 0;
+            margin: 0;
+            &::before{
+                display: none;
+            }
+        }
+        &::before{
+            content: '/';
+            position: absolute;
+            @include ptr(top,-2);
+            left: 0;
+        }
+    }
+}
+
+/*===SECTION BENEFITS===*/
+.benefits{
+    @include ptr(padding,200 0 150);
+}
+.benefits-title{
+    @include fluidFontSize(21px,42px,480px,1680px,52px,32px);
+    font-weight: bold;
+    @include ptr(margin,90 0 0 0);
+}
+.benefits-parent{
+    @include ptr(margin,90 -30 0);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.benefits-item{
+    width: 25%;
+    @include ptr(padding,0 30);
+    @include ptr(margin,0 0 90 0);
+}
+.benefits-description{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border: solid 20px $color3;
+    @include fluidFontSize(15px,30px,480px,1680px,40px,22px);
+    font-weight: bold;
+    @include ptr(width,780);
+    @include ptr(height,217);
+    @include ptr(margin,-200 0 0 0);
+    float: right;
+}
+
+/*===SECTION TESTIMONIALS===*/
+.testimonials{
+    @include ptr(padding,100 0);
+    background-color: $color3;
+}
+.main-carousel{
+    @include ptr(margin,100 0 0 0);
+}
+.main-carousel-item{
+    display: flex;
+}
+.main-carousel-info{
+    @include ptr(width,310);
+    span{
+        @include fluidFontSize(16px,21px,480px,1680px,25px,18px);
+        color: $color1;
     }
 }

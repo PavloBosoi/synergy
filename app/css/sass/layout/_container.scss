@@ -15,4 +15,11 @@
 .container-s{
     width: 100%;
     @include ptr(padding, 0 170);
+    position: relative;
+    &::before,
+    &::after{
+        content: " ";
+        display: table;
+        clear: both;
+    }
 }

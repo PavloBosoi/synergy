@@ -10,6 +10,7 @@ var gulp = require('gulp'),
     rigger = require('gulp-rigger'),
     imagemin = require('gulp-imagemin'),
     pngquant = require('imagemin-pngquant'),
+    svgSprite = require('gulp-svg-sprite'),
     watch = require('gulp-watch'),
     mainBowerFiles = require('main-bower-files'),
     concat = require('gulp-concat'),
@@ -37,6 +38,7 @@ var path = {
         img: 'app/images/*.*',
         fonts: 'app/fonts/',
         sprite: 'app/images/sprite/*.png',
+        spritesvg: 'app/images/sprite/*.svg',
         libsJs: 'app/js/libs/',
         libsCss: 'app/css/libs/',
         modulesJs: 'app/js/modules/*.js',
@@ -48,7 +50,8 @@ var path = {
         css: 'app/css/**/**/*.scss',
         img: 'app/images/*.*',
         fonts: 'app/fonts/**/*.*',
-        sprite: 'app/images/sprite/*.png'
+        sprite: 'app/images/sprite/*.png',
+        spritesvg: 'app/images/sprite/*.svg'
     }
 };
 
@@ -159,6 +162,20 @@ gulp.task('sprite', function (){
     return spriteData.pipe(gulp.dest(path.dist.sprite));
 });
 
+gulp.task('spritesvg', function () {
+    return gulp.src(path.app.spritesvg)
+        .pipe(svgSprite({
+            mode: {
+                css: {		// Activate the «css» mode
+                    render: {
+                        css: true	// Activate CSS output (with default options)
+                    }
+                }
+            }
+        }))
+        .pipe(gulp.dest(path.dist.sprite));
+});
+
 gulp.task('dist', [
     'clean',
     'mainJS',
@@ -169,6 +186,7 @@ gulp.task('dist', [
     'fonts:dist',
     'image:dist',
     'sprite',
+    'spritesvg',
     'css:dist',
     'css:compressLibs',
     'html:dist'
@@ -195,6 +213,9 @@ gulp.task('watch', function(){
     });
     watch([path.watch.sprite], function(event, cb){
         gulp.start('sprite');
+    });
+    watch([path.watch.spritesvg], function(event, cb){
+        gulp.start('spritesvg');
     });
     watch(['bower_components'], function(event, cb){
         gulp.start('mainJS');

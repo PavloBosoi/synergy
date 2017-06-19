@@ -14,3 +14,48 @@
         color: #fff;
     }
 }
+
+.btn-full{
+    @include ptr(height, 60);
+    @include ptr(width, 60);
+    @include ptr(line-height, 60);
+    @include ptr(font-size, 14);
+    text-align: center;
+    display: block;
+    font-weight: bold;
+    border: 1px solid $color1;
+    color: $color2;
+    text-transform: uppercase;
+    position: relative;
+    z-index: 2;
+    overflow: hidden;
+    &:hover{
+        background-color: $color1;
+        color: #fff;
+        @include ptr(width, 237);
+        span{
+            opacity: 1;
+            position: static;
+            transition-delay: .5s;
+        }
+    }
+    span{
+        position: absolute;
+        display: inline-block;
+        top: 100%;
+        left: 0;
+        opacity: 0;
+        color: #fff;
+        @include ptr(margin,0 50 0 0);
+        transition: $linear;
+        transition-delay: 0s;
+    }
+    i{
+
+    }
+}
+.btn-skills{
+    position: absolute;
+    @include ptr(bottom,68);
+    @include ptr(right,68);
+}

@@ -23,14 +23,18 @@ $(function () {
 
     //scroll header menu
     $(window).on('scroll',function(){
-        console.log($(this).scrollTop());
-        if($(this).scrollTop() > 0){
+        scrollTop($(this));
+    });
+    scrollTop($(window));
+
+    function scrollTop(obj){
+        if(obj.scrollTop() > 0){
             $('.header').addClass('active');
         }
         else{
             $('.header').removeClass('active');
         }
-    });
+    }
 
     //header menu 2 level
     $('.menu > ul > li').hover(
@@ -91,6 +95,19 @@ $(function () {
             }
         );
     }
+
+
+
+
+/*=============PLUGINS==============*/
+
+    $('.owl-carousel').owlCarousel({
+        items: 1,
+        loop: true,
+        margin: 10,
+        dots: true,
+        nav: true
+    })
 
 
 });
