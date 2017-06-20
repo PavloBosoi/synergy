@@ -14,6 +14,20 @@
         color: #fff;
     }
 }
+.btn-colored{
+    background-color: $color1;
+    border: 1px solid $color1;
+    color: #fff;
+    &:hover{
+        background-color: transparent;
+        color: #fff;
+        border: 1px solid #fff;
+    }
+}
+.btn-right{
+    float: right;
+}
+
 
 .btn-full{
     @include ptr(height, 60);

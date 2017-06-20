@@ -115,10 +115,6 @@
     @include ptr(padding,100 0);
     background-color: $color3;
     position: relative;
-    .btn-empty{
-        float: right;
-        @include ptr(margin,-120 0 0 0);
-    }
 }
 .case{
     display: flex;
@@ -179,20 +175,14 @@
 .benefits{
     @include ptr(padding,200 0 150);
 }
-.benefits-title{
-    @include fluidFontSize(21px,42px,480px,1680px,52px,32px);
-    font-weight: bold;
-    @include ptr(margin,90 0 0 0);
-}
 .benefits-parent{
     @include ptr(margin,90 -30 0);
-    display: flex;
+    @include row(flex);
     flex-wrap: wrap;
     justify-content: space-between;
 }
 .benefits-item{
-    width: 25%;
-    @include ptr(padding,0 30);
+    @include col(4);
     @include ptr(margin,0 0 90 0);
 }
 .benefits-description{
@@ -215,14 +205,184 @@
 }
 .main-carousel{
     @include ptr(margin,100 0 0 0);
+    position: relative;
+    .owl-stage-outer{
+        @include ptr(padding, 0 170);
+    }
 }
 .main-carousel-item{
-    display: flex;
+    @include ptr(padding,74 0);
 }
 .main-carousel-info{
+    float: left;
     @include ptr(width,310);
     span{
         @include fluidFontSize(16px,21px,480px,1680px,25px,18px);
         color: $color1;
+    }
+    img{
+        @include ptr(margin,60 0 0 0);
+        @include ptr(max-width,120);
+        @include ptr(max-height,120);
+    }
+}
+.main-carousel-description{
+    position: relative;
+    @include ptr(margin,0 0 0 400);
+    @include ptr(width,760);
+    &::before,
+    &::after{
+        position: absolute;
+        @include fluidFontSize(36px,72px,480px,1680px,76px,54px);
+        font-family: $font2;
+        color: $color1;
+    }
+    &::before{
+        @include ptr(top,-80);
+        left: 0;
+        content: '“';
+    }
+    &::after{
+        @include ptr(bottom,-110);
+        right: 0;
+        content: '”';
+    }
+    p{
+        @include fluidFontSize(16px,30px,480px,1680px,44px,22px);
+    }
+}
+
+/*===SECTION TECHNOLOGIES===*/
+.technologies{
+    @include ptr(padding,200 0);
+}
+.technologies-parent{
+    @include ptr(margin,140 0 0);
+    @include row(flex);
+    flex-wrap: wrap;
+}
+.technologies-item{
+    @include col(4);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    @include ptr(margin,0 0 140);
+    i{
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        margin: auto;
+        opacity: 0;
+        transition: $linear;
+        &:first-child{
+            opacity: 1;
+            position: relative;
+        }
+        &:hover{
+            opacity: 1;
+            &:first-child{
+                opacity: 0;
+            }
+        }
+    }
+}
+
+/*===SECTION ESTIMATION===*/
+.estimation{
+    background-color: $color2;
+    @include ptr(padding,140 280 100);
+    .sections-title{
+        @include ptr(margin,0 0 90);
+        color: #fff;
+    }
+}
+
+/*===SECTION PARTNERS===*/
+.partners{
+    @include ptr(padding,200 0);
+}
+.partners-parent{
+    @include row(flex);
+    @include ptr(padding,90 0 0);
+}
+.partners-item{
+    @include row(flex);
+    align-items: center;
+    @include col(2);
+    @include ptr(margin,0 0 130);
+    .general-block-info{
+        @include col(2);
+    }
+    &:hover i{
+        opacity: 1;
+        &:first-child{
+            opacity: 0;
+        }
+    }
+}
+.partners-img{
+    @include col(2);
+    display: flex;
+    position: relative;
+    text-align: center;
+    i{
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        margin: auto;
+        opacity: 0;
+        transition: $linear;
+        &:first-child{
+            opacity: 1;
+            position: relative;
+        }
+    }
+}
+
+/*===SECTION CONTACT-US===*/
+.contact-us{
+    background-color: $color3;
+    @include ptr(padding,100 0);
+}
+.contact-parent{
+    @include row(flex);
+    justify-content: space-between;
+    @include ptr(margin,100 0 0);
+}
+.contact-form{
+    @include col(4);
+}
+.contact-info{
+    @include row(flex);
+    flex-wrap: wrap;
+    @include col(1.75);
+}
+.contact-item{
+    @include col(2);
+    span{
+        @include fluidFontSize(12px,12px,480px,1680px,16px,12px);
+        color: #b9c2c7;
+        text-transform: uppercase;
+        font-weight: bold;
+        display: block;
+        @include ptr(margin,0 0 10 0);
+    }
+    p{
+        @include fluidFontSize(16px,24px,480px,1680px,28px,20px);
+        font-weight: bold;
+        @include ptr(margin,0 0 20 0);
+    }
+    a{
+        @include fluidFontSize(16px,24px,480px,1680px,28px,20px);
+        font-weight: bold;
+        display: inline-block;
+        &:hover{
+            color: $color1;
+        }
     }
 }

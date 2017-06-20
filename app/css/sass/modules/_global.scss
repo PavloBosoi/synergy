@@ -60,6 +60,7 @@
     display: flex;
     flex-wrap: wrap;
     height: 100%;
+    @include ptr(padding,0 30 0 0);
     h4{
         @include fluidFontSize(16px,21px,480px,1680px,25px,18px);
         font-weight: bold;
@@ -68,4 +69,95 @@
     p{
         align-self: flex-end;
     }
+}
+
+.sections-title{
+    @include fluidFontSize(21px,42px,480px,1680px,52px,32px);
+    font-weight: bold;
+    @include ptr(margin,90 0 0 0);
+}
+
+
+
+//*---OWL-CAROUSEL---*/
+.owl-controls{
+    position: absolute;
+    top: 0;
+    @include ptr(right,170);
+    @include ptr(padding,55 0);
+    @include ptr(width,20);
+}
+.owl-dots{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.owl-dots div{
+    display: inline-block;
+    @include ptr(width,8);
+    @include ptr(height,8);
+    @include ptr(margin,20 0 0 0);
+    &:first-child{
+        margin: 0;
+    }
+
+    background-color: #b9c2c7;
+    border-radius: 50%;
+    transition: $linear;
+}
+
+.owl-dots .active,
+.owl-dots div:hover{
+    background-color: $color1;
+}
+
+.owl-nav{
+    div{
+        position: absolute;
+        @include ptr(width,20);
+        @include ptr(height,12);
+        &::before,
+        &::after{
+            content: '';
+            position: absolute;
+            @include ptr(top,5);
+            @include ptr(width,12);
+            height: 1px;
+            background-color: #b9c2c7;
+            transition: $linear;
+        }
+        &:hover{
+            &::before,
+            &::after{
+                background-color: $color1;
+            }
+        }
+    }
+    .owl-prev{
+        top: 0;
+        &::before{
+            left: 0;
+            transform: rotate(135deg);
+        }
+        &::after{
+            right: 0;
+            transform: rotate(-135deg);
+        }
+    }
+    .owl-next{
+        bottom: 0;
+        &::before{
+            left: 0;
+            transform: rotate(45deg);
+        }
+        &::after{
+            right: 0;
+            transform: rotate(-45deg);
+        }
+    }
+}
+
+
+.js-view-all-parent{
+    overflow: hidden;
 }
