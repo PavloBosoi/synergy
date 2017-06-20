@@ -3,8 +3,17 @@
    ======================= */
 
 .footer {
-/*    margin: -140px auto 0;
-    height: 140px;
-    background: #BFF08E;
-    position: relative;*/
+    margin: -100px auto 0;
+    margin: -10rem auto 0;
+    @include ptr(height,100);
+    background-color: $color2;
+    position: relative;
+}
+.copy{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    @include fluidFontSize(16px,18px,480px,1680px,22px,17px);
+    color: #69696a;
 }

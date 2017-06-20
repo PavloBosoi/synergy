@@ -1,0 +1,11 @@
+.icon {
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  fill: currentColor;
+}
+
+.icon-arrow-s {
+  width: 2.33333em;
+  font-size: 0.9rem;
+}

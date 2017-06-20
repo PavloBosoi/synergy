@@ -11,6 +11,9 @@ var gulp = require('gulp'),
     imagemin = require('gulp-imagemin'),
     pngquant = require('imagemin-pngquant'),
     svgSprite = require('gulp-svg-sprite'),
+    svgmin = require('gulp-svgmin'),
+    cheerio = require('gulp-cheerio'),
+    replace = require('gulp-replace'),
     watch = require('gulp-watch'),
     mainBowerFiles = require('main-bower-files'),
     concat = require('gulp-concat'),
@@ -162,17 +165,45 @@ gulp.task('sprite', function (){
     return spriteData.pipe(gulp.dest(path.dist.sprite));
 });
 
-gulp.task('spritesvg', function () {
+gulp.task('spritesvgBuild', function () {
     return gulp.src(path.app.spritesvg)
+    // minify svg
+        .pipe(svgmin({
+            js2svg: {
+                pretty: true
+            }
+        }))
+        // remove all fill, style and stroke declarations in out shapes
+        .pipe(cheerio({
+            run: function ($) {
+                $('[fill]').removeAttr('fill');
+                $('[stroke]').removeAttr('stroke');
+                $('[style]').removeAttr('style');
+            },
+            parserOptions: {xmlMode: true}
+        }))
+        // cheerio plugin create unnecessary string '&gt;', so replace it.
+        .pipe(replace('&gt;', '>'))
+        // build svg sprite
         .pipe(svgSprite({
             mode: {
-                css: {		// Activate the «css» mode
+                symbol: {
+                    sprite: "sprite.svg",
                     render: {
-                        css: true	// Activate CSS output (with default options)
+                        scss: {
+                            dest:'sprite-svg.scss',
+                            template: "app/css/sass/templates/_sprite_template.scss"
+                        }
                     }
                 }
             }
         }))
+        .pipe(gulp.dest('app/css/sass/svg'));
+});
+
+gulp.task('spritesvg', ['spritesvgBuild'], function () {
+    return gulp.src('app/css/sass/svg/**/*.scss')
+        .pipe(sass().on('error', sass.logError))
         .pipe(gulp.dest(path.dist.sprite));
 });
 

@@ -9,7 +9,7 @@
     height: 100%;
 }
 .content{
-/*    padding: 0 0 140px;*/
+    @include ptr(padding,0 0 100);
     @include ptr(margin-top,115);
 }
 .container-s{

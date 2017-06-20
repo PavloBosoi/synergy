@@ -152,5 +152,80 @@ $(function () {
         }
     })
 
+    /*=============PLUGINS==============*/
+
+
+
+    /*=================Validation===============*/
+
+    /*===CONTACT===*/
+    function formLabel(el){
+        $(el).on('click contextmenu focusin',function(e){
+            $(el).each(function(){
+                if($(this).find('input').val() === '' || $(this).find('textarea').val() === ''){
+                    //если инпут или текстареа не пусты
+                    $(this).removeClass('active');
+                }
+            });
+            $(this).addClass('active');
+        });
+        $(document).mouseup(function(e){// событие клика по веб-документу
+            $(el).each(function(){
+                if($(this).find('input').val() === '' || $(this).find('textarea').val() === '' && !$(this).is(e.target) && $(this).has(e.target).length === 0){
+                    //если инпут или текстареа не пусты и клик был не поселектору и не по его дочерним элементам
+                    $(this).removeClass('active');
+                }
+            });
+        });
+    }
+    formLabel('.js-form-group');
+
+    function validateForms(el){
+        var val = el.val(),
+            id = el.attr('id');
+        switch (id){
+            case 'js-name':
+                var vName = /^[a-zA-Zа-яА-Я]+$/;
+                if(val.length >= 3 && val != '' && vName.test(val)){
+                    el.parent().removeClass('error').addClass('not-error');
+                }
+                else{
+                    el.parent().addClass('error').removeClass('not-error');
+                }
+                break;
+            case 'js-mail':
+                var vMail = /^([a-zA-Z0-9_.-])+@([a-zA-Z0-9_.-])+\.([a-zA-Z])+([a-zA-Z])+/;
+                if(val != '' && vMail.test(val)){
+                    el.parent().removeClass('error').addClass('not-error');
+                }
+                else{
+                    el.parent().addClass('error').removeClass('not-error');
+                }
+                break;
+            case 'js-phone':
+                var vPhone = /^(\s*)?(\+)?([- _():=+]?\d[- _():=+]?){10,14}(\s*)?$/;
+                if(val.length >= 3 && val != '' && vPhone.test(val)){
+                    el.parent().removeClass('error').addClass('not-error');
+                }
+                else{
+                    el.parent().addClass('error').removeClass('not-error');
+                }
+                break;
+            case 'js-message':
+                if(val.length >= 3 && val != ''){
+                    el.parent().removeClass('error').addClass('not-error');
+                }
+                else{
+                    el.parent().addClass('error').removeClass('not-error');
+                }
+                break;
+        }
+    }
+    $('.validate-field').on('input', function(){
+        validateForms($(this));
+    });
+
+
+    /*=================Validation===============*/
 
 });

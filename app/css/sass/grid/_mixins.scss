@@ -72,19 +72,7 @@
 }
 
 //===row===//
-@mixin row($display, $direction: false, $wrap: false, $j-content: false, $align-items: false){
-    @if ($direction) {
-        flex-direction: $direction;
-    }
-    @if ($wrap) {
-        flex-wrap: $wrap;
-    }
-    @if ($j-content) {
-        justify-content: $j-content;
-    }
-    @if ($align-items) {
-        align-items: $align-items;
-    }
+@mixin row($display){
     display: $display;
     @include ptr(margin-left,-$gutter);
     @include ptr(margin-right,-$gutter);

@@ -51,11 +51,9 @@ textarea{
     width: 100%;
     @include ptr(height,60);
     @include ptr(padding,10 0);
-    @include ptr(margin, 0 0 20 0);
-    @include ptr(border-radius,2);
-    border-bottom: 1px solid #b9c2c7;
     color: $color2;
     font-family: $font1;
+    position: relative;
     background-color: transparent;
 }
 input[type="submit"]{
@@ -64,6 +62,7 @@ input[type="submit"]{
     @include ptr(height, 60);
     @include ptr(line-height, 60);
     @include ptr(font-size, 14);
+    @include ptr(margin,50 0 0 0);
     text-align: center;
     display: inline-block;
     font-weight: bold;

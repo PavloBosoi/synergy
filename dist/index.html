@@ -146,7 +146,7 @@
 					<h2>our cases</h2>
 				</div>
 				<div class="container-s">
-					<div class="cases-parent js-view-all-parent">
+					<div class="cases-parent">
 						<div class="case">
 							<div class="case-img">
 								<img src="images/case1.png" alt="case">
@@ -181,7 +181,7 @@
 							</div>
 						</div>
 					</div>
-					<a href="#" class="btn-empty btn-right js-view-all">View all cases</a>
+					<a href="#" class="btn-empty btn-right">View all cases</a>
 				</div>
 			</section>
 
@@ -393,19 +393,19 @@
 					<div class="contact-parent">
 						<div class="contact-form">
 							<form action="#" method="post">
-								<label>
-									<span>yOUR EMAIL:</span>
-									<input type="text">
-								</label>
-								<label>
-									<span>Phone number:</span>
-									<input type="text">
-								</label>
-								<label>
-									<span>How can we help you?</span>
-									<input type="text">
-								</label>
-								<input type="submit" value="Send" class="wpcf7-form-control wpcf7-submit">
+								<div class="form-group js-form-group">
+									<input type="text" id="js-mail" class="validate-field"/>
+									<label for="js-mail">Your Email:</label>
+								</div>
+								<div class="form-group js-form-group">
+									<input type="text" id="js-phone" class="validate-field"/>
+									<label for="js-phone">Phone number:</label>
+								</div>
+								<div class="form-group form-group-last js-form-group">
+									<input type="text" id="js-message" class="validate-field"/>
+									<label for="js-message">How can we help you?</label>
+								</div>
+								<label><input type="submit" value="Send" class="wpcf7-form-control wpcf7-submit"></label>
 							</form>
 						</div>
 						<div class="contact-info">
@@ -434,6 +434,19 @@
 				</div>
 			</section>
 
+			<section class="socials">
+				<div class="container-s">
+					<div class="socials-parent">
+						<a class="socials-item" href="#"><i class="fa fa-behance" aria-hidden="true"></i></a>
+						<a class="socials-item" href="#"><i class="fa fa-google-plus" aria-hidden="true"></i></a>
+						<a class="socials-item" href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+						<a class="socials-item" href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+						<a class="socials-item" href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+						<a class="socials-item" href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+					</div>
+				</div>
+			</section>
+
 
 
 
@@ -442,7 +455,7 @@
 	</div><!-- .wrapper -->
 
 	<footer class="footer">
-	
+	    <div class="copy"><p>Copyright &copy; 2015 Synergy Way. All rights reserved.</p></div>
 	</footer><!-- .footer -->
 
 	</body>
