@@ -181,13 +181,12 @@ $(function () {
     var ctrl = new ScrollMagic.Controller({
         globalSceneOptions: {
             triggerHook: 0,
-            tweenChanges: true,
-            duration: ScreenHeight
+            tweenChanges: true
         }
     });
 
     // Create scene
-    $("section").each(function(index){
+/*    $("section").each(function(index){
 
         if(index < $("section").length-1){
             new ScrollMagic.Scene({
@@ -196,21 +195,49 @@ $(function () {
                 .setPin(this)
                 .addTo(ctrl);
         }
-    });
+    });*/
 
+    /*===ALL SECTIONS===*/
+
+    $("section").each(function(index){
+        var sectionTitle = $(this).find('.sections-title'),
+            titleMain = $(this).find('.title-main');
+
+        if(index <= $("section").length){
+
+            var sTween = new TimelineMax();
+            sTween.staggerFrom(sectionTitle, 0.5, {opacity:0, y:100, ease:Back.easeIn}, 0.1);
+            sTween.call(function() {
+                titleMain.toggleClass('active');
+            });
+
+            var scene = new ScrollMagic.Scene({
+                triggerElement: this
+            })
+                .setTween(sTween)
+                .addIndicators({name: index + " (duration: 0)"}) // add indicators (requires plugin)
+                .addTo(ctrl);
+
+            scene.triggerHook(0.5);
+        }
+    });
 
     /*===Section1===*/
     var title1 = '.title-main';
 
     var s1Tween = new TimelineMax();
-    s1Tween.to('.title-main span', 2, {text:{value:"This is the new text", delimiter:" "}, ease:Linear.easeNone});
+    /*s1Tween.to('.title-main span', 2, {text:{value:"This is the new text", delimiter:" "}, ease:Linear.easeNone});*/
     /*s1Tween.from(title1, 1, { y: 150, opacity: 0, ease:Linear.easeNone});*/
+    s1Tween.staggerFrom(title1, 1, {opacity:0, y:100, ease:Back.easeIn}, 0.1);
 
     // Create scene1
     var scene1 = new ScrollMagic.Scene({
         triggerElement: '#scene1'
     })
         .addTo(ctrl);
+
+    /*===Section2===*/
+
 
     /*=============PLUGINS==============*/
 
