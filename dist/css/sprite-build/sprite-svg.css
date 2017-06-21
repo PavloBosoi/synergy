@@ -1,11 +1,9 @@
-.icon {
+.icon-s {
   display: inline-block;
   width: 1em;
   height: 1em;
-  fill: currentColor;
-}
+  fill: currentColor; }
 
 .icon-arrow-s {
-  width: 2.33333em;
   font-size: 0.9rem;
-}
+  width: 2.33333em; }

@@ -97,8 +97,8 @@ gulp.task('js:dist', function (){
 gulp.task('js:compressLibs', ['mainJS'], function() {
     return gulp.src([
         path.app.libsJs +'jquery.js',
-        /*path.app.libsJs + 'TweenMax.min.js',
-        path.app.libsJs + 'ScrollMagic.js',*/
+        path.app.libsJs + 'TweenMax.js',
+        path.app.libsJs + 'ScrollMagic.js',
         path.app.libsJs + '*.js'
     ])
         .pipe(concat('libs.min.js'))
@@ -165,7 +165,7 @@ gulp.task('sprite', function (){
     return spriteData.pipe(gulp.dest(path.dist.sprite));
 });
 
-gulp.task('spritesvgBuild', function () {
+gulp.task('spritesvgBuild', function (){
     return gulp.src(path.app.spritesvg)
     // minify svg
         .pipe(svgmin({
@@ -201,8 +201,13 @@ gulp.task('spritesvgBuild', function () {
         .pipe(gulp.dest('app/css/sass/svg'));
 });
 
-gulp.task('spritesvg', ['spritesvgBuild'], function () {
-    return gulp.src('app/css/sass/svg/**/*.scss')
+gulp.task('spritesvgTransfer', function () {
+    return gulp.src('app/css/sass/svg/symbol/*.svg')
+        .pipe(gulp.dest(path.dist.sprite));
+});
+
+gulp.task('spritesvg', ['spritesvgTransfer','spritesvgBuild'], function () {
+    return gulp.src('app/css/sass/svg/symbol/*.scss')
         .pipe(sass().on('error', sass.logError))
         .pipe(gulp.dest(path.dist.sprite));
 });

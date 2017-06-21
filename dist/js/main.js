@@ -73,8 +73,7 @@ $(function () {
 
     //skills block img full
     var img = '.skills-img',
-        item = '.skills-item',
-        color = '#69696a';
+        item = '.skills-item';
     if(item.length > 0){
         $(img).each(function(){
             var top = $(this).prev(item).position().top,
@@ -86,12 +85,14 @@ $(function () {
 
         $(item).hover(
             function(){
-                $(this).siblings(item).css('color',color);
+                $(this).siblings(item).addClass('disabled');
                 $(this).next(img).addClass('active');
+                $(this).addClass('active');
             },
             function(){
-                $(this).siblings(item).css('color','#fff');
+                $(this).siblings(item).removeClass('disabled');
                 $(this).next(img).removeClass('active');
+                $(this).removeClass('active');
             }
         );
     }
@@ -128,7 +129,7 @@ $(function () {
         });
     }
 
-    viewAll($('.case'),2);
+    //viewAll($('.case'),2);
 
 
 
@@ -136,8 +137,10 @@ $(function () {
 /*=============PLUGINS==============*/
 
     $('.owl-carousel').owlCarousel({
-        /*animateIn: 'pulse',*/
+        animateIn: 'fadeIn',
+        animateOut: 'fadeOut',
         smartSpeed: 1500,
+        mouseDrag: false,
         items: 1,
         loop: true,
         margin: 10,
@@ -149,8 +152,65 @@ $(function () {
             var height = $('.owl-controls').outerHeight();
             height /= 2;
             $('.owl-controls').css({'top':'50%','margin-top':-height});
+        },
+/*        onTranslate: function(e){
+            $('.owl-item:not(.cloned)').each(function(){
+                if($('.owl-item').hasClass('active')){
+                    $(this).animate({'opacity':1},300);
+                }
+                else{
+                    $(this).animate({'opacity':0},300);
+                }
+            });
+        }*/
+    });
+
+
+
+    $('.experience-number').spincrement({
+        from: 0,                // Стартовое число
+        to: false,              // Итоговое число. Если false, то число будет браться из элемента с классом spincrement, также сюда можно напрямую прописать число. При этом оно может быть, как целым, так и с плавающей запятой
+        duration: 2500         // Продолжительность анимации в миллисекундах
+    });
+
+
+
+
+    //GSAP
+    // Init ScrollMagic
+    var ctrl = new ScrollMagic.Controller({
+        globalSceneOptions: {
+            triggerHook: 0,
+            tweenChanges: true,
+            duration: ScreenHeight
         }
+    });
+
+    // Create scene
+    $("section").each(function(index){
+
+        if(index < $("section").length-1){
+            new ScrollMagic.Scene({
+                triggerElement: this
+            })
+                .setPin(this)
+                .addTo(ctrl);
+        }
+    });
+
+
+    /*===Section1===*/
+    var title1 = '.title-main';
+
+    var s1Tween = new TimelineMax();
+    s1Tween.to('.title-main span', 2, {text:{value:"This is the new text", delimiter:" "}, ease:Linear.easeNone});
+    /*s1Tween.from(title1, 1, { y: 150, opacity: 0, ease:Linear.easeNone});*/
+
+    // Create scene1
+    var scene1 = new ScrollMagic.Scene({
+        triggerElement: '#scene1'
     })
+        .addTo(ctrl);
 
     /*=============PLUGINS==============*/
 

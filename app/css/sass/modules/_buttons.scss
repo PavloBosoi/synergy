@@ -43,6 +43,7 @@
     position: relative;
     z-index: 2;
     overflow: hidden;
+    transition: $linear-f;
     &:hover{
         background-color: $color1;
         color: #fff;
@@ -50,7 +51,7 @@
         span{
             opacity: 1;
             position: static;
-            transition-delay: .5s;
+/*            transition-delay: .1s;*/
         }
     }
     span{
@@ -61,7 +62,7 @@
         opacity: 0;
         color: #fff;
         @include ptr(margin,0 50 0 0);
-        transition: $linear;
+        transition: $linear-f;
         transition-delay: 0s;
     }
     i{
@@ -72,4 +73,5 @@
     position: absolute;
     @include ptr(bottom,68);
     @include ptr(right,68);
+    color: #fff;
 }
