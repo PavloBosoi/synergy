@@ -207,9 +207,6 @@ $(function () {
 
             var sTween = new TimelineMax();
             sTween.staggerFrom(sectionTitle, 0.5, {opacity:0, y:100, ease:Back.easeIn}, 0.1);
-            sTween.call(function() {
-                titleMain.toggleClass('active');
-            });
 
             var scene = new ScrollMagic.Scene({
                 triggerElement: this
@@ -218,17 +215,15 @@ $(function () {
                 .addIndicators({name: index + " (duration: 0)"}) // add indicators (requires plugin)
                 .addTo(ctrl);
 
-            scene.triggerHook(0.5);
+            scene.triggerHook(0.7);
         }
     });
 
     /*===Section1===*/
-    var title1 = '.title-main';
 
     var s1Tween = new TimelineMax();
     /*s1Tween.to('.title-main span', 2, {text:{value:"This is the new text", delimiter:" "}, ease:Linear.easeNone});*/
     /*s1Tween.from(title1, 1, { y: 150, opacity: 0, ease:Linear.easeNone});*/
-    s1Tween.staggerFrom(title1, 1, {opacity:0, y:100, ease:Back.easeIn}, 0.1);
 
     // Create scene1
     var scene1 = new ScrollMagic.Scene({
@@ -237,6 +232,30 @@ $(function () {
         .addTo(ctrl);
 
     /*===Section2===*/
+    var opacity = '.js-opacity',
+        baseX = 100;
+
+    var s2Tween = new TimelineMax();
+    /*s1Tween.to('.title-main span', 2, {text:{value:"This is the new text", delimiter:" "}, ease:Linear.easeNone});*/
+    /*s1Tween.from(title1, 1, { y: 150, opacity: 0, ease:Linear.easeNone});*/
+    /*s2Tween.staggerFrom(opacity, 1, {opacity:0, ease:Back.easeIn}, 0.1);*/
+    $('.skills-item').each(function(index, element) {
+        console.log(element);
+        //s2Tween.from(element, 0.5, {backgroundColor: '#fff'}, index * 0.2)
+        s2Tween.insert(TweenMax.set(element, {css:{className:'+=on'}}), index * 1);
+        s2Tween.insert(TweenMax.set(element, {css:{className:'-=on'}}), index * 2);
+        //s2Tween.to(element, {className:"+=show-map"},index * 0.2);
+    });
+
+    // Create scene2
+    var scene2 = new ScrollMagic.Scene({
+        triggerElement: '#scene2'
+    })
+        .setTween(s2Tween)
+        .addIndicators({name: "Section2 (duration: 0)"}) // add indicators (requires plugin)
+        .addTo(ctrl);
+
+    scene2.triggerHook(1);
 
 
     /*=============PLUGINS==============*/
