@@ -238,13 +238,19 @@ $(function () {
     var s2Tween = new TimelineMax();
     /*s1Tween.to('.title-main span', 2, {text:{value:"This is the new text", delimiter:" "}, ease:Linear.easeNone});*/
     /*s1Tween.from(title1, 1, { y: 150, opacity: 0, ease:Linear.easeNone});*/
-    s2Tween.staggerFrom(opacity, 1, {opacity:0, ease:Back.easeIn}, 0.1);
+    /*s2Tween.staggerFrom(opacity, 1, {opacity:0, ease:Back.easeIn}, 0.1);
     $('.js-img-effect').each(function(index, element) {
         //s2Tween.from(element, 0.5, {backgroundColor: '#fff'}, index * 0.2)
         s2Tween.staggerFrom($(this), 0.1, {height: '100%', ease:Back.easeIn}, 0.2);
-/*        s2Tween.insert(TweenMax.set($(this), {css:{className:'+=on'}}), '+=0.2');
-        s2Tween.insert(TweenMax.set($(this), {css:{className:'-=on'}}), '+=0.5');*/
+/!*        s2Tween.insert(TweenMax.set($(this), {css:{className:'+=on'}}), '+=0.2');
+        s2Tween.insert(TweenMax.set($(this), {css:{className:'-=on'}}), '+=0.5');*!/
         //s2Tween.to(element, {className:"+=show-map"},index * 0.2);
+    });*/
+
+    $('.skills-block').each(function(index, element) {
+        s2Tween.set($(this), {
+            className: "+=active"
+        }, '+=0.2');
     });
 
     // Create scene2
