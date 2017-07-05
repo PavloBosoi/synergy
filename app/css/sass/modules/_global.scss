@@ -19,9 +19,13 @@
         position: absolute;
         top: 68%;
         left: 0;
-        width: 10%;
+        width: 0;
         height: 1px;
         background-color: $color1;
+        transition: $linear-f;
+    }
+    &.active::before{
+        width: 10%;
     }
 }
 .title-main-right{
@@ -39,6 +43,8 @@
     text-transform: none;
     &::before{
         top: 33%;
+    }
+    &.active::before{
         width: 13%;
     }
 }
@@ -161,3 +167,62 @@
 .js-view-all-parent{
     overflow: hidden;
 }
+
+
+
+
+
+
+
+
+/*
+@-webkit-keyframes typing {
+    from {
+        width: 0
+    }
+    to {
+        width: 14.17em
+    }
+}
+
+@keyframes typing {
+    from {
+        width: 0
+    }
+    to {
+        width: 14.17em
+    }
+}
+
+@-webkit-keyframes caret {
+    from, to {
+        border-color: transparent
+    }
+    50% {
+        border-color: black
+    }
+}
+
+@keyframes caret {
+    from, to {
+        border-color: transparent
+    }
+    50% {
+        border-color: black
+    }
+}
+
+body {
+    font-family: Consolas;
+    font-size:16px;
+}
+
+h1{
+    font-size: 150%;
+    width: 14.1em;
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: .1em solid #333;
+    -webkit-animation: typing 13s steps(26, end), caret 0.9s step-end infinite;
+    animation: typing 13s steps(26, end), caret 0.9s step-end infinite;
+}*/

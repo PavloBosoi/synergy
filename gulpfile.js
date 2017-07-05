@@ -97,6 +97,7 @@ gulp.task('js:dist', function (){
 gulp.task('js:compressLibs', ['mainJS'], function() {
     return gulp.src([
         path.app.libsJs +'jquery.js',
+        path.app.libsJs + 'jquery.textillate.js',
         path.app.libsJs + 'TweenMax.js',
         path.app.libsJs + 'ScrollMagic.js',
         path.app.libsJs + '*.js'

@@ -167,14 +167,6 @@ $(function () {
 
 
 
-    $('.experience-number').spincrement({
-        from: 0,                // Стартовое число
-        to: false,              // Итоговое число. Если false, то число будет браться из элемента с классом spincrement, также сюда можно напрямую прописать число. При этом оно может быть, как целым, так и с плавающей запятой
-        duration: 2500         // Продолжительность анимации в миллисекундах
-    });
-
-
-
 
     //GSAP
     // Init ScrollMagic
@@ -197,16 +189,31 @@ $(function () {
         }
     });*/
 
+    var typed = new Typed('.js-change-text', {
+        strings: ['1 Some <i>strings</i> with', '2 Some <strong>HTML</strong>', '3 Chars &times; &copy;'],
+        typeSpeed: 110,
+        backSpeed: 50,
+        cursorChar: '_',
+        shuffle: true,
+        smartBackspace: false,
+        loop: true
+    });
+
+
     /*===ALL SECTIONS===*/
 
     $("section").each(function(index){
         var sectionTitle = $(this).find('.sections-title'),
-            titleMain = $(this).find('.title-main');
+            titleMain = $(this).find('.title-main'),
+            textEffect = $(this).find('.js-effect-text');
 
         if(index <= $("section").length){
 
             var sTween = new TimelineMax();
+            sTween.staggerFrom(titleMain, 0.5, {opacity:0, y:100, ease:Back.easeIn}, 0.1);
+            sTween.set(titleMain, { className: "+=active" }, 0.5);
             sTween.staggerFrom(sectionTitle, 0.5, {opacity:0, y:100, ease:Back.easeIn}, 0.1);
+            /*sTween.set(textEffect, { className: "+=active" }, 0.5);*/
 
             var scene = new ScrollMagic.Scene({
                 triggerElement: this
@@ -217,6 +224,23 @@ $(function () {
 
             scene.triggerHook(0.7);
         }
+
+
+    });
+
+    $(".js-effect-img").each(function(index){
+
+        var sTweenImage = new TimelineMax();
+        sTweenImage.set($(this), { className: "+=active" }, 0.5);
+
+        var sceneImage = new ScrollMagic.Scene({
+            triggerElement: this
+        })
+            .setTween(sTweenImage)
+            .addIndicators({name: index + " (sTweenImage: 0)"}) // add indicators (requires plugin)
+            .addTo(ctrl);
+
+        sceneImage.triggerHook(0.9);
     });
 
     /*===Section1===*/
@@ -224,6 +248,9 @@ $(function () {
     var s1Tween = new TimelineMax();
     /*s1Tween.to('.title-main span', 2, {text:{value:"This is the new text", delimiter:" "}, ease:Linear.easeNone});*/
     /*s1Tween.from(title1, 1, { y: 150, opacity: 0, ease:Linear.easeNone});*/
+
+
+
 
     // Create scene1
     var scene1 = new ScrollMagic.Scene({
@@ -246,7 +273,7 @@ $(function () {
         s2Tween.insert(TweenMax.set($(this), {css:{className:'-=on'}}), '+=0.5');*!/
         //s2Tween.to(element, {className:"+=show-map"},index * 0.2);
     });*/
-
+    s2Tween.staggerFrom(opacity, 0.5, {opacity:0, ease:Back.easeIn}, 0.1);
     $('.skills-block').each(function(index, element) {
         s2Tween.set($(this), {
             className: "+=active"
@@ -261,7 +288,33 @@ $(function () {
         .addIndicators({name: "Section2 (duration: 0)"}) // add indicators (requires plugin)
         .addTo(ctrl);
 
-    scene2.triggerHook(0.9);
+    scene2.triggerHook(0.8);
+
+
+
+    /*===Section3===*/
+    // Create scene3
+    var scene3 = new ScrollMagic.Scene({
+        triggerElement: '#scene3'
+    })
+        .addIndicators({name: "Section2 (duration: 0)"}) // add indicators (requires plugin)
+        .addTo(ctrl);
+
+    scene3.triggerHook(0.8);
+
+    scene3.on("enter", function (event) {
+        console.log(event);
+        $('.js-effect-text').textillate({
+            initialDelay: 500,
+            in: { effect: 'fadeInUp', delay: 1}
+        });
+
+        $('.experience-number').spincrement({
+            from: 0,                // Стартовое число
+            to: false,              // Итоговое число. Если false, то число будет браться из элемента с классом spincrement, также сюда можно напрямую прописать число. При этом оно может быть, как целым, так и с плавающей запятой
+            duration: 2500         // Продолжительность анимации в миллисекундах
+        });
+    });
 
 
     /*=============PLUGINS==============*/
