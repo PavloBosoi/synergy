@@ -1,8 +1,39 @@
+@keyframes translate{
+    0%{
+        transform: translate(0, 0%);
+        opacity: 1;
+    }
+    33%{
+        transform: translate(50%, 0%);
+        opacity: 1;
+    }
+    39%{
+        opacity: 1;
+    }
+    40%{
+        transform: translate(100%, 0%);
+        opacity: 0;
+    }
+    75%{
+        transform: translate(-100%, 0%);
+        opacity: 0;
+    }
+    100%{
+        transform: translate(0, 0%);
+        opacity: 1;
+    }
+}
+
+.js-big-img{
+
+}
+
 .js-effect-img{
     position: relative;
     top: 100px;
     opacity: 0;
     overflow: hidden;
+    transform: scale(0.5,0.5);
     transition: $linear-f;
     .js-effect-img-wrap{
         position: absolute;
@@ -22,6 +53,7 @@
     &.active{
         top: 0;
         opacity: 1;
+        transform: scale(1,1);
     }
     &::before,
     &::after{
@@ -34,7 +66,7 @@
         transition: all .4s ease;
     }
     &::before{
-        background-color: #000;
+        background-color: $color-before;
         transition-delay: 0s;
         z-index: 4;
     }
@@ -42,11 +74,37 @@
         height: 0;
     }
     &::after{
-        background-color: #ccc;
+        background-color: $color-after;
         transition-delay: .5s;
         z-index: 2;
     }
     &.active::after{
         height: 0;
+    }
+}
+
+.js-effect-text{
+    opacity:  0;
+    top: 100px;
+    position: relative;
+    transition: $linear;
+    &.active{
+        top: 0;
+        /*transition-delay: .5s;*/
+        opacity: 1;
+    }
+}
+
+.js-effect-line{
+    opacity:  0;
+    top: 100px;
+    position: relative;
+    transform: scale(0.5,0.5);
+    transition: $linear-f;
+    &.active{
+        top: 0;
+        /*transition-delay: .5s;*/
+        opacity: 1;
+        transform: scale(1,1);
     }
 }

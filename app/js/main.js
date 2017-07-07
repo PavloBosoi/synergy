@@ -78,13 +78,20 @@ $(function () {
         $(img).each(function(){
             var top = $(this).prev(item).position().top,
                 left = $(this).prev(item).position().left,
-                width = $(this).prev(item).outerWidth(),
-                height = $(this).prev(item).outerHeight();
+                width = $(this).prev(item).width(),
+                height = $(this).prev(item).height();
+            console.log(width);
             $(this).css({'top':top,'left':left,'width':width,'height':height});
         });
 
         $(item).hover(
             function(){
+                if($(this).hasClass('active')){
+
+                }
+                else{
+
+                }
                 $(this).siblings(item).addClass('disabled');
                 $(this).next(img).addClass('active');
                 $(this).addClass('active');
@@ -96,6 +103,8 @@ $(function () {
             }
         );
     }
+
+
 
 
     //view all
@@ -149,9 +158,10 @@ $(function () {
         navText: [],
         onInitialized: function(e){
             $('.owl-nav,.owl-dots').wrapAll('<div class="owl-controls"/>');
-            var height = $('.owl-controls').outerHeight();
+            var control = $('.owl-controls'),
+                height = control.outerHeight();
             height /= 2;
-            $('.owl-controls').css({'top':'50%','margin-top':-height});
+            control.css({'top':'50%','margin-top':-height});
         },
 /*        onTranslate: function(e){
             $('.owl-item:not(.cloned)').each(function(){
@@ -177,18 +187,6 @@ $(function () {
         }
     });
 
-    // Create scene
-/*    $("section").each(function(index){
-
-        if(index < $("section").length-1){
-            new ScrollMagic.Scene({
-                triggerElement: this
-            })
-                .setPin(this)
-                .addTo(ctrl);
-        }
-    });*/
-
     var typed = new Typed('.js-change-text', {
         strings: ['1 Some <i>strings</i> with', '2 Some <strong>HTML</strong>', '3 Chars &times; &copy;'],
         typeSpeed: 110,
@@ -198,6 +196,11 @@ $(function () {
         smartBackspace: false,
         loop: true
     });
+
+/*    $('.js-effect-text').textillate({
+        initialDelay: 200,
+        in: { effect: 'fadeInUp', delay: 0.5}
+    });*/
 
 
     /*===ALL SECTIONS===*/
@@ -240,7 +243,40 @@ $(function () {
             .addIndicators({name: index + " (sTweenImage: 0)"}) // add indicators (requires plugin)
             .addTo(ctrl);
 
-        sceneImage.triggerHook(0.9);
+        sceneImage.triggerHook(0.7);
+    });
+
+    $(".js-effect-text").each(function(index){
+
+        var sTweenText = new TimelineMax();
+        sTweenText.set($(this), { className: "+=active" }, 0.5);
+
+        var sceneText = new ScrollMagic.Scene({
+            triggerElement: this
+        })
+            .setTween(sTweenText)
+            .addIndicators({name: index + " (sTweenText: 0)"}) // add indicators (requires plugin)
+            .addTo(ctrl);
+
+        sceneText.triggerHook(0.9);
+    });
+
+
+    $(".js-effect-line").each(function(index){
+
+        var sTweenLine = new TimelineMax();
+        sTweenLine.set($(this),{
+            className: "+=active"
+        }, '+=0.1');
+
+        var sceneLine = new ScrollMagic.Scene({
+            triggerElement: this
+        })
+            .setTween(sTweenLine)
+            .addIndicators({name:  " (sTweenLine: 0)"}) // add indicators (requires plugin)
+            .addTo(ctrl);
+
+        sceneLine.triggerHook(1);
     });
 
     /*===Section1===*/
@@ -274,9 +310,9 @@ $(function () {
         //s2Tween.to(element, {className:"+=show-map"},index * 0.2);
     });*/
     s2Tween.staggerFrom(opacity, 0.5, {opacity:0, ease:Back.easeIn}, 0.1);
-    $('.skills-block').each(function(index, element) {
+    $('.skills-effect').each(function(index, element){
         s2Tween.set($(this), {
-            className: "+=active"
+            className: "+=show"
         }, '+=0.2');
     });
 
@@ -293,28 +329,27 @@ $(function () {
 
 
     /*===Section3===*/
+    var s3Tween = new TimelineMax();
+
     // Create scene3
     var scene3 = new ScrollMagic.Scene({
         triggerElement: '#scene3'
     })
+        .setTween(s3Tween)
         .addIndicators({name: "Section2 (duration: 0)"}) // add indicators (requires plugin)
         .addTo(ctrl);
 
     scene3.triggerHook(0.8);
 
-    scene3.on("enter", function (event) {
-        console.log(event);
-        $('.js-effect-text').textillate({
-            initialDelay: 500,
-            in: { effect: 'fadeInUp', delay: 1}
-        });
+    scene3.on("enter", function (event){
 
         $('.experience-number').spincrement({
             from: 0,                // Стартовое число
             to: false,              // Итоговое число. Если false, то число будет браться из элемента с классом spincrement, также сюда можно напрямую прописать число. При этом оно может быть, как целым, так и с плавающей запятой
-            duration: 2500         // Продолжительность анимации в миллисекундах
+            duration: 3500         // Продолжительность анимации в миллисекундах
         });
     });
+
 
 
     /*=============PLUGINS==============*/

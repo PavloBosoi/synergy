@@ -44,6 +44,11 @@
     z-index: 2;
     overflow: hidden;
     transition: $linear-f;
+    p{
+        width: 3em;
+        display: inline-block;
+        overflow: hidden;
+    }
     &:hover{
         background-color: $color1;
         color: #fff;
@@ -52,6 +57,10 @@
             opacity: 1;
             position: static;
 /*            transition-delay: .1s;*/
+        }
+        svg{
+            animation-name: translate;
+            animation-duration: 1s;
         }
     }
     span{
