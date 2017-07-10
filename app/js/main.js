@@ -78,8 +78,8 @@ $(function () {
         $(img).each(function(){
             var top = $(this).prev(item).position().top,
                 left = $(this).prev(item).position().left,
-                width = $(this).prev(item).width(),
-                height = $(this).prev(item).height();
+                width = $(this).prev(item).outerWidth(),
+                height = $(this).prev(item).outerHeight();
             console.log(width);
             $(this).css({'top':top,'left':left,'width':width,'height':height});
         });
@@ -243,7 +243,7 @@ $(function () {
             .addIndicators({name: index + " (sTweenImage: 0)"}) // add indicators (requires plugin)
             .addTo(ctrl);
 
-        sceneImage.triggerHook(0.7);
+        sceneImage.triggerHook(1);
     });
 
     $(".js-effect-text").each(function(index){
@@ -258,7 +258,7 @@ $(function () {
             .addIndicators({name: index + " (sTweenText: 0)"}) // add indicators (requires plugin)
             .addTo(ctrl);
 
-        sceneText.triggerHook(0.9);
+        sceneText.triggerHook(1);
     });
 
 
@@ -309,12 +309,14 @@ $(function () {
         s2Tween.insert(TweenMax.set($(this), {css:{className:'-=on'}}), '+=0.5');*!/
         //s2Tween.to(element, {className:"+=show-map"},index * 0.2);
     });*/
-    s2Tween.staggerFrom(opacity, 0.5, {opacity:0, ease:Back.easeIn}, 0.1);
+
+
+/*    s2Tween.staggerFrom(opacity, 0.5, {opacity:0, ease:Back.easeIn}, 0.1);
     $('.skills-effect').each(function(index, element){
         s2Tween.set($(this), {
             className: "+=show"
         }, '+=0.2');
-    });
+    });*/
 
     // Create scene2
     var scene2 = new ScrollMagic.Scene({

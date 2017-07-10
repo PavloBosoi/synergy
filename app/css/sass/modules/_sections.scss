@@ -219,6 +219,12 @@
 }
 .case-img{
     @include ptr(margin,0 10);
+    &:hover img{
+        transform: scale(0.8,0.8);
+    }
+    img{
+        transition: $linear-f;
+    }
 }
 .case-info{
     @include ptr(margin,130 10 0 130);
