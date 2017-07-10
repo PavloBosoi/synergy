@@ -8,6 +8,7 @@
     font-weight: bold;
     border: 1px solid $color1;
     color: $color2;
+    border-radius: 2px;
     text-transform: uppercase;
     &:hover{
         background-color: $color1;
@@ -40,6 +41,7 @@
     border: 1px solid $color1;
     color: $color2;
     text-transform: uppercase;
+    border-radius: 2px;
     position: relative;
     z-index: 2;
     overflow: hidden;
@@ -60,12 +62,13 @@
         }
         svg{
             animation-name: translate;
-            animation-duration: 1s;
+            animation-duration: .5s;
         }
     }
     span{
         position: absolute;
         display: inline-block;
+        height: 100%;
         top: 100%;
         left: 0;
         opacity: 0;

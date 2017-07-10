@@ -23,3 +23,14 @@
         clear: both;
     }
 }
+.container-b{
+    width: 100%;
+    @include ptr(padding, 0 280);
+    position: relative;
+    &::before,
+    &::after{
+        content: " ";
+        display: table;
+        clear: both;
+    }
+}

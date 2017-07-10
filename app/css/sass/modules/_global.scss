@@ -39,13 +39,28 @@
 
 .title-big{
     @include fluidFontSize(18px,52px,480px,1680px,68px,36px);
-    padding-left: 14.5%;
+    @include ptr(padding,0 10 0 280);
     text-transform: none;
     &::before{
-        top: 33%;
+        top: 35%;
     }
     &.active::before{
-        width: 13%;
+        @include ptr(width,250);
+    }
+}
+.title-intermediate{
+    @include fluidFontSize(16px,42px,480px,1680px,48px,32px);
+    @include ptr(padding,0 10 0 280);
+    text-transform: none;
+    color: #fff;
+    h2{
+        @include ptr(margin,0 0 90 0);
+    }
+    &::before{
+        top: 35%;
+    }
+    &.active::before{
+        @include ptr(width,250);
     }
 }
 
@@ -65,15 +80,11 @@
 .general-block-info{
     display: flex;
     flex-wrap: wrap;
-    height: 100%;
     @include ptr(padding,0 30 0 0);
     h4{
         @include fluidFontSize(16px,21px,480px,1680px,25px,18px);
         font-weight: bold;
         @include ptr(margin,0 0 15 0);
-    }
-    p{
-        align-self: flex-end;
     }
 }
 
@@ -89,19 +100,17 @@
 .owl-controls{
     position: absolute;
     top: 0;
-    @include ptr(right,170);
+    right: 0;
     @include ptr(padding,55 0);
     @include ptr(width,20);
 }
 .owl-dots{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    @include ptr(padding,0 6);
 }
 .owl-dots div{
     display: inline-block;
     @include ptr(width,8);
-    @include ptr(height,8);
+    @include ptr(height,7);
     @include ptr(margin,20 0 0 0);
     &:first-child{
         margin: 0;

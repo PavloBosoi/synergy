@@ -1,4 +1,4 @@
-@keyframes translate{
+/*@keyframes translate{
     0%{
         transform: translate(0, 0%);
         opacity: 1;
@@ -22,10 +22,29 @@
         transform: translate(0, 0%);
         opacity: 1;
     }
+}*/
+
+@keyframes translate{
+    0%{
+        transform: translate(100%, 0%);
+        opacity: 0;
+    }
+    50%{
+        transform: translate(-100%, 0%);
+        opacity: 0;
+    }
+    100%{
+        transform: translate(0, 0%);
+        opacity: 1;
+    }
 }
 
-.js-big-img{
-
+.js-effect-opacity{
+    opacity: 0;
+    transition: $linear-f;
+    &.active{
+        opacity: 1;
+    }
 }
 
 .js-effect-img{
@@ -106,5 +125,26 @@
         /*transition-delay: .5s;*/
         opacity: 1;
         transform: scale(1,1);
+    }
+}
+
+.js-change-text{
+    position: relative;
+    &::before{
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 0;
+        height: 100%;
+        background-color: transparent;
+        z-index: -1;
+        transition: all .1s ease;
+    }
+    &.active{
+        &::before{
+            width: 100%;
+            background-color: #ccc;
+        }
     }
 }

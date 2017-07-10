@@ -55,45 +55,55 @@
                 color: $color2;
                 font-weight: bold;
                 position: relative;
+                white-space: nowrap;
                 z-index: 2;
                 &:hover{
-                    background-color: $color2;
-                    color: $color1;
-                }
-            }
-            &.hover{
-                >a{
-                    background-color: $color2;
                     color: $color1;
                 }
             }
             ul{
-                display: none;
+                display: flex;
+                opacity: 0;
                 position: absolute;
-                top: 100%;
+                top: 50%;
                 left: 0;
+                z-index: -1;
+                transition: $linear-f;
                 li{
-                    opacity: 0;
-                    transform: rotateY(180deg);
-                    transition: $linear;
-                    &.rotate{
-                        opacity: 1;
-                        transform: rotateY(0deg);
-                    }
                     a{
                         @include ptr(padding,0 38);
-                        background-color: $color2;
                         @include ptr(height,60);
-                        color: #fff;
+                        color: $color2;
+                        font-weight: bold;
                         display: flex;
                         align-items: center;
                         white-space: nowrap;
+                        &:hover{
+                            color: $color1;
+                        }
                     }
                 }
+                &::before,
+                &::after{
+                    content: '';
+                    position: absolute;
+                    width: 1000%;
+                    height: 100%;
+                    top: 0;
+                    left: 0;
+                    background-color: $color3;
+                    z-index: -1;
+                }
+                &::after{
+                    left: auto;
+                    right: 0;
+                }
             }
-            &.hover{
+            &:hover{
                 ul{
-                    display: flex;
+                    opacity: 1;
+                    top: 100%;
+                    z-index: 3;
                 }
             }
         }

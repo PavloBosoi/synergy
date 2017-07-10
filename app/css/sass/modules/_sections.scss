@@ -75,7 +75,7 @@
         }
         svg{
             animation-name: translate;
-            animation-duration: 1s;
+            animation-duration: .5s;
         }
     }
     &.disabled .skills-title,
@@ -218,15 +218,17 @@
     flex-direction: row-reverse;
 }
 .case-img{
+    @include col-lg(2);
     @include ptr(margin,0 10);
     &:hover img{
-        transform: scale(0.8,0.8);
+        transform: scale(0.9,0.9);
     }
     img{
         transition: $linear-f;
     }
 }
 .case-info{
+    @include col-lg(2);
     @include ptr(margin,130 10 0 130);
     @include ptr(width,331);
     position: relative;
@@ -281,10 +283,10 @@
     @include ptr(margin,90 -30 0);
     @include row(flex);
     flex-wrap: wrap;
-    justify-content: space-between;
 }
 .benefits-item{
     @include col(4);
+    @include col-lg(3);
     @include ptr(margin,0 0 90 0);
 }
 .benefits-description{
@@ -308,9 +310,6 @@
 .main-carousel{
     @include ptr(margin,100 0 0 0);
     position: relative;
-    .owl-stage-outer{
-        @include ptr(padding, 0 170);
-    }
 }
 .main-carousel-item{
     @include ptr(padding,74 0);
@@ -331,7 +330,7 @@
 .main-carousel-description{
     position: relative;
     @include ptr(margin,0 0 0 400);
-    @include ptr(width,760);
+    @include ptr(width,780);
     &::before,
     &::after{
         position: absolute;
@@ -365,6 +364,7 @@
 }
 .technologies-item{
     @include col(4);
+    @include col-md(3);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -395,7 +395,7 @@
 /*===SECTION ESTIMATION===*/
 .estimation{
     background-color: $color2;
-    @include ptr(padding,140 280 100);
+    @include ptr(padding,140 0 100);
     .sections-title{
         @include ptr(margin,0 0 90);
         color: #fff;
@@ -408,10 +408,12 @@
 }
 .partners-parent{
     @include row(flex);
+    flex-wrap: wrap;
     @include ptr(padding,90 0 0);
 }
 .partners-item{
     @include row(flex);
+    flex-wrap: wrap;
     align-items: center;
     @include col(2);
     @include ptr(margin,0 0 130);
@@ -458,15 +460,18 @@
 }
 .contact-form{
     @include col(4);
+    @include col-lg(2);
 }
 .contact-info{
     @include row(flex);
     flex-wrap: wrap;
     align-items: flex-start;
     @include col(1.75);
+    @include col-lg(2.5);
 }
 .contact-item{
     @include col(2);
+    @include col-lg(1);
     span{
         @include fluidFontSize(12px,12px,480px,1680px,16px,12px);
         color: #b9c2c7;
@@ -495,6 +500,7 @@
     position: relative;
     @include ptr(margin, 0 0 60 0);
     border-bottom: 1px solid #b9c2c7;
+    transition: $linear-f;
     &::before,
     &::after{
         content: '';
@@ -510,6 +516,9 @@
     }
     &::after{
         right: 50%;
+    }
+    &.active{
+        border-bottom: 1px solid transparent;
     }
 }
 .form-group-last{

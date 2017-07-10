@@ -37,14 +37,14 @@ $(function () {
     }
 
     //header menu 2 level
-    $('.menu > ul > li').hover(
+/*    $('.menu > ul > li').hover(
         function(){
             var ul2 = $(this).find('ul');
             if(ul2.length > 0){
                 var counter = 0;
                 $(this).addClass('hover');
                 ul2.children('li').each(function(){
-                    /*$(this).animate({'transform': 'rotateY(0deg)'},counter);*/
+                    /!*$(this).animate({'transform': 'rotateY(0deg)'},counter);*!/
 
                     $(this).delay(counter).queue(function() {
                         $(this).addClass("rotate").dequeue();
@@ -69,7 +69,7 @@ $(function () {
                 });
             }
         }
-    );
+    );*/
 
     //skills block img full
     var img = '.skills-img',
@@ -147,9 +147,12 @@ $(function () {
 
     $('.owl-carousel').owlCarousel({
         animateIn: 'fadeIn',
-        animateOut: 'fadeOut',
-        smartSpeed: 1500,
+        autoplay: false,
+        autoplayTimeout: 3500,
+        autoplayHoverPause: true,
+        smartSpeed: 3500,
         mouseDrag: false,
+        touchDrag: false,
         items: 1,
         loop: true,
         margin: 10,
@@ -188,13 +191,20 @@ $(function () {
     });
 
     var typed = new Typed('.js-change-text', {
-        strings: ['1 Some <i>strings</i> with', '2 Some <strong>HTML</strong>', '3 Chars &times; &copy;'],
-        typeSpeed: 110,
-        backSpeed: 50,
+        strings: ['1 Some <i>strings</i> with', '2 Some <strong>HTML</strong>', 'consectetur'],
+        typeSpeed: 20,
+        backSpeed: 40,
+        backDelay: 2500,
         cursorChar: '_',
         shuffle: true,
         smartBackspace: false,
-        loop: true
+        loop: true,
+        preStringTyped: function(pos, self){
+            $(self.el).removeClass('active');
+        },
+        onStringTyped: function(pos,self){ console.log(self);
+            $(self.el).addClass('active');
+        }
     });
 
 /*    $('.js-effect-text').textillate({
@@ -229,6 +239,22 @@ $(function () {
         }
 
 
+    });
+
+
+    $(".js-effect-opacity").each(function(index){
+
+        var sTweenOpacity = new TimelineMax();
+        sTweenOpacity.set($(this), { className: "+=active" }, 0.5);
+
+        var sceneOpacity = new ScrollMagic.Scene({
+            triggerElement: this
+        })
+            .setTween(sTweenOpacity)
+            .addIndicators({name: index + " (sTweenText: 0)"}) // add indicators (requires plugin)
+            .addTo(ctrl);
+
+        sceneOpacity.triggerHook(1);
     });
 
     $(".js-effect-img").each(function(index){
