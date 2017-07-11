@@ -87,3 +87,93 @@
     @include ptr(right,68);
     color: #fff;
 }
+
+
+.btn-menu{
+    display: none;
+    position: absolute;
+    @include ptr(top,16);
+    @include ptr(right,50);
+    overflow: hidden;
+    padding: 0;
+    width: 25px;
+    height: 20px;
+    margin: 0;
+    font-size: 0;
+    text-indent: -9999px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    box-shadow: none;
+    border-radius: 0;
+    border: none;
+    z-index: 6;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.btn-menu:focus {
+    outline: none;
+}
+
+.btn-menu i {
+    display: block;
+    position: absolute;
+    top: 9px;
+    left: 0px;
+    right: 0px;
+    height: 1px;
+    background: $color1;
+    transition: background 0.3s;
+}
+
+.btn-menu i::before,
+.btn-menu i::after {
+    position: absolute;
+    display: block;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background-color: $color1;
+    content: "";
+    transition-delay: .3s, 0s;
+    transition-duration: 0.3s, 0.3s;
+}
+
+.btn-menu i::before {
+    top: -8px;
+    -webkit-transition-property: top, -webkit-transform;
+    transition-property: top, transform;
+}
+
+.btn-menu i::after {
+    bottom: -8px;
+    -webkit-transition-property: bottom, -webkit-transform;
+    transition-property: bottom, transform;
+}
+
+/* активное состояние, т.е. меню открыто */
+.btn-menu.active i{
+    background: none;
+    width: 100%;
+}
+
+.btn-menu.active i::before {
+    top: 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+
+.btn-menu.active i::after {
+    bottom: 0;
+    -webkit-transform: rotate(-45deg);
+    -ms-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+}
+
+.btn-menu.active i::before,
+.btn-menu.active i::after {
+    -webkit-transition-delay: 0s, 0.3s;
+    transition-delay: 0s, 0.3s;
+}

@@ -58,6 +58,9 @@
     .owl-dots div{
         @include ptr(height,8);
     }
+    .btn-empty{
+        @include ptr(padding, 0 20);
+    }
 }
 
 @media only screen and (max-width: 1200px) {
@@ -86,16 +89,139 @@
     .skills-text{
         @include ptr(width, 320);
     }
+    .header{
+        @include ptr(padding, 20 0);
+    }
+    .menu > ul{
+        flex-direction: column;
+        justify-content: space-around;
+        opacity: 0;
+        position: fixed;
+        top: 0;
+        right: 0;
+        background-color: #ccc;
+        @include ptr(width, 0);
+        height: 100%;
+        @include ptr(padding, 100 0 0);
+        transition: $linear-f;
+    }
+    .btn-menu{
+        display: block;
+    }
+    .btn-menu{
+        &.active{
+            &+ul{
+                opacity: 1;
+                @include ptr(width, 320);
+            }
+        }
+    }
+    .menu > ul > li{
+        width: 100%;
+        ul{
+            display: none;
+        }
+    }
+    .menu > ul > li > a{
+        height: auto;
+        display: inline-block;
+    }
+    .h-estimate{
+        @include ptr(padding, 0 70 0);
+    }
 }
 
 @media only screen and (max-width: 768px) {
+    .case{
+        display: block;
+        @include ptr(margin, 0 0 40 0);
+    }
+    .case-img{
+        width: 100%;
+        margin: 0;
+    }
+    .case-info{
+        width: 100%;
+        @include ptr(padding, 50 60 0);
+        margin: 0;
+    }
+    .main-carousel-description{
+        @include ptr(margin,0 0 0 250);
+    }
+    .main-carousel-info{
+        @include ptr(width,250);
+    }
+    .main-carousel-description::before{
+        @include ptr(top,-70);
+    }
+    .main-carousel-description::after{
+        @include ptr(bottom,-70);
+    }
     html{
         font-size: 8px;
     }
 }
 
 @media only screen and (max-width: 640px) {
-
+    .skills-item{
+        width: 100%;
+    }
+    .about-us-experience{
+        flex-wrap: wrap;
+    }
+    .experience-item{
+        width: 100%;
+        display: block;
+        text-align: center;
+        @include ptr(margin,10 0);
+        span{
+            position: relative;
+            &::before{
+                content: '+';
+                position: absolute;
+                top: 0;
+                @include ptr(right,-22);
+                font-size: 26px;
+            }
+        }
+    }
+    .experience-item-info{
+        padding: 0;
+        i{
+            display: none;
+        }
+    }
+    .main-carousel-info{
+        width: 100%;
+        float: none;
+    }
+    .main-carousel-description{
+        width: 100%;
+        @include ptr(margin, 60 0 0 0);
+    }
+    .main-carousel-description::before{
+        @include ptr(top,-30);
+    }
+    .main-carousel-description::after{
+        @include ptr(bottom,-30);
+    }
+    .owl-controls{
+        position: relative;
+        width: 100%;
+        @include ptr(padding, 20 0);
+        text-align: center;
+    }
+    .owl-dots{
+        display: inline-block;
+    }
+    .owl-dots div{
+        @include ptr(width, 10);
+        @include ptr(height, 10);
+        @include ptr(margin, 0 8);
+        &:first-child{
+            @include ptr(margin, 0 8);
+        }
+    }
 }
 
 @media only screen and (max-width: 480px) {

@@ -5,7 +5,7 @@ $(function () {
         ScreenHeight = $(window).height();
 
     //обработка тачей
-    if (isTouch()) {
+    if (isTouch()){
         $('html').addClass('touch');
     }
     else {
@@ -20,6 +20,11 @@ $(function () {
             return false;
         }
     }
+
+    //btn-menu
+    $(".js-menu").on('click', function(e){
+        $(this).toggleClass("active");
+    });
 
     //scroll header menu
     $(window).on('scroll',function(){
@@ -124,7 +129,7 @@ $(function () {
                 $(this).slideUp(500);
             }
         });
-        console.log(heightParent(el,count));
+
         btn.on('click',function(e){
             e.preventDefault();
             if($(this).hasClass('active')){
@@ -161,11 +166,13 @@ $(function () {
         navText: [],
         onInitialized: function(e){
             $('.owl-nav,.owl-dots').wrapAll('<div class="owl-controls"/>');
-            var control = $('.owl-controls'),
-                height = control.outerHeight();
-            height /= 2;
-            control.css({'top':'50%','margin-top':-height});
-        },
+            if(ScreenWidth > 640){
+                var control = $('.owl-controls'),
+                    height = control.outerHeight();
+                height /= 2;
+                control.css({'top':'50%','margin-top':-height});
+            }
+        }
 /*        onTranslate: function(e){
             $('.owl-item:not(.cloned)').each(function(){
                 if($('.owl-item').hasClass('active')){

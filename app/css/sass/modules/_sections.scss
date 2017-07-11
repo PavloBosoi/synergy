@@ -179,12 +179,13 @@
     }
 }
 .about-us-experience{
-    @include ptr(margin,145 0 0 0);
+    @include ptr(margin,145 -10 0);
     display: flex;
     justify-content: space-between;
 }
 .experience-item{
     display: flex;
+    @include ptr(padding,0 10);
     i{
         font-style: normal;
         color: $color1;
@@ -287,6 +288,7 @@
 .benefits-item{
     @include col(4);
     @include col-lg(3);
+    @include col-sm(2);
     @include ptr(margin,0 0 90 0);
 }
 .benefits-description{
@@ -468,6 +470,7 @@
     align-items: flex-start;
     @include col(1.75);
     @include col-lg(2.5);
+    @include col-sm(2);
 }
 .contact-item{
     @include col(2);
