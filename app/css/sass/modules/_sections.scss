@@ -64,7 +64,8 @@
         background-color: rgba(0,0,0,.85);
         z-index: 2;
     }
-    &.active .btn-full{
+    &.active .btn-full,
+    &:hover .btn-full{
         background-color: $color1;
         color: #fff;
         @include ptr(width, 237);
@@ -289,6 +290,7 @@
     @include col(4);
     @include col-lg(3);
     @include col-sm(2);
+    @include col-xs(1);
     @include ptr(margin,0 0 90 0);
 }
 .benefits-description{
@@ -296,6 +298,7 @@
     justify-content: space-around;
     align-items: center;
     border: solid 20px $color3;
+    border: solid 2rem $color3;
     @include fluidFontSize(15px,30px,480px,1680px,40px,22px);
     font-weight: bold;
     @include ptr(width,780);
@@ -367,6 +370,8 @@
 .technologies-item{
     @include col(4);
     @include col-md(3);
+    @include col-sl(2);
+    @include col-xs(1);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -418,11 +423,14 @@
     flex-wrap: wrap;
     align-items: center;
     @include col(2);
+    @include col-xs(1);
     @include ptr(margin,0 0 130);
     .general-block-info{
         @include col(2);
+        @include col-lg(1.7);
     }
-    &:hover i{
+    &:hover i,
+    &:hover img{
         opacity: 1;
         &:first-child{
             opacity: 0;
@@ -431,10 +439,11 @@
 }
 .partners-img{
     @include col(2);
+    @include col-lg(2.5);
     display: flex;
     position: relative;
     text-align: center;
-    i{
+    i,img{
         position: absolute;
         top: 0;
         left: 0;
@@ -457,12 +466,14 @@
 }
 .contact-parent{
     @include row(flex);
+    flex-wrap: wrap;
     justify-content: space-between;
     @include ptr(margin,100 0 0);
 }
 .contact-form{
     @include col(4);
     @include col-lg(2);
+    @include col-xs(1);
 }
 .contact-info{
     @include row(flex);
@@ -471,6 +482,7 @@
     @include col(1.75);
     @include col-lg(2.5);
     @include col-sm(2);
+    @include col-xs(1);
 }
 .contact-item{
     @include col(2);
@@ -501,9 +513,12 @@
 
 .form-group{
     position: relative;
-    @include ptr(margin, 0 0 60 0);
+    @include ptr(margin, 60 0 0 0);
     border-bottom: 1px solid #b9c2c7;
     transition: $linear-f;
+    &:first-child{
+        margin: 0;
+    }
     &::before,
     &::after{
         content: '';
@@ -520,12 +535,11 @@
     &::after{
         right: 50%;
     }
-    &.active{
+    &.active,
+    &.error,
+    &.not-error{
         border-bottom: 1px solid transparent;
     }
-}
-.form-group-last{
-    @include ptr(margin,110 0 0 0);
 }
 .form-group label{
     position: absolute;

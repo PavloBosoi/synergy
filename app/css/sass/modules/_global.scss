@@ -28,6 +28,13 @@
         width: 10%;
     }
 }
+.title-main-left{
+    padding-left: 11%;
+    &::before{
+        left: 0;
+        right: auto;
+    }
+}
 .title-main-right{
     padding-right: 11%;
     text-align: right;
@@ -38,7 +45,7 @@
 }
 
 .title-big{
-    @include fluidFontSize(18px,52px,480px,1680px,68px,36px);
+    @include fluidFontSize(22px,52px,480px,1680px,68px,36px);
     @include ptr(padding,0 10 0 280);
     text-transform: none;
     &::before{
@@ -89,7 +96,7 @@
 }
 
 .sections-title{
-    @include fluidFontSize(21px,42px,480px,1680px,52px,32px);
+    @include fluidFontSize(19px,42px,480px,1680px,52px,32px);
     font-weight: bold;
     @include ptr(margin,90 0 0 0);
 }
@@ -110,7 +117,7 @@
 .owl-dots div{
     display: inline-block;
     @include ptr(width,8);
-    @include ptr(height,7);
+    @include ptr(height,8);
     @include ptr(margin,20 0 0 0);
     &:first-child{
         margin: 0;

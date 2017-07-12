@@ -2,7 +2,8 @@
 
 $(function () {
     var ScreenWidth = $(window).width(),
-        ScreenHeight = $(window).height();
+        ScreenHeight = $(window).height(),
+        btnMenu = $(".js-menu");
 
     //обработка тачей
     if (isTouch()){
@@ -22,9 +23,26 @@ $(function () {
     }
 
     //btn-menu
-    $(".js-menu").on('click', function(e){
+    btnMenu.on('click', function(e){
         $(this).toggleClass("active");
     });
+
+
+    //add estimate btn to slide menu
+    function estimateBtnClone() {
+        btnMenu.on('click',function(){
+            var btn = $('.h-estimate').clone();
+            if($(this).hasClass('active')){
+                btn.prependTo('.menu ul');
+            }
+            else{
+                btn = '';
+                $('.menu ul .h-estimate').remove();
+            }
+        });
+    }
+
+    estimateBtnClone();
 
     //scroll header menu
     $(window).on('scroll',function(){
@@ -77,37 +95,61 @@ $(function () {
     );*/
 
     //skills block img full
-    var img = '.skills-img',
-        item = '.skills-item';
-    if(item.length > 0){
+    function skillsBg(){
+        var img = '.skills-img',
+            item = '.skills-item';
+        if(item.length > 0){
+
+            skillsSize(img,item);
+
+/*            $(item).hover(
+                function () {
+                    $(this).siblings(item).addClass('disabled');
+                    $(this).next(img).addClass('active');
+                    $(this).addClass('active');
+                },
+                function () {
+                    $(this).siblings(item).removeClass('disabled');
+                    $(this).next(img).removeClass('active');
+                    $(this).removeClass('active');
+                }
+            );*/
+
+            if(ScreenWidth < 640){
+                $(img).removeClass('active');
+                $(item).removeClass('disabled, active');
+            }
+
+            $(item).on({
+                mouseenter: function () {
+                    if(ScreenWidth > 640){
+                        $(this).siblings(item).addClass('disabled');
+                        $(this).next(img).addClass('active');
+                        $(this).addClass('active');
+                    }
+                },
+                mouseleave: function () {
+                    if(ScreenWidth > 640){
+                        $(this).siblings(item).removeClass('disabled');
+                        $(this).next(img).removeClass('active');
+                        $(this).removeClass('active');
+                    }
+                }
+            });
+        }
+    }
+
+    function skillsSize(img,item) {
         $(img).each(function(){
             var top = $(this).prev(item).position().top,
                 left = $(this).prev(item).position().left,
                 width = $(this).prev(item).outerWidth(),
                 height = $(this).prev(item).outerHeight();
-            console.log(width);
             $(this).css({'top':top,'left':left,'width':width,'height':height});
         });
-
-        $(item).hover(
-            function(){
-                if($(this).hasClass('active')){
-
-                }
-                else{
-
-                }
-                $(this).siblings(item).addClass('disabled');
-                $(this).next(img).addClass('active');
-                $(this).addClass('active');
-            },
-            function(){
-                $(this).siblings(item).removeClass('disabled');
-                $(this).next(img).removeClass('active');
-                $(this).removeClass('active');
-            }
-        );
     }
+
+    skillsBg();
 
 
 
@@ -152,7 +194,8 @@ $(function () {
 
     $('.owl-carousel').owlCarousel({
         animateIn: 'fadeIn',
-        autoplay: false,
+        autoHeight: true,
+        autoplay: true,
         autoplayTimeout: 3500,
         autoplayHoverPause: true,
         smartSpeed: 3500,
@@ -239,7 +282,7 @@ $(function () {
                 triggerElement: this
             })
                 .setTween(sTween)
-                .addIndicators({name: index + " (duration: 0)"}) // add indicators (requires plugin)
+                /*.addIndicators({name: index + " (duration: 0)"})*/
                 .addTo(ctrl);
 
             scene.triggerHook(0.7);
@@ -258,7 +301,7 @@ $(function () {
             triggerElement: this
         })
             .setTween(sTweenOpacity)
-            .addIndicators({name: index + " (sTweenText: 0)"}) // add indicators (requires plugin)
+            /*.addIndicators({name: index + " (sTweenText: 0)"})*/
             .addTo(ctrl);
 
         sceneOpacity.triggerHook(1);
@@ -273,7 +316,7 @@ $(function () {
             triggerElement: this
         })
             .setTween(sTweenImage)
-            .addIndicators({name: index + " (sTweenImage: 0)"}) // add indicators (requires plugin)
+            /*.addIndicators({name: index + " (sTweenImage: 0)"})*/
             .addTo(ctrl);
 
         sceneImage.triggerHook(1);
@@ -288,7 +331,7 @@ $(function () {
             triggerElement: this
         })
             .setTween(sTweenText)
-            .addIndicators({name: index + " (sTweenText: 0)"}) // add indicators (requires plugin)
+            /*.addIndicators({name: index + " (sTweenText: 0)"})*/
             .addTo(ctrl);
 
         sceneText.triggerHook(1);
@@ -306,7 +349,7 @@ $(function () {
             triggerElement: this
         })
             .setTween(sTweenLine)
-            .addIndicators({name:  " (sTweenLine: 0)"}) // add indicators (requires plugin)
+            /*.addIndicators({name:  " (sTweenLine: 0)"})*/
             .addTo(ctrl);
 
         sceneLine.triggerHook(1);
@@ -356,7 +399,7 @@ $(function () {
         triggerElement: '#scene2'
     })
         .setTween(s2Tween)
-        .addIndicators({name: "Section2 (duration: 0)"}) // add indicators (requires plugin)
+        /*.addIndicators({name: "Section2 (duration: 0)"})*/
         .addTo(ctrl);
 
     scene2.triggerHook(0.8);
@@ -371,7 +414,7 @@ $(function () {
         triggerElement: '#scene3'
     })
         .setTween(s3Tween)
-        .addIndicators({name: "Section2 (duration: 0)"}) // add indicators (requires plugin)
+        /*.addIndicators({name: "Section2 (duration: 0)"})*/
         .addTo(ctrl);
 
     scene3.triggerHook(0.8);
@@ -462,5 +505,18 @@ $(function () {
 
 
     /*=================Validation===============*/
+
+
+    $(window).resize(function(){
+        ScreenWidth = $(window).width();
+        ScreenHeight = $(window).height();
+        skillsBg();
+        if(ScreenWidth > 1024){
+            btnMenu.removeClass('active');
+        }
+        if(ScreenWidth > 1024 && !btnMenu.hasClass('active')){
+            $('.menu ul .h-estimate').remove();
+        }
+    });
 
 });

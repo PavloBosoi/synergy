@@ -142,9 +142,10 @@
         transition: all .1s ease;
     }
     &.active{
+        color: #fff;
         &::before{
             width: 100%;
-            background-color: #ccc;
+            background-color: $color1;
         }
     }
 }

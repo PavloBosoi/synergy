@@ -16,4 +16,5 @@
     height: 100%;
     @include fluidFontSize(16px,18px,480px,1680px,22px,17px);
     color: #69696a;
+    @include ptr(padding, 0 20);
 }
