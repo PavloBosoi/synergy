@@ -195,8 +195,8 @@ $(function () {
     $('.owl-carousel').owlCarousel({
         animateIn: 'fadeIn',
         autoHeight: true,
-        autoplay: true,
-        autoplayTimeout: 3500,
+        autoplay: false,
+        autoplayTimeout: 2500,
         autoplayHoverPause: true,
         smartSpeed: 3500,
         mouseDrag: false,

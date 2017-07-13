@@ -16,7 +16,7 @@
         width: 0;
         height: 1px;
         background-color: #e8e8f0;
-        z-index: -1;
+        z-index: 1;
         transition: $linear;
     }
     &::before{
@@ -71,6 +71,7 @@
                 position: absolute;
                 top: 40%;
                 left: 0;
+                @include ptr(margin,0 -20);
                 z-index: -1;
                 transition: $linear-f;
                 li{

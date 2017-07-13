@@ -250,7 +250,7 @@
         @include ptr(bottom,10);
         @include ptr(left,-55);
         @include ptr(width,40);
-        @include ptr(height,1);
+        height: 1px;
         background-color: $color2;
     }
     span{

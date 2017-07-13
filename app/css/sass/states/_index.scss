@@ -130,6 +130,7 @@
 
 .js-change-text{
     position: relative;
+    white-space: nowrap;
     &::before{
         content: '';
         position: absolute;

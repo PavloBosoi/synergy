@@ -16,6 +16,12 @@
     .menu > ul > li ul li a{
         @include ptr(padding,0 40);
     }
+    .main-carousel-info{
+        @include ptr(width, 280);
+    }
+    .main-carousel-description{
+        @include ptr(margin, 0 0 0 300);
+    }
     html{
         font-size: 9px;
     }
@@ -38,8 +44,12 @@
     .general-block-info{
         padding: 0;
     }
+    .owl-dots {
+        padding: 0 7px;
+    }
     .owl-dots div{
-        @include ptr(height,8);
+        width: 6px;
+        height: 6px;
     }
 
     html {
@@ -48,9 +58,14 @@
 }
 
 @media only screen and (max-width: 1280px) {
-    .menu > ul > li > a,
-    .menu > ul > li ul li a{
+    .menu > ul > li > a{
         @include ptr(padding,0 20);
+    }
+    .menu > ul > li ul{
+        @include ptr(margin,0 -20);
+    }
+    .menu > ul > li ul li a{
+        @include ptr(padding,0 40);
     }
     .benefits-description{
         float: none;
@@ -58,10 +73,15 @@
     }
     .main-carousel-description {
         @include ptr(margin, 0 0 0 320);
-        @include ptr(width, 500);
     }
     .btn-empty{
         @include ptr(padding, 0 20);
+    }
+    .contact-item{
+        @include ptr(margin-top, 35);
+        &:first-child{
+            margin: 0;
+        }
     }
 }
 
@@ -71,9 +91,6 @@
     }
     .skills-item{
         @include ptr(padding, 50);
-    }
-    .main-carousel-description {
-        @include ptr(width, 660);
     }
 }
 
@@ -85,11 +102,8 @@
         @include ptr(padding, 100 0);
     }
     .main-carousel-description{
-        @include ptr(width,400);
+        @include ptr(width,550);
         @include ptr(margin,0 0 0 280);
-    }
-    .main-carousel-info{
-        @include ptr(width,280);
     }
     .benefits-description{
         width: 100%;
@@ -114,6 +128,7 @@
         @include ptr(width, 0);
         @include ptr(padding, 100 0 0);
         height: 100%;
+        z-index: 2;
         transition: $linear-f;
         .h-estimate{
             position: absolute;
@@ -124,7 +139,7 @@
                 color: #fff;
             }
         }
-        &::before{
+        /*&::before{
             content: '';
             position: absolute;
             @include ptr(top, 99);
@@ -132,7 +147,7 @@
             background-color: #e8e8f0;
             height: 1px;
             width: 100%;
-        }
+        }*/
     }
     .btn-menu{
         display: block;
@@ -187,6 +202,9 @@
             top: 60%;
         }
     }
+    .m-info{
+        @include ptr(height,500);
+    }
     .case{
         display: block;
         @include ptr(margin, 0 0 40 0);
@@ -202,6 +220,7 @@
     }
     .main-carousel-description{
         @include ptr(margin,0 0 0 250);
+        @include ptr(width,400);
     }
     .main-carousel-info{
         @include ptr(width,250);
@@ -223,6 +242,12 @@
 @media only screen and (max-width: 640px){
     .title-big {
         line-height: 30px;
+    }
+    .testimonials{
+        @include ptr(padding,100 0 50);
+    }
+    .m-info{
+        @include ptr(height,400);
     }
     .skills-item{
         width: 100%;
@@ -257,7 +282,7 @@
         @include ptr(margin,40 0 0 0);
     }
     .main-carousel-item{
-        @include ptr(padding, 30 0);
+        @include ptr(padding, 40 0);
     }
     .main-carousel-info{
         width: 100%;
@@ -272,41 +297,40 @@
         @include ptr(margin, 60 0 0 0);
     }
     .main-carousel-description::before{
-        @include ptr(top,-30);
+        @include ptr(top,-50);
     }
     .main-carousel-description::after{
-        @include ptr(bottom,-50);
+        @include ptr(bottom,-70);
     }
     .owl-controls{
         position: relative;
         width: 100%;
-        @include ptr(padding, 20 0);
-        @include ptr(margin, 30 0 0);
-        margin-top: 0 !important;
+        padding: 0;
+        margin-top: 60px !important;
         text-align: center;
     }
     .owl-dots{
         display: inline-block;
     }
     .owl-dots div{
-        @include ptr(width, 10);
-        @include ptr(height, 10);
+        width: 8px;
+        height: 8px;
         @include ptr(margin, 0 8);
         &:first-child{
             @include ptr(margin, 0 8);
         }
     }
     .owl-nav div{
-        @include ptr(margin, 0 -8 0 0);
+        margin: 0;
         transform: rotate(-90deg);
     }
     .owl-nav .owl-prev {
-        top: 42%;
-        left: 0;
+        top: -3px;
+        left: -5px;
     }
     .owl-nav .owl-next {
-        top: 42%;
-        right: 0;
+        top: -3px;
+        right: -5px;
     }
 }
 
