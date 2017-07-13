@@ -185,6 +185,34 @@
 }
 
 
+.section-lines{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    @include row(flex,false);
+    span{
+        display: block;
+        @include col(4,false);
+
+        height: 100%;
+        &:first-child{
+            border: none;
+        }
+    }
+}
+.section-lines-light{
+    span{
+        border-left: 1px solid #e8e8f0;
+    }
+}
+.section-lines-dark{
+    span{
+        border-left: 1px solid #29292c;
+    }
+}
+
 
 
 

@@ -72,10 +72,12 @@
 }
 
 //===row===//
-@mixin row($display){
+@mixin row($display,$space:true){
     display: $display;
-    @include ptr(margin-left,-$gutter);
-    @include ptr(margin-right,-$gutter);
+    @if($space) {
+        @include ptr(margin-left,-$gutter);
+        @include ptr(margin-right,-$gutter);
+    }
 }
 
 //===col===//

@@ -2,6 +2,10 @@
    Module/Sections
    ======================= */
 
+section{
+    position: relative;
+}
+
 /*===SECTION M-INFO===*/
 .m-info{
     @include ptr(height,711);
@@ -218,6 +222,9 @@
 }
 .case:nth-child(even){
     flex-direction: row-reverse;
+    .case-info{
+        @include ptr(margin,130 110 0 110);
+    }
 }
 .case-img{
     @include col-lg(2);
@@ -231,7 +238,7 @@
 }
 .case-info{
     @include col-lg(2);
-    @include ptr(margin,130 10 0 130);
+    @include ptr(margin,130 10 0 110);
     @include ptr(width,331);
     position: relative;
     .btn-full{
@@ -479,7 +486,7 @@
     @include row(flex);
     flex-wrap: wrap;
     align-items: flex-start;
-    @include col(1.75);
+    @include col(2);
     @include col-lg(2.5);
     @include col-sm(2);
     @include col-xs(1);

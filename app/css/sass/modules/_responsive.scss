@@ -218,6 +218,11 @@
         @include ptr(padding, 50 60 0);
         margin: 0;
     }
+    .case:nth-child(even){
+        .case-info{
+            margin: 0;
+        }
+    }
     .main-carousel-description{
         @include ptr(margin,0 0 0 250);
         @include ptr(width,400);
