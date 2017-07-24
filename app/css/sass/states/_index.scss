@@ -150,3 +150,40 @@
         }
     }
 }
+
+
+@media only screen and (max-width: 1024px) {
+    .js-menu-deep {
+        & > a {
+            position: relative;
+            &::before,
+            &::after {
+                content: '';
+                position: absolute;
+                background-color: #69696a;
+                transition: $linear-f;
+            }
+            &::before {
+                bottom: 5px;
+                left: 105%;
+                height: 1px;
+                width: 0;
+            }
+            /*        &::after{
+                        top: 100%;
+                        right: -50px;
+                        width: 1px;
+                        height: 0;
+                    }*/
+
+        }
+        &.active > a {
+            &::before {
+                width: 1000%;
+            }
+            /*        &::after{
+                        height: 150px;
+                    }*/
+        }
+    }
+}

@@ -33,7 +33,7 @@ $(function () {
         btnMenu.on('click',function(){
             var btn = $('.h-estimate').clone();
             if($(this).hasClass('active')){
-                btn.prependTo('.menu ul');
+                btn.prependTo('.menu > ul');
             }
             else{
                 btn = '';
@@ -187,6 +187,12 @@ $(function () {
 
     //viewAll($('.case'),2);
 
+    if(ScreenWidth < 1024){
+        $('.js-menu-deep').on('click',function(){
+            $(this).toggleClass('active');
+        });
+    }
+
 
 
 
@@ -195,9 +201,9 @@ $(function () {
     $('.owl-carousel').owlCarousel({
         animateIn: 'fadeIn',
         autoHeight: true,
-        autoplay: false,
+        autoplay: true,
         autoplayTimeout: 2500,
-        autoplayHoverPause: true,
+        /*autoplayHoverPause: true,*/
         smartSpeed: 3500,
         mouseDrag: false,
         touchDrag: false,
@@ -411,13 +417,13 @@ $(function () {
 
     // Create scene3
     var scene3 = new ScrollMagic.Scene({
-        triggerElement: '#scene3'
+        triggerElement: '.js-experience-number'
     })
         .setTween(s3Tween)
         /*.addIndicators({name: "Section2 (duration: 0)"})*/
         .addTo(ctrl);
 
-    scene3.triggerHook(0.8);
+    scene3.triggerHook(1);
 
     scene3.on("enter", function (event){
 
@@ -501,6 +507,13 @@ $(function () {
     }
     $('.validate-field').on('input', function(){
         validateForms($(this));
+    });
+
+    //Ввод только цифр
+    $('#js-phone').bind("change keyup input click", function(){
+        if (this.value.match(/[^0-9]/g)){
+            this.value = this.value.replace(/[^0-9]/g, '');
+        }
     });
 
 

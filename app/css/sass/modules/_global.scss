@@ -17,7 +17,7 @@
     &::before{
         content: '';
         position: absolute;
-        top: 68%;
+        top: 65%;
         left: 0;
         width: 0;
         height: 1px;
@@ -41,15 +41,16 @@
     &::before{
         left: auto;
         right: 0;
+        top: 57%;
     }
 }
 
 .title-big{
     @include fluidFontSize(22px,52px,480px,1680px,68px,36px);
-    @include ptr(padding,0 10 0 280);
+    @include ptr(padding,0 170 0 280);
     text-transform: none;
     &::before{
-        top: 35%;
+        top: 33%;
     }
     &.active::before{
         @include ptr(width,250);

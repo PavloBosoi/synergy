@@ -20,7 +20,7 @@
         @include ptr(width, 280);
     }
     .main-carousel-description{
-        @include ptr(margin, 0 0 0 300);
+        width: 55%;
     }
     html{
         font-size: 9px;
@@ -71,16 +71,13 @@
         float: none;
         margin: 0;
     }
-    .main-carousel-description {
-        @include ptr(margin, 0 0 0 320);
-    }
     .btn-empty{
         @include ptr(padding, 0 20);
     }
     .contact-item{
         @include ptr(margin-top, 35);
         &:first-child{
-            margin: 0;
+            @include ptr(margin, 0 10 0);
         }
     }
 }
@@ -102,8 +99,8 @@
         @include ptr(padding, 100 0);
     }
     .main-carousel-description{
-        @include ptr(width,550);
-        @include ptr(margin,0 0 0 280);
+        width: 55%;
+        @include ptr(margin,0 0 0 350);
     }
     .benefits-description{
         width: 100%;
@@ -129,6 +126,7 @@
         @include ptr(padding, 100 0 0);
         height: 100%;
         z-index: 2;
+        overflow: hidden;
         transition: $linear-f;
         .h-estimate{
             position: absolute;
@@ -138,6 +136,16 @@
             .btn-empty{
                 color: #fff;
             }
+        }
+        &::before{
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: $color2;
+            z-index: 3;
         }
         /*&::before{
             content: '';
@@ -154,15 +162,78 @@
         &.active{
             &+ul{
                 opacity: 1;
-                @include ptr(width, 400);
+                @include ptr(width, 450);
+                &::before{
+                    display: none;
+                }
             }
         }
     }
     .menu > ul > li{
         width: 100%;
-        @include ptr(padding, 20 50);
+        @include ptr(padding, 20 50 0);
+        @include ptr(margin, 0 0 20);
         ul{
-            display: none;
+            display: block;
+            margin: 0;
+            left: auto;
+            right: 0;
+            top: calc(100% - 22px);
+            z-index: 2;
+            opacity: 1;
+            background-color: $color2;
+            &::before{
+                content: '';
+                position: absolute;
+                top: 17px;
+                left: 0;
+                width: 1px;
+                height: 0;
+                background-color: #69696a;
+                z-index: 2;
+                transition: $linear-f;
+            }
+            li{
+                &:first-child a{
+                    margin: 0;
+                }
+                a{
+                    position: relative;
+                    @include ptr(padding, 0 30 0);
+                    @include ptr(margin, 44 0 0);
+                    text-transform: lowercase;
+                    height: auto;
+                    font-size: 18px;
+                    line-height: 22px;
+                    &::before{
+                        content: '';
+                        position: absolute;
+                        bottom: 5px;
+                        left: 0;
+                        width: 0;
+                        height: 1px;
+                        background-color: #69696a;
+                        transition: $linear-f;
+                    }
+                }
+            }
+        }
+        &:hover ul{
+            top: calc(100% - 22px);
+            z-index: 2;
+        }
+        &.active ul{
+            &::before{
+                height: calc(100% - 22px);
+            }
+            li{
+                a{
+                    color: #fff;
+                    &::before{
+                        width: 15px;
+                    }
+                }
+            }
         }
     }
     .menu > ul > li > a{
@@ -172,6 +243,9 @@
         font-size: 22px;
         line-height: 26px;
         padding: 0;
+    }
+    .menu > ul > li ul::after{
+        display: none;
     }
     .partners-img{
         width: 100%;
@@ -212,6 +286,7 @@
     .case-img{
         width: 100%;
         margin: 0;
+        text-align: center;
     }
     .case-info{
         width: 100%;
@@ -224,8 +299,8 @@
         }
     }
     .main-carousel-description{
-        @include ptr(margin,0 0 0 250);
-        @include ptr(width,400);
+        width: 50%;
+        @include ptr(margin,0 0 0 280);
     }
     .main-carousel-info{
         @include ptr(width,250);
@@ -408,6 +483,9 @@
     }
     .contact-item{
         @include ptr(margin,30 0);
+        &:first-child{
+            margin: 0;
+        }
     }
     .benefits-description{
         @include ptr(padding,0 20);
@@ -417,5 +495,19 @@
     }
     html {
         font-size: 7px;
+    }
+}
+
+@media only screen and (-webkit-min-device-pixel-ratio: 1.5),
+only screen and (min--moz-device-pixel-ratio: 1.5),
+only screen and (-o-min-device-pixel-ratio: 3/2),
+only screen and (min-resolution: 1.5dppx){
+    .case-img{
+        img{
+            display: inline-block;
+            &:first-child{
+                display: none;
+            }
+        }
     }
 }
