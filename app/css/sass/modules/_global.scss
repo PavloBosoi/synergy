@@ -71,6 +71,11 @@
         @include ptr(width,250);
     }
 }
+.title-deep{
+    &::before{
+        top: 65%;
+    }
+}
 
 
 .title-general{
@@ -100,6 +105,10 @@
     @include fluidFontSize(19px,42px,480px,1680px,52px,32px);
     font-weight: bold;
     @include ptr(margin,90 0 0 0);
+}
+
+.deep-page{
+    @include ptr(padding,270 0 200);
 }
 
 

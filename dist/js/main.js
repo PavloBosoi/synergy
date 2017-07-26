@@ -22,6 +22,37 @@ $(function () {
         }
     }
 
+    if(ScreenWidth > 768){
+        threeTwoItem($('.js-team'));
+    }
+
+    function threeTwoItem(parent) {
+        var context = parent,
+            count = 3;
+        while(context.children('div:not(.team-row)').length){
+            context.children('div:not(.team-row):lt('+count+')').wrapAll('<div class="team-row team-row-'+count+'">');
+            if(count === 3){
+                count = 2;
+            }
+            else{
+                count = 3;
+            }
+            if(context.children('div:not(.team-row)').length === 3){
+                count = 3;
+            }
+            if(context.children('div:not(.team-row)').length === 2){
+                count = 2;
+            }
+        }
+    }
+
+    function threeTwoItemUnwrap(item){
+        item.contents().unwrap();
+        console.log(item);
+    }
+
+
+
     //btn-menu
     btnMenu.on('click', function(e){
         $(this).toggleClass("active");
@@ -246,22 +277,24 @@ $(function () {
         }
     });
 
-    var typed = new Typed('.js-change-text', {
-        strings: ['1 Some <i>strings</i> with', '2 Some <strong>HTML</strong>', 'consectetur'],
-        typeSpeed: 20,
-        backSpeed: 40,
-        backDelay: 2500,
-        cursorChar: '_',
-        shuffle: true,
-        smartBackspace: false,
-        loop: true,
-        preStringTyped: function(pos, self){
-            $(self.el).removeClass('active');
-        },
-        onStringTyped: function(pos,self){ console.log(self);
-            $(self.el).addClass('active');
-        }
-    });
+    if($('.js-change-text').length > 0){
+        var typed = new Typed('.js-change-text', {
+            strings: ['1 Some <i>strings</i> with', '2 Some <strong>HTML</strong>', 'consectetur'],
+            typeSpeed: 20,
+            backSpeed: 40,
+            backDelay: 2500,
+            cursorChar: '_',
+            shuffle: true,
+            smartBackspace: false,
+            loop: true,
+            preStringTyped: function(pos, self){
+                $(self.el).removeClass('active');
+            },
+            onStringTyped: function(pos,self){ console.log(self);
+                $(self.el).addClass('active');
+            }
+        });
+    }
 
 /*    $('.js-effect-text').textillate({
         initialDelay: 200,
@@ -273,8 +306,7 @@ $(function () {
 
     $("section").each(function(index){
         var sectionTitle = $(this).find('.sections-title'),
-            titleMain = $(this).find('.title-main'),
-            textEffect = $(this).find('.js-effect-text');
+            titleMain = $(this).find('.title-main');
 
         if(index <= $("section").length){
 
@@ -298,20 +330,22 @@ $(function () {
     });
 
 
-    $(".js-effect-opacity").each(function(index){
+    if($(".js-effect-opacity").length > 0){
+        $(".js-effect-opacity").each(function(index){
 
-        var sTweenOpacity = new TimelineMax();
-        sTweenOpacity.set($(this), { className: "+=active" }, 0.5);
+            var sTweenOpacity = new TimelineMax();
+            sTweenOpacity.set($(this), { className: "+=active" }, 0.5);
 
-        var sceneOpacity = new ScrollMagic.Scene({
-            triggerElement: this
-        })
-            .setTween(sTweenOpacity)
-            /*.addIndicators({name: index + " (sTweenText: 0)"})*/
-            .addTo(ctrl);
+            var sceneOpacity = new ScrollMagic.Scene({
+                triggerElement: this
+            })
+                .setTween(sTweenOpacity)
+                /*.addIndicators({name: index + " (sTweenText: 0)"})*/
+                .addTo(ctrl);
 
-        sceneOpacity.triggerHook(1);
-    });
+            sceneOpacity.triggerHook(1);
+        });
+    }
 
     $(".js-effect-img").each(function(index){
 
@@ -344,95 +378,49 @@ $(function () {
     });
 
 
-    $(".js-effect-line").each(function(index){
+    if($(".js-effect-line").length > 0) {
+        $(".js-effect-line").each(function (index) {
 
-        var sTweenLine = new TimelineMax();
-        sTweenLine.set($(this),{
-            className: "+=active"
-        }, '+=0.1');
+            var sTweenLine = new TimelineMax();
+            sTweenLine.set($(this), {
+                className: "+=active"
+            }, '+=0.1');
 
-        var sceneLine = new ScrollMagic.Scene({
-            triggerElement: this
-        })
-            .setTween(sTweenLine)
-            /*.addIndicators({name:  " (sTweenLine: 0)"})*/
-            .addTo(ctrl);
+            var sceneLine = new ScrollMagic.Scene({
+                triggerElement: this
+            })
+                .setTween(sTweenLine)
+                /*.addIndicators({name:  " (sTweenLine: 0)"})*/
+                .addTo(ctrl);
 
-        sceneLine.triggerHook(1);
-    });
-
-    /*===Section1===*/
-
-    var s1Tween = new TimelineMax();
-    /*s1Tween.to('.title-main span', 2, {text:{value:"This is the new text", delimiter:" "}, ease:Linear.easeNone});*/
-    /*s1Tween.from(title1, 1, { y: 150, opacity: 0, ease:Linear.easeNone});*/
-
-
-
-
-    // Create scene1
-    var scene1 = new ScrollMagic.Scene({
-        triggerElement: '#scene1'
-    })
-        .addTo(ctrl);
-
-    /*===Section2===*/
-    var opacity = '.js-opacity',
-        baseX = 100;
-
-    var s2Tween = new TimelineMax();
-    /*s1Tween.to('.title-main span', 2, {text:{value:"This is the new text", delimiter:" "}, ease:Linear.easeNone});*/
-    /*s1Tween.from(title1, 1, { y: 150, opacity: 0, ease:Linear.easeNone});*/
-    /*s2Tween.staggerFrom(opacity, 1, {opacity:0, ease:Back.easeIn}, 0.1);
-    $('.js-img-effect').each(function(index, element) {
-        //s2Tween.from(element, 0.5, {backgroundColor: '#fff'}, index * 0.2)
-        s2Tween.staggerFrom($(this), 0.1, {height: '100%', ease:Back.easeIn}, 0.2);
-/!*        s2Tween.insert(TweenMax.set($(this), {css:{className:'+=on'}}), '+=0.2');
-        s2Tween.insert(TweenMax.set($(this), {css:{className:'-=on'}}), '+=0.5');*!/
-        //s2Tween.to(element, {className:"+=show-map"},index * 0.2);
-    });*/
-
-
-/*    s2Tween.staggerFrom(opacity, 0.5, {opacity:0, ease:Back.easeIn}, 0.1);
-    $('.skills-effect').each(function(index, element){
-        s2Tween.set($(this), {
-            className: "+=show"
-        }, '+=0.2');
-    });*/
-
-    // Create scene2
-    var scene2 = new ScrollMagic.Scene({
-        triggerElement: '#scene2'
-    })
-        .setTween(s2Tween)
-        /*.addIndicators({name: "Section2 (duration: 0)"})*/
-        .addTo(ctrl);
-
-    scene2.triggerHook(0.8);
-
+            sceneLine.triggerHook(1);
+        });
+    }
 
 
     /*===Section3===*/
-    var s3Tween = new TimelineMax();
+    if($('.js-experience-number').length > 0) {
+        var s3Tween = new TimelineMax();
 
-    // Create scene3
-    var scene3 = new ScrollMagic.Scene({
-        triggerElement: '.js-experience-number'
-    })
-        .setTween(s3Tween)
-        /*.addIndicators({name: "Section2 (duration: 0)"})*/
-        .addTo(ctrl);
+        // Create scene3
+        var scene3 = new ScrollMagic.Scene({
+            triggerElement: '.js-experience-number'
+        })
+            .setTween(s3Tween)
+            /*.addIndicators({name: "Section2 (duration: 0)"})*/
+            .addTo(ctrl);
 
-    scene3.triggerHook(1);
+        scene3.triggerHook(1);
 
-    scene3.on("enter", function (event){
+        scene3.on("enter", function (event) {
 
-        $('.experience-number').spincrement({
-            from: 0,                // Стартовое число
-            to: false,              // Итоговое число. Если false, то число будет браться из элемента с классом spincrement, также сюда можно напрямую прописать число. При этом оно может быть, как целым, так и с плавающей запятой
-            duration: 3500         // Продолжительность анимации в миллисекундах
+            $('.experience-number').spincrement({
+                from: 0,                // Стартовое число
+                to: false,              // Итоговое число. Если false, то число будет браться из элемента с классом spincrement, также сюда можно напрямую прописать число. При этом оно может быть, как целым, так и с плавающей запятой
+                duration: 3500         // Продолжительность анимации в миллисекундах
+            });
         });
-    });
+    }
 
 
 
@@ -529,6 +517,13 @@ $(function () {
         }
         if(ScreenWidth > 1024 && !btnMenu.hasClass('active')){
             $('.menu ul .h-estimate').remove();
+        }
+
+        if(ScreenWidth > 768){
+            threeTwoItem($('.js-team'));
+        }
+        else{
+            threeTwoItemUnwrap($('.team-row'));
         }
     });
 

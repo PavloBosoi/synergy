@@ -80,6 +80,16 @@
             @include ptr(margin, 0 10 0);
         }
     }
+    .deep-page{
+        @include ptr(padding, 100 0);
+    }
+    .join-info,
+    .join-btn{
+        @include ptr(margin-top, 40);
+    }
+    .team-btn{
+        margin: 0;
+    }
 }
 
 @media only screen and (max-width: 1200px) {
@@ -254,6 +264,9 @@
         width: 100%;
         @include ptr(margin,40 0 0 0);
     }
+    .join-item{
+        @include ptr(margin,80 0 0 0);
+    }
 }
 
 @media only screen and (max-width: 768px) {
@@ -313,6 +326,18 @@
     }
     .cases-parent{
         @include ptr(margin, 40 0 0 0);
+    }
+    .team-row{
+        flex-wrap: wrap;
+    }
+    .team-parent{
+        display: flex;
+        flex-wrap: wrap;
+        @include ptr(margin-left, -20);
+        @include ptr(margin-right, -20);
+    }
+    .team-item{
+        width: 50%;
     }
     html{
         font-size: 8px;
@@ -492,6 +517,13 @@
     }
     .copy{
         font-size: 12px;
+    }
+    .title-deep{
+        @include ptr(padding, 0 20);
+    }
+    .team-item{
+        width: 100%;
+        text-align: center;
     }
     html {
         font-size: 7px;

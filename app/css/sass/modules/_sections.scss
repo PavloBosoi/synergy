@@ -683,3 +683,105 @@ span.wpcf7-not-valid-tip {
 .instagram:hover{
     color: #7b37ae;
 }
+
+/*===PAGE TEAM===*/
+.team-parent{
+    @include ptr(margin, 90 0 0 0);
+}
+.team-row{
+    display: flex;
+    @include ptr(margin, 0 -20);
+}
+.team-row-2{
+    justify-content: space-around;
+    .team-item{
+        @include ptr(padding, 0 140 0 20);
+        &:first-child{
+            @include ptr(padding, 0 20 0 140);
+        }
+    }
+}
+.team-row-3{
+    justify-content: space-between;
+}
+.team-item{
+    @include ptr(margin, 0 0 110);
+    @include ptr(padding, 0 20);
+}
+.team-item-wrap{
+    text-align: left;
+    display: inline-block;
+}
+.team-img{
+    display: inline-block;
+}
+.team-name{
+    @include ptr(margin, 35 0 0 0);
+    p{
+        @include fluidFontSize(14px,26px,480px,1680px,30px,20px);
+        font-weight: bold;
+    }
+    span{
+        color: $color1;
+        display: block;
+        @include ptr(margin, 10 0 0 0);
+    }
+}
+.team-btn{
+    text-align: center;
+    @include ptr(margin, 85 0 0 0);
+    .btn-empty{
+        @include ptr(width, 170);
+    }
+}
+
+/*===PAGE JOIN===*/
+.join-item{
+    @include ptr(margin, 190 0 0 0);
+    &:first-child{
+        margin: 0;
+    }
+}
+.join-wrap{
+    @include row(flex);
+    flex-wrap: wrap;
+}
+.join-info{
+    @include col(3);
+    @include col-lg(2);
+    @include col-sl(1);
+    @include ptr(margin, 80 0 0 0);
+    ul{
+        @include ptr(margin, 30 0 0 20);
+        li{
+            @include ptr(padding, 0 0 0 20);
+            @include ptr(margin, 10 0 0 0);
+            &:first-child{
+                margin: 0;
+            }
+            position: relative;
+            &::before{
+                content: '';
+                position: absolute;
+                @include ptr(top,10);
+                left: 0;
+                width: 2px;
+                height: 2px;
+                border-radius: 50%;
+                background-color: $color1;
+            }
+        }
+    }
+}
+.join-title{
+    @include fluidFontSize(14px,26px,480px,1680px,30px,20px);
+    font-weight: bold;
+}
+.join-btn{
+    @include col(3);
+    @include col-lg(1);
+    @include ptr(margin, 85 0 0 0);
+    .btn-empty{
+        @include ptr(width,170);
+    }
+}
