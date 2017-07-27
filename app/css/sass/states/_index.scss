@@ -113,6 +113,17 @@
         opacity: 1;
     }
 }
+.js-effect-title-before{
+    opacity:  0;
+    right: 100px;
+    position: relative;
+    transition: $linear-f;
+    &.active{
+        right: 0;
+        /*transition-delay: .5s;*/
+        opacity: 1;
+    }
+}
 
 .js-effect-line{
     opacity:  0;

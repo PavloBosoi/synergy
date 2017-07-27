@@ -304,7 +304,7 @@ $(function () {
 
     /*===ALL SECTIONS===*/
 
-    $("section").each(function(index){
+/*    $("section").each(function(index){
         var sectionTitle = $(this).find('.sections-title'),
             titleMain = $(this).find('.title-main');
 
@@ -313,25 +313,46 @@ $(function () {
             var sTween = new TimelineMax();
             sTween.staggerFrom(titleMain, 0.5, {opacity:0, y:100, ease:Back.easeIn}, 0.1);
             sTween.set(titleMain, { className: "+=active" }, 0.5);
-            sTween.staggerFrom(sectionTitle, 0.5, {opacity:0, y:100, ease:Back.easeIn}, 0.1);
-            /*sTween.set(textEffect, { className: "+=active" }, 0.5);*/
+            //sTween.staggerFrom(sectionTitle, 0.5, {opacity:0, y:100, ease:Back.easeIn}, 0.1);
 
             var scene = new ScrollMagic.Scene({
                 triggerElement: this
             })
                 .setTween(sTween)
-                /*.addIndicators({name: index + " (duration: 0)"})*/
                 .addTo(ctrl);
 
             scene.triggerHook(0.7);
         }
 
 
-    });
+    });*/
+
+    var titleBeforeEffect = '.js-effect-title-before',
+        opacityEffect = '.js-effect-opacity',
+        imgEffect = '.js-effect-img',
+        textEffect = '.js-effect-text',
+        lineEffect = '.js-effect-line',
+        numberParent = '.js-experience-number';
+
+    if($(titleBeforeEffect).length > 0){
+        $(titleBeforeEffect).each(function(index){
+
+            var sTweenTitleBefore = new TimelineMax();
+            sTweenTitleBefore.set($(this), { className: "+=active" }, 0.5);
+
+            var sceneTitleBefore = new ScrollMagic.Scene({
+                triggerElement: this
+            })
+                .setTween(sTweenTitleBefore)
+                .addTo(ctrl);
+
+            sceneTitleBefore.triggerHook(1);
+        });
+    }
 
 
-    if($(".js-effect-opacity").length > 0){
-        $(".js-effect-opacity").each(function(index){
+    if($(opacityEffect).length > 0){
+        $(opacityEffect).each(function(index){
 
             var sTweenOpacity = new TimelineMax();
             sTweenOpacity.set($(this), { className: "+=active" }, 0.5);
@@ -340,46 +361,49 @@ $(function () {
                 triggerElement: this
             })
                 .setTween(sTweenOpacity)
-                /*.addIndicators({name: index + " (sTweenText: 0)"})*/
                 .addTo(ctrl);
 
             sceneOpacity.triggerHook(1);
         });
     }
 
-    $(".js-effect-img").each(function(index){
+    if($(imgEffect).length > 0) {
+        $(imgEffect).each(function (index) {
 
-        var sTweenImage = new TimelineMax();
-        sTweenImage.set($(this), { className: "+=active" }, 0.5);
+            var sTweenImage = new TimelineMax();
+            sTweenImage.set($(this), {className: "+=active"}, 0.5);
 
-        var sceneImage = new ScrollMagic.Scene({
-            triggerElement: this
-        })
-            .setTween(sTweenImage)
-            /*.addIndicators({name: index + " (sTweenImage: 0)"})*/
-            .addTo(ctrl);
+            var sceneImage = new ScrollMagic.Scene({
+                triggerElement: this
+            })
+                .setTween(sTweenImage)
+                /*.addIndicators({name: index + " (sTweenImage: 0)"})*/
+                .addTo(ctrl);
 
-        sceneImage.triggerHook(1);
-    });
+            sceneImage.triggerHook(1);
+        });
+    }
 
-    $(".js-effect-text").each(function(index){
+    if($(textEffect).length > 0) {
+        $(textEffect).each(function (index) {
 
-        var sTweenText = new TimelineMax();
-        sTweenText.set($(this), { className: "+=active" }, 0.5);
+            var sTweenText = new TimelineMax();
+            sTweenText.set($(this), {className: "+=active"}, 0.5);
 
-        var sceneText = new ScrollMagic.Scene({
-            triggerElement: this
-        })
-            .setTween(sTweenText)
-            /*.addIndicators({name: index + " (sTweenText: 0)"})*/
-            .addTo(ctrl);
+            var sceneText = new ScrollMagic.Scene({
+                triggerElement: this
+            })
+                .setTween(sTweenText)
+                /*.addIndicators({name: index + " (sTweenText: 0)"})*/
+                .addTo(ctrl);
 
-        sceneText.triggerHook(1);
-    });
+            sceneText.triggerHook(1);
+        });
+    }
 
 
-    if($(".js-effect-line").length > 0) {
-        $(".js-effect-line").each(function (index) {
+    if($(lineEffect).length > 0) {
+        $(lineEffect).each(function (index) {
 
             var sTweenLine = new TimelineMax();
             sTweenLine.set($(this), {
@@ -399,12 +423,12 @@ $(function () {
 
 
     /*===Section3===*/
-    if($('.js-experience-number').length > 0) {
+    if($(numberParent).length > 0) {
         var s3Tween = new TimelineMax();
 
         // Create scene3
         var scene3 = new ScrollMagic.Scene({
-            triggerElement: '.js-experience-number'
+            triggerElement: numberParent
         })
             .setTween(s3Tween)
             /*.addIndicators({name: "Section2 (duration: 0)"})*/
