@@ -73,6 +73,7 @@
     }
 }
 .title-deep{
+    @include ptr(margin-bottom, 290);
     &::before{
         top: 65%;
     }
@@ -111,7 +112,6 @@
 .deep-page{
     @include ptr(padding,270 0 200);
 }
-
 
 
 //*---OWL-CAROUSEL---*/

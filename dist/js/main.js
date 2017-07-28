@@ -28,20 +28,25 @@ $(function () {
 
     function threeTwoItem(parent) {
         var context = parent,
-            count = 3;
+            count = 3,
+            lastItem = false;
         while(context.children('div:not(.team-row)').length){
             context.children('div:not(.team-row):lt('+count+')').wrapAll('<div class="team-row team-row-'+count+'">');
+            if(lastItem === true){
+                var item = context.children('.team-row:last-child').append('<div class="team-item"/>');
+            }
             if(count === 3){
                 count = 2;
             }
             else{
                 count = 3;
             }
-            if(context.children('div:not(.team-row)').length === 3){
+/*            if(context.children('div:not(.team-row)').length === 3){
                 count = 3;
-            }
+            }*/
             if(context.children('div:not(.team-row)').length === 2){
-                count = 2;
+                /*count = 2;*/
+                lastItem = true;
             }
         }
     }

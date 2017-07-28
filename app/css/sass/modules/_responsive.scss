@@ -22,6 +22,12 @@
     .main-carousel-description{
         width: 55%;
     }
+    .join-block{
+        @include ptr(padding, 0 0 0 50);
+        &:first-child{
+            padding: 0;
+        }
+    }
     html{
         font-size: 9px;
     }
@@ -87,8 +93,14 @@
     .join-btn{
         @include ptr(margin-top, 40);
     }
+    .join-btn{
+        padding: 0;
+    }
     .team-btn{
         margin: 0;
+    }
+    .title-deep{
+        @include ptr(margin-bottom, 40);
     }
 }
 
@@ -333,11 +345,22 @@
     .team-parent{
         display: flex;
         flex-wrap: wrap;
-        @include ptr(margin-left, -20);
-        @include ptr(margin-right, -20);
+        @include ptr(margin-left, -10);
+        @include ptr(margin-right, -10);
     }
     .team-item{
         width: 50%;
+        margin-left: 0;
+        margin-right: 0;
+        @include ptr(padding-left, 10);
+        @include ptr(padding-right, 10);
+    }
+    .team-img,
+    .team-img img{
+        width: 100%;
+    }
+    .join-block{
+        padding: 0;
     }
     html{
         font-size: 8px;

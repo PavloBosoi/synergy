@@ -689,15 +689,14 @@ span.wpcf7-not-valid-tip {
     @include ptr(margin, 90 0 0 0);
 }
 .team-row{
-    display: flex;
-    @include ptr(margin, 0 -20);
+    @include row(flex);
 }
 .team-row-2{
     justify-content: space-around;
     .team-item{
-        @include ptr(padding, 0 140 0 20);
+        @include ptr(margin, 0 170 110 10);
         &:first-child{
-            @include ptr(padding, 0 20 0 140);
+            @include ptr(margin, 0 10 110 170);
         }
     }
 }
@@ -705,8 +704,9 @@ span.wpcf7-not-valid-tip {
     justify-content: space-between;
 }
 .team-item{
-    @include ptr(margin, 0 0 110);
-    @include ptr(padding, 0 20);
+    @include ptr(margin, 0 10 110);
+    /*@include ptr(padding, 0 20);*/
+    width: 300px;
 }
 .team-item-wrap{
     text-align: left;
@@ -716,7 +716,7 @@ span.wpcf7-not-valid-tip {
     display: inline-block;
 }
 .team-name{
-    @include ptr(margin, 35 0 0 0);
+    @include ptr(margin, 25 0 0 0);
     p{
         @include fluidFontSize(14px,26px,480px,1680px,30px,20px);
         font-weight: bold;
@@ -746,11 +746,14 @@ span.wpcf7-not-valid-tip {
     @include row(flex);
     flex-wrap: wrap;
 }
-.join-info{
+.join-block{
     @include col(3);
+    @include col-xl(2.5);
+    @include col-sm(1);
+}
+.join-info{
     @include col-lg(2);
-    @include col-sl(1);
-    @include ptr(margin, 80 0 0 0);
+    @include ptr(margin-top, 80);
     ul{
         @include ptr(margin, 30 0 0 20);
         li{
@@ -778,9 +781,10 @@ span.wpcf7-not-valid-tip {
     font-weight: bold;
 }
 .join-btn{
-    @include col(3);
+    @include col-xl(5);
     @include col-lg(1);
-    @include ptr(margin, 85 0 0 0);
+    @include ptr(margin-top, 85);
+    @include ptr(padding, 0 0 0 35);
     .btn-empty{
         @include ptr(width,170);
     }

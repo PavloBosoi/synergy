@@ -99,6 +99,11 @@
         margin-right: $gutter/$fz + rem;
     }
 }
+@mixin col-xl($column,$space:true){
+    @media only screen and (max-width: $media-xl + px){
+        @include colWidth($column,$space);
+    }
+}
 @mixin col-lg($column,$space:true){
     @media only screen and (max-width: $media-lg + px){
         @include colWidth($column,$space);
