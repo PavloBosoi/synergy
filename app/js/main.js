@@ -33,7 +33,7 @@ $(function () {
         while(context.children('div:not(.team-row)').length){
             context.children('div:not(.team-row):lt('+count+')').wrapAll('<div class="team-row team-row-'+count+'">');
             if(lastItem === true){
-                var item = context.children('.team-row:last-child').append('<div class="team-item"/>');
+                var item = context.children('.team-row:last-child').append('<div class="team-item last-team-item"/>');
             }
             if(count === 3){
                 count = 2;
@@ -53,7 +53,6 @@ $(function () {
 
     function threeTwoItemUnwrap(item){
         item.contents().unwrap();
-        console.log(item);
     }
 
 
@@ -175,7 +174,7 @@ $(function () {
         }
     }
 
-    function skillsSize(img,item) {
+    function skillsSize(img,item){
         $(img).each(function(){
             var top = $(this).prev(item).position().top,
                 left = $(this).prev(item).position().left,
