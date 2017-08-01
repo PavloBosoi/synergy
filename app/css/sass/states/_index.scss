@@ -203,3 +203,10 @@
         }
     }
 }
+
+.active[disabled-btn="true"]{
+    color: #69696a;
+    border: 1px solid #69696a;
+    pointer-events: none;
+    cursor: default;
+}

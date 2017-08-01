@@ -338,91 +338,32 @@ $(function () {
         lineEffect = '.js-effect-line',
         numberParent = '.js-experience-number';
 
-    if($(titleBeforeEffect).length > 0){
-        $(titleBeforeEffect).each(function(index){
+    addGsapActive(titleBeforeEffect,ctrl);
 
-            var sTweenTitleBefore = new TimelineMax();
-            sTweenTitleBefore.set($(this), { className: "+=active" }, 0.5);
+    addGsapActive(opacityEffect,ctrl);
 
-            var sceneTitleBefore = new ScrollMagic.Scene({
-                triggerElement: this
-            })
-                .setTween(sTweenTitleBefore)
-                .addTo(ctrl);
+    addGsapActive(imgEffect,ctrl);
 
-            sceneTitleBefore.triggerHook(1);
-        });
-    }
+    addGsapActive(textEffect,ctrl);
 
+    addGsapActive(lineEffect,ctrl);
 
-    if($(opacityEffect).length > 0){
-        $(opacityEffect).each(function(index){
+    function addGsapActive(effect, controller){
+        if($(document).find(effect).length > 0) {
+            $(document).find(effect).each(function (index) {
 
-            var sTweenOpacity = new TimelineMax();
-            sTweenOpacity.set($(this), { className: "+=active" }, 0.5);
+                var sTween = new TimelineMax();
+                sTween.set($(this), {className: "+=active"}, 0.5);
 
-            var sceneOpacity = new ScrollMagic.Scene({
-                triggerElement: this
-            })
-                .setTween(sTweenOpacity)
-                .addTo(ctrl);
+                var scene = new ScrollMagic.Scene({
+                    triggerElement: this
+                })
+                    .setTween(sTween)
+                    .addTo(controller);
 
-            sceneOpacity.triggerHook(1);
-        });
-    }
-
-    if($(imgEffect).length > 0) {
-        $(imgEffect).each(function (index) {
-
-            var sTweenImage = new TimelineMax();
-            sTweenImage.set($(this), {className: "+=active"}, 0.5);
-
-            var sceneImage = new ScrollMagic.Scene({
-                triggerElement: this
-            })
-                .setTween(sTweenImage)
-                /*.addIndicators({name: index + " (sTweenImage: 0)"})*/
-                .addTo(ctrl);
-
-            sceneImage.triggerHook(1);
-        });
-    }
-
-    if($(textEffect).length > 0) {
-        $(textEffect).each(function (index) {
-
-            var sTweenText = new TimelineMax();
-            sTweenText.set($(this), {className: "+=active"}, 0.5);
-
-            var sceneText = new ScrollMagic.Scene({
-                triggerElement: this
-            })
-                .setTween(sTweenText)
-                /*.addIndicators({name: index + " (sTweenText: 0)"})*/
-                .addTo(ctrl);
-
-            sceneText.triggerHook(1);
-        });
-    }
-
-
-    if($(lineEffect).length > 0) {
-        $(lineEffect).each(function (index) {
-
-            var sTweenLine = new TimelineMax();
-            sTweenLine.set($(this), {
-                className: "+=active"
-            }, '+=0.1');
-
-            var sceneLine = new ScrollMagic.Scene({
-                triggerElement: this
-            })
-                .setTween(sTweenLine)
-                /*.addIndicators({name:  " (sTweenLine: 0)"})*/
-                .addTo(ctrl);
-
-            sceneLine.triggerHook(1);
-        });
+                scene.triggerHook(1);
+            });
+        }
     }
 
 
