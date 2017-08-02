@@ -400,7 +400,7 @@ section{
     align-items: center;
     position: relative;
     @include ptr(margin,0 0 140);
-    i{
+    i,img{
         position: absolute;
         top: 0;
         left: 0;
