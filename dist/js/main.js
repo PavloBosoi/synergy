@@ -428,36 +428,36 @@ $(function () {
             case 'js-name':
                 var vName = /^[a-zA-Zа-яА-Я]+$/;
                 if(val.length >= 3 && val != '' && vName.test(val)){
-                    el.parent().removeClass('error').addClass('not-error');
+                    el.closest('.js-form-group').removeClass('error').addClass('not-error');
                 }
                 else{
-                    el.parent().addClass('error').removeClass('not-error');
+                    el.closest('.js-form-group').addClass('error').removeClass('not-error');
                 }
                 break;
             case 'js-mail':
                 var vMail = /^([a-zA-Z0-9_.-])+@([a-zA-Z0-9_.-])+\.([a-zA-Z])+([a-zA-Z])+/;
                 if(val != '' && vMail.test(val)){
-                    el.parent().removeClass('error').addClass('not-error');
+                    el.closest('.js-form-group').removeClass('error').addClass('not-error');
                 }
                 else{
-                    el.parent().addClass('error').removeClass('not-error');
+                    el.closest('.js-form-group').addClass('error').removeClass('not-error');
                 }
                 break;
             case 'js-phone':
                 var vPhone = /^(\s*)?(\+)?([- _():=+]?\d[- _():=+]?){10,14}(\s*)?$/;
                 if(val.length >= 3 && val != '' && vPhone.test(val)){
-                    el.parent().removeClass('error').addClass('not-error');
+                    el.closest('.js-form-group').removeClass('error').addClass('not-error');
                 }
                 else{
-                    el.parent().addClass('error').removeClass('not-error');
+                    el.closest('.js-form-group').addClass('error').removeClass('not-error');
                 }
                 break;
             case 'js-message':
                 if(val.length >= 3 && val != ''){
-                    el.parent().removeClass('error').addClass('not-error');
+                    el.closest('.js-form-group').removeClass('error').addClass('not-error');
                 }
                 else{
-                    el.parent().addClass('error').removeClass('not-error');
+                    el.closest('.js-form-group').addClass('error').removeClass('not-error');
                 }
                 break;
         }
