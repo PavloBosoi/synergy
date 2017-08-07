@@ -210,3 +210,11 @@
     pointer-events: none;
     cursor: default;
 }
+.wpcf7.no-active{
+    form{
+        transition: $linear-f;
+        width: 0;
+        height: 0;
+        opacity: 0;
+    }
+}

@@ -19,7 +19,8 @@
     "gsap": "^1.19.1",
     "scrollmagic": "^2.0.5",
     "typed.js": "^2.0.2",
-    "textillate": "^0.4.0"
+    "textillate": "^0.4.0",
+    "fancybox": "^3.1.20"
   },
   "overrides": {
     "font-awesome": {

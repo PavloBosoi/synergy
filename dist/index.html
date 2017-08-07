@@ -50,7 +50,7 @@
 		                </ul>
 		            </nav>
 		            <div class="h-estimate">
-		                <a href="#" class="btn-empty">Estimate Project</a>
+		                <a href="javascript:;" data-fancybox="modal" data-src="#modal" class="btn-empty">Estimate Project</a>
 		            </div>
 		        </div>
 		    </div>
@@ -58,6 +58,8 @@
 		</header>
 
 		<main class="content">
+
+			<div class="success-message"></div>
 
 			<section class="m-info" id="scene1">
 				<div class="title-main title-big js-effect-title-before">
@@ -559,6 +561,26 @@
 
 	<footer class="footer">
 	    <div class="copy"><p>Copyright &copy; 2015 Synergy Way. All rights reserved.</p></div>
+	    <div class="popup-block popup-form" id="modal">
+	        <form action="#" method="post">
+	            <div class="popup-title">
+	                <h4>Estimate Project</h4>
+	            </div>
+	            <div class="form-group js-form-group">
+	                <input type="text" id="js-mail" class="validate-field"/>
+	                <label for="js-mail">Your Email:</label>
+	            </div>
+	            <div class="form-group js-form-group">
+	                <input type="tel" id="js-phone" class="validate-field"/>
+	                <label for="js-phone">Phone number:</label>
+	            </div>
+	            <div class="form-group form-group-last js-form-group">
+	                <input type="text" id="js-message" class="validate-field"/>
+	                <label for="js-message">Tell us about your project </label>
+	            </div>
+	            <label><input type="submit" value="Send" class="wpcf7-form-control wpcf7-submit"></label>
+	        </form>
+	    </div>
 	</footer><!-- .footer -->
 
 	</body>

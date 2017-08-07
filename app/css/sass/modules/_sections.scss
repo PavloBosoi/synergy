@@ -510,6 +510,7 @@ section{
 .contact-item{
     @include col(2);
     @include col-lg(1);
+    @include ptr(margin-bottom,150);
     span{
         @include fluidFontSize(12px,12px,480px,1680px,16px,12px);
         color: #b9c2c7;
@@ -641,11 +642,51 @@ span.wpcf7-not-valid-tip {
     opacity:0;
 }
 .success-message{
-    text-align: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    @include ptr(width,700);
+    @include ptr(height,200);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
     font-weight: bold;
-    @include fluidFontSize(14px,20px,480px,1024px,30px,16px);
-    text-transform: uppercase;
-    color: $color1;
+    @include fluidFontSize(15px,30px,480px,1680px,40px,22px);
+    color: $color2;
+    border: 20px solid #fff;
+    border: 2rem solid #fff;
+    svg{
+        position: absolute;
+        @include ptr(top,20);
+        @include ptr(right,20);
+        @include ptr(width,25);
+        @include ptr(height,25);
+    }
+}
+.form-close{
+    position: absolute;
+    @include ptr(top,20);
+    @include ptr(right,30);
+    @include ptr(width,20);
+    @include ptr(height,20);
+    z-index: 2;
+    cursor: pointer;
+    &::before,
+    &::after{
+        content: '';
+        position: absolute;
+        @include ptr(top,10);
+        @include ptr(right,-3);
+        @include ptr(width,25);
+        height: 1px;
+        background-color: $color2;
+    }
+    &::before{
+        transform: rotate(45deg);
+    }
+    &::after{
+        transform: rotate(-45deg);
+    }
 }
 
 
