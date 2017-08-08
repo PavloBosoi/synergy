@@ -47,15 +47,16 @@
     .skills-text{
         @include ptr(width,440);
     }
-    .general-block-info{
-        padding: 0;
-    }
     .owl-dots {
         padding: 0 7px;
     }
     .owl-dots div{
         width: 6px;
         height: 6px;
+    }
+    .benefits-description{
+        float: none;
+        margin: 0;
     }
 
     html {
@@ -72,10 +73,6 @@
     }
     .menu > ul > li ul li a{
         @include ptr(padding,0 40);
-    }
-    .benefits-description{
-        float: none;
-        margin: 0;
     }
     .btn-empty{
         @include ptr(padding, 0 20);
@@ -101,6 +98,9 @@
     }
     .title-deep{
         @include ptr(margin-bottom, 40);
+    }
+    .contact-item{
+        margin-bottom: 0;
     }
 }
 
@@ -279,6 +279,15 @@
     .join-item{
         @include ptr(margin,80 0 0 0);
     }
+    .success-message{
+        position: relative;
+        width: 100%;
+        @include ptr(padding,0 20);
+    }
+    .form-close{
+        @include ptr(top,10);
+        @include ptr(right,10);
+    }
 }
 
 @media only screen and (max-width: 768px) {
@@ -361,6 +370,22 @@
     }
     .join-block{
         padding: 0;
+    }
+    .benefits-description{
+        @include ptr(padding,0 50);
+    }
+    .contact-parent{
+        flex-wrap: wrap-reverse;
+    }
+    .contact-form{
+        @include ptr(margin,40 0);
+    }
+    .contact-info{
+        @include ptr(margin,0 -10);
+    }
+    .contact-item{
+        @include ptr(margin-bottom,50);
+        margin-top: 0;
     }
     html{
         font-size: 8px;
@@ -466,6 +491,15 @@
     .success-message{
         width: 100%;
     }
+    .contact-info{
+        margin: 0;
+    }
+    .contact-item{
+        @include ptr(margin,30 0);
+        &:first-child{
+            margin: 0;
+        }
+    }
 }
 
 @media only screen and (max-width: 480px) {
@@ -523,24 +557,6 @@
         width: 100%;
         @include ptr(margin, 40 0 0 0);
     }
-    .contact-parent{
-        @include ptr(margin,40 0);
-    }
-    .contact-parent{
-        flex-wrap: wrap-reverse;
-    }
-    .contact-form{
-        @include ptr(margin,40 0);
-    }
-    .contact-info{
-        margin: 0;
-    }
-    .contact-item{
-        @include ptr(margin,30 0);
-        &:first-child{
-            margin: 0;
-        }
-    }
     .benefits-description{
         @include ptr(padding,0 20);
     }
@@ -556,6 +572,13 @@
     }
     .popup-form{
         width: 100%;
+    }
+    .contact-parent{
+        width: 100%;
+        @include ptr(margin,40 0);
+    }
+    .general-block-info{
+        padding: 0;
     }
     html {
         font-size: 7px;

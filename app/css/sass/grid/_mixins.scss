@@ -104,6 +104,11 @@
         @include colWidth($column,$space);
     }
 }
+@mixin col-nl($column,$space:true){
+    @media only screen and (max-width: $media-nl + px){
+        @include colWidth($column,$space);
+    }
+}
 @mixin col-lg($column,$space:true){
     @media only screen and (max-width: $media-lg + px){
         @include colWidth($column,$space);

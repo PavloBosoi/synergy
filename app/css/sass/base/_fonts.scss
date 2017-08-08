@@ -37,3 +37,33 @@
     font-weight: 800;
     font-style: normal;
 }
+
+@font-face {
+    font-family: 'Georgia';
+    src:    local('Georgia'),
+            url("../fonts/georgiab.ttf");
+    font-weight: bold;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Georgia';
+    src:    local('Georgia'),
+            url("../fonts/georgiaz.ttf");
+    font-weight: bold;
+    font-style: italic;
+}
+@font-face {
+    font-family: 'Georgia';
+    src:    local('Georgia'),
+            url("../fonts/georgia.ttf");
+    font-weight: 400;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Georgia';
+    src:
+            local('Georgia'),
+            url("../fonts/georgiai.ttf");
+    font-weight: 400;
+    font-style: italic;
+}

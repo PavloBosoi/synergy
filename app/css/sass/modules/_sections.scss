@@ -311,7 +311,7 @@ section{
 }
 .benefits-item{
     @include col(4);
-    @include col-lg(3);
+    @include col-nl(3);
     @include col-sm(2);
     @include col-xs(1);
     @include ptr(margin,0 0 90 0);
@@ -322,10 +322,12 @@ section{
     align-items: center;
     border: solid 20px $color3;
     border: solid 2rem $color3;
+    font-family: $font3;
     @include fluidFontSize(15px,30px,480px,1680px,40px,22px);
     font-weight: bold;
-    @include ptr(width,780);
+    @include ptr(width,820);
     @include ptr(height,217);
+    @include ptr(padding,0 100);
     @include ptr(margin,-200 0 0 0);
     float: right;
 }
@@ -496,7 +498,7 @@ section{
 .contact-form{
     @include col(4);
     @include col-lg(2);
-    @include col-xs(1);
+    @include col-sm(1);
 }
 .contact-info{
     @include row(flex);
@@ -504,12 +506,13 @@ section{
     align-items: flex-start;
     @include col(2);
     @include col-lg(2.5);
-    @include col-sm(2);
-    @include col-xs(1);
+    @include col-sm(1);
 }
 .contact-item{
     @include col(2);
     @include col-lg(1);
+    @include col-sm(2);
+    @include col-sl(1);
     @include ptr(margin-bottom,150);
     span{
         @include fluidFontSize(12px,12px,480px,1680px,16px,12px);
@@ -633,7 +636,7 @@ span.wpcf7-not-valid-tip {
     font-weight: normal;
     display: block;
     position: absolute;
-    @include ptr(bottom,-25);
+    @include ptr(bottom,-40);
     left: 0;
     line-height: normal;
     white-space: nowrap;
@@ -647,10 +650,12 @@ span.wpcf7-not-valid-tip {
     left: 0;
     @include ptr(width,700);
     @include ptr(height,200);
+    @include ptr(padding,0 20);
     display: flex;
     justify-content: space-around;
     align-items: center;
     font-weight: bold;
+    font-family: $font3;
     @include fluidFontSize(15px,30px,480px,1680px,40px,22px);
     color: $color2;
     border: 20px solid #fff;
@@ -666,7 +671,7 @@ span.wpcf7-not-valid-tip {
 .form-close{
     position: absolute;
     @include ptr(top,20);
-    @include ptr(right,30);
+    @include ptr(right,20);
     @include ptr(width,20);
     @include ptr(height,20);
     z-index: 2;
