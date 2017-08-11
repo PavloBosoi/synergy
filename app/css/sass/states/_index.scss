@@ -154,7 +154,7 @@
         right: 0;
         width: 0;
         height: 100%;
-        background-color: transparent;
+        background-color: #fff;
         z-index: -1;
         transition: all .1s ease;
     }
@@ -169,7 +169,7 @@
 
 
 @media only screen and (max-width: 1024px) {
-    .js-menu-deep {
+    .menu-item-has-children {
         & > a {
             position: relative;
             &::before,
@@ -193,7 +193,7 @@
                     }*/
 
         }
-        &.active > a {
+        &.on-active > a {
             &::before {
                 width: 1000%;
             }

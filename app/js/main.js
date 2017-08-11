@@ -63,6 +63,26 @@ $(function () {
     });
 
 
+    //summit popup
+    var counterSummit = false,
+        el = $('.js-summit');
+    $(window).on('scroll',function(e){
+        if(!counterSummit){
+            $('.js-summit').parent().addClass('active');
+        }
+        counterSummit = true;
+    });
+
+    $(document).mouseup(function(e){// событие клика по веб-документу
+        if(!el.is(e.target) && el.has(e.target).length === 0){
+            el.parent().removeClass('active');
+        }
+    });
+    $('.popup-close').on('click', function(){
+        el.parent().removeClass('active');
+    });
+
+
     //add estimate btn to slide menu
     function estimateBtnClone() {
         btnMenu.on('click',function(){
@@ -223,8 +243,16 @@ $(function () {
     //viewAll($('.case'),2);
 
     if(ScreenWidth < 1024){
-        $('.js-menu-deep').on('click',function(){
-            $(this).toggleClass('active');
+        var menuDeep = $('.menu-item-has-children');
+        menuDeep.on('click',function(){
+            if($(this).hasClass('on-active')){
+                $(this).removeClass('on-active');
+            }
+            else{
+                menuDeep.removeClass('on-active');
+                $(this).addClass('on-active');
+            }
+
         });
     }
 
@@ -283,10 +311,10 @@ $(function () {
 
     if($('.js-change-text').length > 0){
         var typed = new Typed('.js-change-text', {
-            strings: ['1 Some <i>strings</i> with', '2 Some <strong>HTML</strong>', 'consectetur'],
+            strings: ['mobile apps', 'web apps', 'software products', 'websites'],
             typeSpeed: 20,
-            backSpeed: 40,
-            backDelay: 2500,
+            backSpeed: 20,
+            backDelay: 4500,
             cursorChar: '_',
             shuffle: true,
             smartBackspace: false,
@@ -294,8 +322,10 @@ $(function () {
             preStringTyped: function(pos, self){
                 $(self.el).removeClass('active');
             },
-            onStringTyped: function(pos,self){ console.log(self);
-                $(self.el).addClass('active');
+            onStringTyped: function(pos,self){
+                setTimeout(function(){
+                    $(self.el).addClass('active');
+                },3000);
             }
         });
     }

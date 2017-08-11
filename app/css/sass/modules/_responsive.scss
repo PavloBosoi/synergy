@@ -244,7 +244,8 @@
             top: calc(100% - 22px);
             z-index: 2;
         }
-        &.active ul{
+        &.on-active ul{
+            z-index: 3;
             &::before{
                 height: calc(100% - 22px);
             }
@@ -579,6 +580,9 @@
     }
     .general-block-info{
         padding: 0;
+    }
+    .popup-summit-parent{
+        width: 100%;
     }
     html {
         font-size: 7px;
