@@ -204,6 +204,7 @@
             z-index: 2;
             opacity: 1;
             background-color: $color2;
+            @include ptr(max-width, 220);
             &::before{
                 content: '';
                 position: absolute;
@@ -227,6 +228,7 @@
                     height: auto;
                     font-size: 18px;
                     line-height: 22px;
+                    white-space: normal;
                     &::before{
                         content: '';
                         position: absolute;

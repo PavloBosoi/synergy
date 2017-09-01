@@ -839,3 +839,13 @@ span.wpcf7-not-valid-tip {
         @include ptr(width,170);
     }
 }
+
+/*===PAGE SERVICE===*/
+.service-text{
+    @include ptr(margin, 0 -50);
+    p{
+        float: left;
+        width: 50%;
+        @include ptr(padding, 0 50);
+    }
+}
