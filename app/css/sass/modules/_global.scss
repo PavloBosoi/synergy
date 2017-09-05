@@ -229,6 +229,47 @@
     opacity: 0;
 }
 
+/*---Category filter---*/
+.category-filter{
+    @include ptr(margin, 0 -20);
+    text-align: center;
+    li{
+        display: inline-block;
+        @include fluidFontSize(16px,26px,480px,1680px,38px,22px);
+        font-weight: bold;
+        color: #b9c2c7;
+        @include ptr(padding, 0 20);
+        span{
+            position: relative;
+            display: block;
+            &::before,
+            &::after{
+                content: '';
+                position: absolute;
+                bottom: 0;
+                z-index: 1;
+                width: 0;
+                height: 1px;
+                background-color: $color1;
+                transition: $linear-f;
+            }
+            &::before{
+                left: 50%;
+            }
+            &::after{
+                right: 50%;
+            }
+        }
+        &.active span{
+            color: $color2;
+            &::before,
+            &::after{
+                width: 50%;
+            }
+        }
+    }
+}
+
 
 
 

@@ -204,7 +204,7 @@ $(function () {
         });
     }
 
-    skillsBg();
+    /*skillsBg();*/
 
 
 

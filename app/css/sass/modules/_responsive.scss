@@ -102,6 +102,9 @@
     .contact-item{
         margin-bottom: 0;
     }
+    .service-btn{
+        @include ptr(margin-top,110);
+    }
 }
 
 @media only screen and (max-width: 1200px) {
@@ -290,6 +293,42 @@
     .form-close{
         @include ptr(top,10);
         @include ptr(right,10);
+    }
+    .text-edit{
+        h1,h2,h3,h4{
+            padding: 0;
+        }
+    }
+    .service-text{
+        margin: 0;
+        flex-wrap: wrap;
+    }
+    .service-text-block{
+        width: 100%;
+        padding: 0;
+        text-align: center;
+    }
+    /*.split-half{
+        width: 100%;
+        padding-left: 0;
+        padding-right: 0;
+        margin: 0;
+        & + .split-half{
+            @include ptr(margin-top,90);
+        }
+    }*/
+    .service-post{
+        @include ptr(margin, 90 0 0 0);
+        &:first-child{
+            @include ptr(margin, 90 0 0 0);
+        }
+        .btn-full{
+            @include ptr(left,25);
+            @include ptr(bottom,25);
+        }
+    }
+    .service-wrapper{
+        @include ptr(padding,25);
     }
 }
 
@@ -585,6 +624,17 @@
     }
     .popup-summit-parent{
         width: 100%;
+    }
+    .service-content{
+        @include ptr(margin-top,20);
+        p{
+            @include ptr(margin-top,20);
+        }
+    }
+    .text-edit{
+        blockquote{
+            @include ptr(padding, 20);
+        }
     }
     html {
         font-size: 7px;
