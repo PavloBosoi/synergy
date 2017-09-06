@@ -120,6 +120,9 @@
             font-family: $font3;
             @include fluidFontSize(15px,30px,480px,1680px,40px,22px);
         }
+        & + p{
+            @include ptr(margin-top,95);
+        }
     }
 }
 

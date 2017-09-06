@@ -44,7 +44,7 @@
             @include ptr(width,130);
         }
     }
-    .skills-text{
+    .override-text{
         @include ptr(width,440);
     }
     .owl-dots {
@@ -105,13 +105,23 @@
     .service-btn{
         @include ptr(margin-top,110);
     }
+    .service-post{
+        @include ptr(margin, 90 0 0 0);
+        .btn-full{
+            @include ptr(left,25);
+            @include ptr(bottom,25);
+        }
+    }
+    .service-wrapper{
+        @include ptr(padding,25);
+    }
 }
 
 @media only screen and (max-width: 1200px) {
     .container-s{
         @include ptr(padding, 0 50);
     }
-    .skills-item{
+    .override-item{
         @include ptr(padding, 50);
     }
 }
@@ -130,7 +140,7 @@
     .benefits-description{
         width: 100%;
     }
-    .skills-text{
+    .override-text{
         @include ptr(width, 320);
     }
     .header{
@@ -323,12 +333,12 @@
             @include ptr(margin, 90 0 0 0);
         }
         .btn-full{
-            @include ptr(left,25);
-            @include ptr(bottom,25);
+            @include ptr(left,80);
+            @include ptr(bottom,60);
         }
     }
     .service-wrapper{
-        @include ptr(padding,25);
+        @include ptr(padding,80);
     }
 }
 
@@ -444,7 +454,7 @@
     .m-info{
         @include ptr(height,400);
     }
-    .skills-item{
+    .override-item{
         width: 100%;
     }
     .about-us-experience{
@@ -635,6 +645,16 @@
         blockquote{
             @include ptr(padding, 20);
         }
+    }
+    .service-post{
+        @include ptr(margin, 90 0 0 0);
+        .btn-full{
+            @include ptr(left,25);
+            @include ptr(bottom,25);
+        }
+    }
+    .service-wrapper{
+        @include ptr(padding,25);
     }
     html {
         font-size: 7px;

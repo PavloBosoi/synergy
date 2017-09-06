@@ -22,6 +22,23 @@ $(function () {
         }
     }
 
+
+    //add classes override items
+    function overrideItem(item){
+        item.on({
+            mouseenter: function () {
+                $(this).siblings(item).addClass('disabled');
+                $(this).addClass('active');
+            },
+            mouseleave: function () {
+                $(this).siblings(item).removeClass('disabled');
+                $(this).removeClass('active');
+            }
+        });
+    }
+
+    overrideItem($('.override-item'));
+
     if(ScreenWidth > 768){
         threeTwoItem($('.js-team'));
     }
@@ -510,7 +527,7 @@ $(function () {
     $(window).resize(function(){
         ScreenWidth = $(window).width();
         ScreenHeight = $(window).height();
-        skillsBg();
+        /*skillsBg();*/
         if(ScreenWidth > 1024){
             btnMenu.removeClass('active');
         }
