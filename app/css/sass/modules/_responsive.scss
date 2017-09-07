@@ -96,6 +96,9 @@
     .team-btn{
         margin: 0;
     }
+    .blog-btn{
+        @include ptr(margin,-35 0 0 0);
+    }
     .title-deep{
         @include ptr(margin-bottom, 40);
     }
@@ -114,6 +117,16 @@
     }
     .service-wrapper{
         @include ptr(padding,25);
+    }
+    .blog-item-wrapper,
+    .blog-item:nth-child(even) .blog-item-wrapper{
+        @include ptr(padding-left, 80);
+        @include ptr(padding-right, 80);
+    }
+    .blog-desc,
+    .blog-item:nth-child(even) .blog-desc{
+        @include ptr(padding-left, 80);
+        @include ptr(padding-right, 80);
     }
 }
 
@@ -438,6 +451,16 @@
     .contact-item{
         @include ptr(margin-bottom,50);
         margin-top: 0;
+    }
+    .blog-item{
+        width: 100%;
+    }
+    .blog-item-wrapper{
+        padding-bottom: 0;
+    }
+    .blog-desc{
+        position: static;
+        padding: 0;
     }
     html{
         font-size: 8px;

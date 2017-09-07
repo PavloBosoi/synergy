@@ -124,6 +124,17 @@
             @include ptr(margin-top,95);
         }
     }
+    img{
+        display: block;
+        margin: 4.5rem auto 0;
+        margin: 45px auto 0;
+    }
+    .wp-caption-text{
+        @include fluidFontSize(14px,16px,480px,1680px,28px,15px);
+        @include ptr(margin, 20 0 0 0);
+        color: #b9c2c7;
+        text-align: center;
+    }
 }
 
 .text-edit table{

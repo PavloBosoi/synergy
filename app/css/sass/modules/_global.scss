@@ -239,6 +239,7 @@
         font-weight: bold;
         color: #b9c2c7;
         @include ptr(padding, 0 20);
+        @include ptr(margin, 0 0 20);
         span{
             position: relative;
             display: block;
