@@ -229,6 +229,10 @@
     opacity: 0;
 }
 
+.deep-space{
+    padding-bottom: 0;
+}
+
 /*---Category filter---*/
 .category-filter{
     @include ptr(margin, 0 -20);

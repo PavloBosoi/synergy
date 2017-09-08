@@ -585,6 +585,13 @@ section{
         border-bottom: 1px solid transparent;
     }
 }
+.first-group{
+    margin: 0;
+}
+.form-privacy{
+    @include ptr(margin,45 0 0 0);
+    @include fluidFontSize(12px,14px,480px,1680px,26px,13px);
+}
 .form-group label{
     position: absolute;
     @include ptr(top,10);
@@ -1083,7 +1090,12 @@ span.wpcf7-not-valid-tip {
     font-weight: 400;
     color: $color1;
 }
-.blog-info{
+.blog-post-info{
+    display: flex;
+    justify-content: space-between;
+}
+.blog-info,
+.blog-social{
     @include ptr(margin,30 -20 0);
     color: #b9c2c7;
     p{
@@ -1103,8 +1115,110 @@ span.wpcf7-not-valid-tip {
 /*===PAGE BLOG-POST===*/
 .blog-post-img{
     @include ptr(margin,0 0 70 0);
+    img{
+        width: 100%;
+    }
 }
 .blog-post-container{
     @include ptr(width, 800);
     margin: 0 auto;
+}
+.related-posts{
+    @include ptr(margin,200 0 0 0);
+    overflow: hidden;
+}
+.related-item{
+    float: left;
+    width: 50%;
+    @include ptr(height,400);
+    text-align: right;
+    position: relative;
+    &::before{
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 2;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.85);
+        opacity: 1;
+        transition: $linear-f;
+    }
+    &:nth-child(even){
+        text-align: left;
+        .related-position{
+            @include ptr(padding, 0 40 0 0);
+            svg{
+                left: auto;
+                right: 0;
+                transform: rotate(0);
+            }
+        }
+        .related-text{
+            @include ptr(padding,0 120 0 0);
+        }
+    }
+    &:hover{
+        &::before {
+            background-color: rgba(0, 0, 0, 0.65);
+        }
+        .related-position{
+            color: $color1;
+            @include ptr(padding, 0 0 0 50);
+        }
+        &:nth-child(even){
+            .related-position{
+                @include ptr(padding, 0 50 0 0);
+            }
+        }
+    }
+}
+.related-item-wrapper{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    @include ptr(padding,70);
+    color: #fff;
+    z-index: 3;
+}
+.related-img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    background-size: cover;
+}
+.related-position{
+    @include fluidFontSize(12px,14px,480px,1680px,26px,13px);
+    @include ptr(margin, 0 0 50 0);
+    text-transform: uppercase;
+    font-weight: bold;
+    display: inline-block;
+    @include ptr(padding, 0 0 0 40);
+    position: relative;
+    transition: $linear-f;
+    svg{
+        position: absolute;
+        top: 50%;
+        left: 0;
+        @include ptr(margin-top, -6);
+        transform: rotate(180deg);
+    }
+}
+.related-tags{
+    margin: 0;
+}
+.related-title{
+    @include fluidFontSize(16px,26px,480px,1680px,38px,22px);
+    font-weight: bold;
+}
+.related-text{
+    @include ptr(padding,0 0 0 120);
+    font-weight: 300;
 }

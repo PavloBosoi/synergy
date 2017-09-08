@@ -137,5 +137,6 @@ $bezier-big-img: all .4s cubic-bezier(0.555, 0.205, 0.295, 0.975);
     @include fluidFontSize(16px,26px,480px,1680px,38px,22px);
     @include fluidFontSize(14px,18px,480px,1680px,30px,16px);
     @include fluidFontSize(14px,16px,480px,1680px,28px,15px);
+    @include fluidFontSize(12px,14px,480px,1680px,26px,13px);
     @include fluidFontSize(10px,12px,480px,1680px,24px,11px);
 }
