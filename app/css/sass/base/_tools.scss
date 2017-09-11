@@ -40,3 +40,17 @@
 .left{
     float: left;
 }
+
+// Mixin itself
+@mixin clear() {
+    &::after {
+        display: block;
+        content: "";
+        clear: both;
+    }
+}
+
+// Usage as a mixin
+.clear{
+    @include clear;
+}

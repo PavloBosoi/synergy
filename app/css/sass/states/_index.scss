@@ -109,22 +109,26 @@
 
 .js-effect-text{
     opacity:  0;
-    top: 100px;
+    transform: translateY(100px);
+    /*top: 100px;*/
     position: relative;
     transition: $linear-f;
     &.active{
-        top: 0;
+        /*top: 0;*/
+        transform: translateY(0);
         /*transition-delay: .5s;*/
         opacity: 1;
     }
 }
 .js-effect-title-before{
     opacity:  0;
-    right: 100px;
+    transform: translateX(-100px);
+    /*right: 100px;*/
     position: relative;
     transition: $linear-f;
     &.active{
-        right: 0;
+        /*right: 0;*/
+        transform: translateX(0);
         /*transition-delay: .5s;*/
         opacity: 1;
     }
@@ -132,15 +136,15 @@
 
 .js-effect-line{
     opacity:  0;
-    top: 100px;
+    /*top: 100px;*/
     position: relative;
-    transform: scale(0.5,0.5);
+    transform: translateY(100px) scale(0.5,0.5);
     transition: $linear-f;
     &.active{
-        top: 0;
+        /*top: 0;*/
         /*transition-delay: .5s;*/
         opacity: 1;
-        transform: scale(1,1);
+        transform: translateY(0) scale(1,1);
     }
 }
 

@@ -58,6 +58,14 @@
         float: none;
         margin: 0;
     }
+    .related-position{
+        @include ptr(margin-bottom, 20);
+    }
+    .arcus-route-img{
+        position: static !important;
+        width: 100%;
+        @include ptr(margin-top, 40);
+    }
 
     html {
         font-size: 8px;
@@ -718,9 +726,6 @@
     }
     .service-wrapper{
         @include ptr(padding,25);
-    }
-    .related-item{
-        @include ptr(height, 250);
     }
     .related-text{
         display: none;

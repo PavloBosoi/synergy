@@ -1066,11 +1066,38 @@ span.wpcf7-not-valid-tip {
     @include fluidFontSize(16px,26px,480px,1680px,38px,22px);
     @include ptr(margin,40 0 0 0);
     font-weight: bold;
+    a{
+        color: $color2;
+        &:hover{
+            color: $color1;
+        }
+    }
 }
 .blog-tags{
     @include fluidFontSize(14px,16px,480px,1680px,28px,15px);
     @include ptr(margin,10 0 0 0);
     color: #757575;
+    span{
+        position: relative;
+        display: inline-block;
+        text-transform: lowercase;
+        @include fluidFontSize(14px,16px,480px,1680px,28px,15px);
+        @include ptr(padding,0 0 0 15);
+        @include ptr(margin,0 0 0 10);
+        &:first-child{
+            padding: 0;
+            margin: 0;
+            &::before{
+                display: none;
+            }
+        }
+        &::before{
+            content: '/';
+            position: absolute;
+            @include ptr(top,0);
+            left: 0;
+        }
+    }
 }
 .blog-text{
     @include fluidFontSize(14px,18px,480px,1680px,30px,16px);
@@ -1094,8 +1121,7 @@ span.wpcf7-not-valid-tip {
     display: flex;
     justify-content: space-between;
 }
-.blog-info,
-.blog-social{
+.blog-info{
     @include ptr(margin,30 -20 0);
     color: #b9c2c7;
     p{
@@ -1106,6 +1132,24 @@ span.wpcf7-not-valid-tip {
     span{
         @include fluidFontSize(10px,12px,480px,1680px,24px,11px);
         text-transform: uppercase;
+        font-weight: bold;
+    }
+}
+.blog-social{
+    @include ptr(margin,30 0 0);
+    color: #b9c2c7;
+    p{
+        @include fluidFontSize(10px,12px,480px,1680px,24px,11px);
+        text-transform: uppercase;
+        font-weight: bold;
+        display: inline-block;
+    }
+    span{
+        @include fluidFontSize(10px,12px,480px,1680px,24px,11px);
+        display: inline-block;
+        @include ptr(margin, 0 0 0 40);
+        text-transform: uppercase;
+        cursor: pointer;
     }
 }
 .btn-blog{
@@ -1221,4 +1265,48 @@ span.wpcf7-not-valid-tip {
 .related-text{
     @include ptr(padding,0 0 0 120);
     font-weight: 300;
+}
+/*===PAGE POST-TYPE===*/
+.post-type-part{
+    position: relative;
+    /*@include ptr(padding,0 170);*/
+}
+.post-type-text__left{
+    float: left;
+    @include ptr(padding,0 170);
+    @include ptr(width, 680);
+}
+.post-type-img{
+    position: relative;
+    max-width: calc(100% - 68rem);
+}
+.post-type-img__right{
+    float: right;
+}
+.post-type-general-img{
+    line-height: 0;
+    img{
+        box-shadow: 0px 1px 17px 0px rgba(0, 0, 0, 0.2);
+    }
+}
+.post-type-other-img{
+    position: absolute !important;
+    line-height: 0;
+    img{
+        box-shadow: 0px 1px 17px 0px rgba(0, 0, 0, 0.2);
+    }
+}
+.arcus-space{
+    @include ptr(margin-bottom,150);
+}
+.arcus-options-img{
+    @include ptr(top,75);
+    left: -10%;
+    width: 25%;
+}
+.arcus-route-img{
+    top: auto;
+    @include ptr(bottom,-150);
+    left: -50%;
+    width: 65%;
 }

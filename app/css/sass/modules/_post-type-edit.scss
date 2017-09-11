@@ -1,0 +1,164 @@
+/* ==|====================
+   Module/Text_edit
+   ======================= */
+
+.post-type-edit{
+    h1{
+        font-weight: bold;
+        font-family: $font1;
+        @include fluidFontSize(22px,52px,480px,1680px,68px,36px);
+        @include ptr(margin, 0 0 50);
+        color: $color2;
+        text-align: left;
+    }
+    h2{
+        font-weight: bold;
+        font-family: $font1;
+        @include fluidFontSize(16px,42px,480px,1680px,48px,32px);
+        @include ptr(margin, 90 0 40);
+        text-align: left;
+        &:first-child{
+            margin: 0;
+        }
+    }
+    h3{
+        font-weight: bold;
+        font-family: $font1;
+        @include fluidFontSize(18px,36px,480px,1680px,48px,26px);
+        @include ptr(margin, 90 0 40);
+        text-align: left;
+        &:first-child{
+            margin: 0;
+        }
+    }
+    h4{
+        font-weight: bold;
+        font-family: $font1;
+        @include fluidFontSize(16px,26px,480px,1680px,38px,22px);
+        @include ptr(margin, 0 0 20);
+        text-align: left;
+        &:first-child{
+            margin: 0;
+        }
+    }
+    p{
+        font-family: $font1;
+        @include fluidFontSize(14px,18px,480px,1680px,28px,16px);
+        @include ptr(margin,35 0 0 0);
+        text-align: left;
+        &:first-child{
+            margin: 0;
+        }
+    }
+    a{
+        color: $color1;
+    }
+    strong{
+        font-weight: bold;
+    }
+    ul{
+        @include ptr(margin,35 0 0 20);
+        text-align: left;
+        li{
+            list-style-type: none;
+            position: relative;
+            @include ptr(margin-top,10);
+            @include ptr(padding-left,15);
+            display: block;
+            text-align: left;
+            &:first-child{
+                margin: 0;
+            }
+            &::before{
+                content: '';
+                position: absolute;
+                display: block;
+                @include ptr(top,11);
+                left: 0;
+                width: 2px;
+                height: 2px;
+                border-radius: 50%;
+                background-color: $color1;
+            }
+        }
+    }
+    ol{
+        @include ptr(margin,35 0 0 15);
+        text-align: left;
+        counter-reset: li;
+        li{
+            position: relative;
+            @include ptr(margin-top,10);
+            @include ptr(padding-left,25);
+            display: block;
+            text-align: left;
+            &:first-child{
+                margin: 0;
+            }
+            &::before{
+                content: counter(li, decimal) '.';
+                counter-increment: li;
+                color: $color1;
+                position: absolute;
+                @include ptr(top,11);
+                top: 0;
+                left: 0;
+            }
+        }
+    }
+    blockquote{
+        display: block;
+        @include fluidFontSize(15px,30px,480px,1680px,40px,22px);
+        border: solid 20px $color3;
+        border: solid 2rem $color3;
+        font-weight: bold;
+        width: 100%;
+        @include ptr(margin-top,95);
+        @include ptr(padding,50 60);
+        text-align: left;
+        p{
+            font-family: $font3;
+            @include fluidFontSize(15px,30px,480px,1680px,40px,22px);
+        }
+        & + p{
+            @include ptr(margin-top,95);
+        }
+    }
+    img{
+        display: block;
+        margin: 4.5rem auto 0;
+        margin: 45px auto 0;
+    }
+    .wp-caption-text{
+        @include fluidFontSize(14px,16px,480px,1680px,28px,15px);
+        @include ptr(margin, 20 0 0 0);
+        color: #b9c2c7;
+        text-align: center;
+    }
+}
+
+.text-edit table{
+    width: 100%;
+    @include ptr(margin-top,20);
+}
+.text-edit th{
+    font-weight: bold;
+    padding: 18px;
+    padding: 1.8rem;
+    background-color: #ebebeb;
+    border-left: 1px solid #d7d7d7;
+    text-align: left;
+}
+.text-edit th:first-child{
+    border-left: 1px solid #ebebeb;
+}
+.text-edit th:last-child{
+    border-right: 1px solid #ebebeb;
+}
+.text-edit td{
+    background-color: #fff;
+    font-weight: 400;
+    padding: 18px;
+    padding: 1.8rem;
+    border: 1px solid #d7d7d7;
+}
