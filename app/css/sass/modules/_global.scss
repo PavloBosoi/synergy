@@ -115,17 +115,17 @@
 
 
 //*---OWL-CAROUSEL---*/
-.owl-controls{
+.main-carousel .owl-controls{
     position: absolute;
     top: 0;
     right: 0;
     @include ptr(padding,55 0);
     width: 20px;
 }
-.owl-dots{
+.main-carousel .owl-dots{
     padding: 0 6px;
 }
-.owl-dots div{
+.main-carousel .owl-dots div{
     display: inline-block;
     width: 8px;
     height: 8px;
@@ -139,12 +139,12 @@
     transition: $linear;
 }
 
-.owl-dots .active,
-.owl-dots div:hover{
+.main-carousel .owl-dots .active,
+.main-carousel .owl-dots div:hover{
     background-color: $color1;
 }
 
-.owl-nav{
+.main-carousel .owl-nav{
     div{
         position: absolute;
         width: 20px;

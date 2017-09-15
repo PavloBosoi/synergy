@@ -278,7 +278,7 @@ $(function () {
 
 /*=============PLUGINS==============*/
 
-    $('.owl-carousel').owlCarousel({
+    $('.main-carousel').owlCarousel({
         animateIn: 'fadeIn',
         autoHeight: true,
         autoplay: true,
@@ -312,6 +312,23 @@ $(function () {
                 }
             });
         }*/
+    });
+
+    $('.post-type-carousel').owlCarousel({
+        /*animateIn: 'fadeIn',*/
+        autoHeight: true,
+        autoplay: true,
+        autoplayTimeout: 2500,
+        /*autoplayHoverPause: true,*/
+        smartSpeed: 500,
+/*        mouseDrag: false,
+        touchDrag: false,*/
+        items: 1,
+        loop: true,
+        margin: 1,
+        dots: true,
+        nav: true,
+        navText: []
     });
 
 

@@ -6,22 +6,12 @@
     h1{
         font-weight: bold;
         font-family: $font1;
-        @include fluidFontSize(22px,52px,480px,1680px,68px,36px);
+        @include fluidFontSize(16px,42px,480px,1680px,48px,32px);
         @include ptr(margin, 0 0 50);
         color: $color2;
         text-align: left;
     }
     h2{
-        font-weight: bold;
-        font-family: $font1;
-        @include fluidFontSize(16px,42px,480px,1680px,48px,32px);
-        @include ptr(margin, 90 0 40);
-        text-align: left;
-        &:first-child{
-            margin: 0;
-        }
-    }
-    h3{
         font-weight: bold;
         font-family: $font1;
         @include fluidFontSize(18px,36px,480px,1680px,48px,26px);
@@ -31,10 +21,20 @@
             margin: 0;
         }
     }
-    h4{
+    h3{
         font-weight: bold;
         font-family: $font1;
         @include fluidFontSize(16px,26px,480px,1680px,38px,22px);
+        @include ptr(margin, 90 0 40);
+        text-align: left;
+        &:first-child{
+            margin: 0;
+        }
+    }
+    h4{
+        font-weight: bold;
+        font-family: $font1;
+        @include fluidFontSize(14px,18px,480px,1680px,30px,16px);
         @include ptr(margin, 0 0 20);
         text-align: left;
         &:first-child{
@@ -57,7 +57,7 @@
         font-weight: bold;
     }
     ul{
-        @include ptr(margin,35 0 0 20);
+        @include ptr(margin,20 0 0 0);
         text-align: left;
         li{
             list-style-type: none;
