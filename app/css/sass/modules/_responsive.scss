@@ -2,8 +2,10 @@
    Module/Responsive
    ======================= */
 
-@media only screen and (max-width: 2000px) {
-
+@media only screen and (max-width: 1919px) {
+    .arcus-speed-img {
+        left: -12%;
+    }
 }
 
 @media only screen and (max-width: 1680px) {
@@ -27,6 +29,20 @@
         &:first-child{
             padding: 0;
         }
+    }
+    .arcus-route-img {
+        left: -30%;
+    }
+    .meteor-truck-img{
+        left: -12%;
+        @include ptr(bottom, -70);
+    }
+    .meteor-custodian-img{
+        left: 3%;
+        @include ptr(bottom, -70);
+    }
+    .case-img-vertical{
+        @include ptr(max-width,450);
     }
     html{
         font-size: 9px;
@@ -66,13 +82,31 @@
         width: 100%;
         @include ptr(margin-top, 40);
     }
+    .meteor-box-img {
+        @include ptr(bottom, -20);
+        left: -7%;
+    }
+    .arcus-space{
+        @include ptr(margin, 0 0 100);
+    }
+    .blog-social{
+        span{
+            @include ptr(margin,0 0 0 20);
+        }
+    }
+    .blog-info{
+        @include ptr(margin,30 -10 0);
+        p{
+            @include ptr(padding,0 10);
+        }
+    }
 
     html {
         font-size: 8px;
     }
 }
 
-@media only screen and (max-width: 1280px) {
+@media only screen and (max-width: 1280px){
     .menu > ul > li > a{
         @include ptr(padding,0 20);
     }
@@ -135,6 +169,9 @@
     .blog-item:nth-child(even) .blog-desc{
         @include ptr(padding-left, 80);
         @include ptr(padding-right, 80);
+    }
+    .blog-post-img{
+        @include ptr(height, 550);
     }
     .deep-space{
         padding-bottom: 0;
@@ -390,6 +427,21 @@
             @include ptr(padding,0 10);
         }
     }
+    .arcus-space{
+        margin: 0;
+    }
+    .post-type-container,
+    .post-type-text__left,
+    .post-type-text__right{
+        @include ptr(padding,0 50);
+    }
+    .post-type-text{
+        width: 100%;
+    }
+    .post-type-img {
+        max-width: 75%;
+        @include ptr(margin-top,50);
+    }
 }
 
 @media only screen and (max-width: 768px) {
@@ -501,6 +553,9 @@
     }
     .related-item-wrapper{
         @include ptr(padding,30);
+    }
+    .arcus-speed-img{
+        @include ptr(bottom,-50);
     }
     html{
         font-size: 8px;
@@ -623,6 +678,11 @@
     .blog-social{
         width: 100%;
     }
+    .blog-social,
+    .blog-info p,
+    .blog-social p{
+        padding: 0;
+    }
 }
 
 @media only screen and (max-width: 480px) {
@@ -735,6 +795,20 @@
         p{
             @include ptr(padding, 0 5);
         }
+    }
+    .post-type-container,
+    .post-type-text__left,
+    .post-type-text__right{
+        @include ptr(padding,0 20);
+    }
+    .post-type-technology-parent{
+        margin: 0;
+    }
+    .post-type-technology-item{
+        padding: 0;
+    }
+    .estimation__light{
+
     }
     html {
         font-size: 7px;

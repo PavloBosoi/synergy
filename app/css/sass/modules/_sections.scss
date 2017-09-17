@@ -449,6 +449,20 @@ section{
         color: #fff;
     }
 }
+.estimation__light{
+    padding: 0;
+    @include ptr(margin-top,160);
+    background-color: transparent;
+    .title-intermediate{
+        color: $color2;
+    }
+    .btn-empty{
+        &:hover{
+            border: 1px solid $color1;
+            color: $color2;
+        }
+    }
+}
 
 /*===SECTION PARTNERS===*/
 .partners{
@@ -720,15 +734,15 @@ span.wpcf7-not-valid-tip {
 
 
 /*===SECTION SOCIALS===*/
-.socials{
+.s-network{
     @include ptr(padding,80 0);
 }
-.socials-parent{
+.s-network-parent{
     display: flex;
     justify-content: space-around;
     align-items: center;
 }
-.socials-item{
+.s-network-item{
     @include fluidFontSize(20px,26px,480px,1680px,30px,23px);
     color: #b9c2c7;
     &:hover{
@@ -1152,6 +1166,20 @@ span.wpcf7-not-valid-tip {
         cursor: pointer;
     }
 }
+.blog-social{
+    span{
+        transition: $linear-f;
+    }
+    [data-social='twitter']:hover{
+        color: #36B9FF;
+    }
+    [data-social='facebook']:hover{
+        color: #3C5B9A;
+    }
+    [data-social='linkedin']:hover{
+        color: #1686B0;
+    }
+}
 .btn-blog{
     @include ptr(margin,45 0 0 0);
 }
@@ -1159,6 +1187,10 @@ span.wpcf7-not-valid-tip {
 /*===PAGE BLOG-POST===*/
 .blog-post-img{
     @include ptr(margin,0 0 70 0);
+    @include ptr(height,710);
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    background-size: cover;
     img{
         width: 100%;
     }
@@ -1266,9 +1298,19 @@ span.wpcf7-not-valid-tip {
     @include ptr(padding,0 0 0 120);
     font-weight: 300;
 }
-/*===PAGE POST-TYPE===*/
+/*===PAGE POST-TYPE-ARCUS===*/
 .post-type-part{
     position: relative;
+    @include ptr(margin-top,60);
+    & .post-type-edit{
+        @include ptr(margin-top,140);
+    }
+    &:first-child{
+        margin: 0;
+        .post-type-edit{
+            margin: 0;
+        }
+    }
     /*@include ptr(padding,0 170);*/
 }
 .post-type-text__left{
@@ -1276,24 +1318,32 @@ span.wpcf7-not-valid-tip {
     @include ptr(padding,0 170);
     @include ptr(width, 680);
 }
+.post-type-text__right{
+    float: right;
+    @include ptr(padding,0 210 0 110);
+    @include ptr(width, 670);
+}
 .post-type-img{
     position: relative;
-    max-width: calc(100% - 68rem);
 }
 .post-type-img__right{
     float: right;
+    max-width: calc(100% - 68rem);
+}
+.post-type-img__left{
+    float: left;
+    max-width: calc(100% - 67rem);
 }
 .post-type-general-img{
     line-height: 0;
-    img{
-        box-shadow: 0px 1px 17px 0px rgba(0, 0, 0, 0.2);
-    }
 }
 .post-type-other-img{
     position: absolute !important;
     line-height: 0;
+}
+.post-type-shadow{
     img{
-        box-shadow: 0px 1px 17px 0px rgba(0, 0, 0, 0.2);
+        box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.1);
     }
 }
 .arcus-space{
@@ -1309,4 +1359,111 @@ span.wpcf7-not-valid-tip {
     @include ptr(bottom,-150);
     left: -50%;
     width: 65%;
+}
+.arcus-speed-img{
+    top: auto;
+    @include ptr(bottom,-130);
+    left: -21%;
+    width: 45%;
+}
+
+//*--columns--*/
+.post-type-container{
+    @include ptr(padding,0 170);
+}
+.post-type-technology-columns{
+    @include ptr(margin-top,140);
+}
+.post-type-technology-parent{
+    @include ptr(margin,0 -40);
+    display: flex;
+    flex-wrap: wrap;
+}
+.post-type-technology-item{
+    @include ptr(padding, 0 40);
+    @include ptr(margin, 20 0);
+}
+.technology-item-3{
+    @include col(3,false);
+}
+.technology-item-2{
+    @include col(2,false);
+}
+/*===PAGE POST-TYPE-METEOR===*/
+.meteor-truck-img{
+    @include ptr(bottom, -120);
+    left: -30%;
+    width: 30%;
+}
+.meteor-custodian-img{
+    @include ptr(bottom, -150);
+    left: -13%;
+    width: 18%;
+}
+.meteor-employee-img{
+    @include ptr(bottom, -60);
+    left: 8.8%;
+    width: 17%;
+}
+.meteor-loader-img{
+    @include ptr(bottom, -70);
+    right: -6%;
+    width: 17%;
+}
+.meteor-box-img{
+    @include ptr(bottom, -70);
+    left: -10%;
+    width: 12%;
+}
+
+
+/*===PAGE POST-TYPE-SCHOOL-MANAGER===*/
+.post-type-container-ipad{
+    @include ptr(padding,0 100 0 170);
+    .post-type-carousel{
+        position: absolute;
+        /*@include ptr(top,110);
+        @include ptr(right,74);*/
+        top: 110px;
+        right: 74px;
+        width: 393px;
+        /* @include ptr(width,393);*/
+    }
+    .post-type-ltext{
+        /*@include ptr(width,780);*/
+        width: calc(100% - 720px);
+        @include ptr(padding-right,160);
+    }
+}
+.post-type-slider{
+    position: relative;
+    display: inline-block;
+    float: right;
+}
+.post-type-carousel .post-type-carousel-item,
+.post-type-slider{
+    img{
+        display: none;
+        &:first-child{
+            display: block;
+        }
+    }
+}
+/*===PAGE POST-TYPE-PUTTRO===*/
+.post-type-container-iphone{
+    @include ptr(padding,0 270 0 170);
+    .post-type-carousel{
+        position: absolute;
+        /*@include ptr(top,110);
+        @include ptr(right,74);*/
+        top: 141px;
+        right: 35px;
+        width: 277px;
+        /* @include ptr(width,393);*/
+    }
+    .post-type-ltext{
+        /*@include ptr(width,780);*/
+        width: calc(100% - 480px);
+        @include ptr(padding-right,160);
+    }
 }
