@@ -35,7 +35,7 @@
         font-weight: bold;
         font-family: $font1;
         @include fluidFontSize(16px,26px,480px,1680px,38px,22px);
-        @include ptr(margin, 90 0 20);
+        @include ptr(margin, 60 0 20);
         text-align: left;
         &:first-child{
             margin: 0;

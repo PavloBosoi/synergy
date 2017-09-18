@@ -43,7 +43,8 @@
 
 // Mixin itself
 @mixin clear() {
-    &::after {
+    &::after,
+    &::before{
         display: block;
         content: "";
         clear: both;

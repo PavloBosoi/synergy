@@ -463,6 +463,19 @@ section{
         }
     }
 }
+.estimation-page__light{
+    @include ptr(padding,0 0 200 0);
+    background-color: transparent;
+    .title-intermediate{
+        color: $color2;
+    }
+    .btn-empty{
+        &:hover{
+            border: 1px solid $color1;
+            color: $color2;
+        }
+    }
+}
 
 /*===SECTION PARTNERS===*/
 .partners{
@@ -843,6 +856,7 @@ span.wpcf7-not-valid-tip {
     @include ptr(margin-top, 80);
     ul{
         @include ptr(margin, 30 0 0 20);
+        @include ptr(padding, 0 65 0 0);
         li{
             @include ptr(padding, 0 0 0 20);
             @include ptr(margin, 10 0 0 0);
@@ -863,6 +877,10 @@ span.wpcf7-not-valid-tip {
         }
     }
 }
+.join-s-info{
+    @include col(3,false);
+    @include col-sm(1,false);
+}
 .join-title{
     @include fluidFontSize(14px,26px,480px,1680px,30px,20px);
     font-weight: bold;
@@ -875,6 +893,9 @@ span.wpcf7-not-valid-tip {
     .btn-empty{
         @include ptr(width,170);
     }
+}
+.join-space{
+    @include ptr(margin, 180 0 0 0);
 }
 
 /*===PAGE SERVICE===*/
@@ -1388,6 +1409,7 @@ span.wpcf7-not-valid-tip {
 }
 .technology-item-2{
     @include col(2,false);
+    @include col-xs(1,false);
 }
 /*===PAGE POST-TYPE-METEOR===*/
 .meteor-truck-img{
@@ -1420,25 +1442,26 @@ span.wpcf7-not-valid-tip {
 /*===PAGE POST-TYPE-SCHOOL-MANAGER===*/
 .post-type-container-ipad{
     @include ptr(padding,0 100 0 170);
+    .post-type-slider{
+        position: relative;
+        display: inline-block;
+        float: right;
+        @include ptr(width,717);
+    }
     .post-type-carousel{
         position: absolute;
-        /*@include ptr(top,110);
-        @include ptr(right,74);*/
-        top: 110px;
+        top: 112px;
         right: 74px;
         width: 393px;
-        /* @include ptr(width,393);*/
+        @include ptr(top,112);
+        @include ptr(right,73);
+        @include ptr(width,393);
     }
     .post-type-ltext{
         /*@include ptr(width,780);*/
-        width: calc(100% - 720px);
+        width: calc(100% - 72rem);
         @include ptr(padding-right,160);
     }
-}
-.post-type-slider{
-    position: relative;
-    display: inline-block;
-    float: right;
 }
 .post-type-carousel .post-type-carousel-item,
 .post-type-slider{
@@ -1452,18 +1475,21 @@ span.wpcf7-not-valid-tip {
 /*===PAGE POST-TYPE-PUTTRO===*/
 .post-type-container-iphone{
     @include ptr(padding,0 270 0 170);
+    .post-type-slider{
+        position: relative;
+        display: inline-block;
+        float: right;
+        @include ptr(width,480);
+    }
     .post-type-carousel{
         position: absolute;
-        /*@include ptr(top,110);
-        @include ptr(right,74);*/
-        top: 141px;
-        right: 35px;
-        width: 277px;
-        /* @include ptr(width,393);*/
+        @include ptr(top,141);
+        @include ptr(right,35);
+        @include ptr(width,277);
     }
     .post-type-ltext{
         /*@include ptr(width,780);*/
-        width: calc(100% - 480px);
+        width: calc(100% - 48rem);
         @include ptr(padding-right,160);
     }
 }

@@ -44,6 +44,20 @@
     .case-img-vertical{
         @include ptr(max-width,450);
     }
+    .post-type-container-iphone{
+        @include ptr(padding,0 140 0 170);
+        .post-type-ltext{
+            @include ptr(padding-right,40);
+        }
+    }
+    .post-type-container-ipad{
+        .post-type-ltext{
+            @include ptr(padding-right,40);
+        }
+    }
+    .post-type-ipad-vertical{
+        @include clear;
+    }
     html{
         font-size: 9px;
     }
@@ -99,6 +113,9 @@
         p{
             @include ptr(padding,0 10);
         }
+    }
+    .post-type-iphone-vertical{
+        @include clear;
     }
 
     html {
@@ -189,10 +206,24 @@
     .related-text{
         padding: 0;
     }
+    .post-type-container-ipad {
+        .post-type-slider {
+            float: none;
+            display: block;
+            margin: 0 auto;
+        }
+        .post-type-ltext{
+            width: 100%;
+            padding: 0;
+            @include ptr(margin-top,60);
+        }
+    }
 }
 
 @media only screen and (max-width: 1200px) {
-    .container-s{
+    .container-s,
+    .post-type-container-iphone,
+    .post-type-container-ipad{
         @include ptr(padding, 0 50);
     }
     .override-item{
@@ -557,6 +588,18 @@
     .arcus-speed-img{
         @include ptr(bottom,-50);
     }
+    .post-type-container-iphone{
+        .post-type-slider{
+            float: none;
+            display: block;
+            margin: 0 auto;
+        }
+        .post-type-ltext{
+            width: 100%;
+            padding: 0;
+            @include ptr(margin-top,60);
+        }
+    }
     html{
         font-size: 8px;
     }
@@ -679,9 +722,19 @@
         width: 100%;
     }
     .blog-social,
-    .blog-info p,
+    .blog-info,
     .blog-social p{
         padding: 0;
+    }
+    .post-type-container-ipad{
+        .post-type-slider{
+            width: 420px;
+        }
+        .post-type-carousel{
+            width: 255px;
+            top: 66px;
+            right: 18px;
+        }
     }
 }
 
@@ -790,6 +843,9 @@
     .related-text{
         display: none;
     }
+    .blog-info{
+        @include ptr(margin, 30 0 0);
+    }
     .blog-info,
     .blog-social{
         p{
@@ -807,8 +863,30 @@
     .post-type-technology-item{
         padding: 0;
     }
-    .estimation__light{
-
+    .post-type-container-iphone{
+        .post-type-slider{
+            width: 248px;
+        }
+        .post-type-carousel{
+            width: 143px;
+            top: 73px;
+            right: 18px;
+        }
+    }
+    .post-type-container-ipad{
+        .post-type-slider{
+            width: 248px;
+        }
+        .post-type-carousel{
+            width: 136px;
+            top: 39px;
+            right: 26px;
+        }
+    }
+    .join-info{
+        ul{
+            padding: 0;
+        }
     }
     html {
         font-size: 7px;
@@ -826,7 +904,9 @@ only screen and (     -o-min-device-pixel-ratio: 2/1),
 only screen and (        min-device-pixel-ratio: 2),
 only screen and (                min-resolution: 192dpi),
 only screen and (                min-resolution: 2dppx) {
-    .case-img{
+    .case-img,
+    .post-type-slider,
+    .post-type-carousel-item{
         img{
             display: inline-block;
             &:first-child{
