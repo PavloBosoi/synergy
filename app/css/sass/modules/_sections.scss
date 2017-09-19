@@ -463,6 +463,12 @@ section{
         }
     }
 }
+.estimation-join{
+    .btn-empty{
+        @include ptr(width,170);
+    }
+}
+
 .estimation-page__light{
     @include ptr(padding,0 0 200 0);
     background-color: transparent;
@@ -1098,7 +1104,7 @@ span.wpcf7-not-valid-tip {
 }
 .blog-title{
     position: relative;
-    @include fluidFontSize(16px,26px,480px,1680px,38px,22px);
+    @include fluidFontSize(16px,26px,480px,1680px,34px,22px);
     @include ptr(margin,40 0 0 0);
     font-weight: bold;
     a{
