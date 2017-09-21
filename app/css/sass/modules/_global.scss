@@ -309,7 +309,7 @@
         top: 0;
         left: 0;
         opacity: 1;
-        background-color: rgba(0,0,0,.85);
+        background-color: rgba(0,0,0,.8);
         z-index: 2;
     }
     &:hover::before{
@@ -418,6 +418,12 @@
     color: #fff;
     z-index: 3;
     transition: $linear-f;
+    p{
+        @include ptr(margin,20 0 0 0);
+        &:first-child{
+            margin: 0;
+        }
+    }
 }
 
 
@@ -486,93 +492,33 @@
         }
     }
 }
-/*progress::-webkit-progress-bar {
-    width: 100%;
-    background-color: #f3f3f3;
-    height: 5px;
-    position: relative;
-    overflow: hidden;
 
-
-    background-image: repeating-linear-gradient(-45deg, #fff, #fff 10px, #ccc 10px, #ccc 20px);
-    background-size: 28px 30px;
-    animation: progress 2s linear infinite;
+.scroll-top{
+    display: none;
+    position: fixed;
+    @include ptr(bottom, 30);
+    @include ptr(right, 80);
+    @include ptr(width, 60);
+    @include ptr(height, 60);
+    @include ptr(line-height, 60);
+    border: 1px solid #b9c2c7;
+    text-align: center;
+    color: #b9c2c7;
+    border-radius: 2px;
+    cursor: pointer;
+    z-index: 2;
+    transition: $linear-f;
+    &:hover{
+        border: 1px solid $color1;
+        background-color: $color1;
+        color: #fff;
+    }
+    svg{
+        transform: rotate(-90deg);
+    }
 }
-progress::-webkit-progress-value {
-    background-image: repeating-linear-gradient(-45deg, #fff, #fff 10px, green 10px, green 20px);
-    background-size: 28px 30px;
-    animation: progress 2s linear infinite;
-}
-progress::-moz-progress-bar {
-    width: 100%;
-    background-color: #f3f3f3;
-    height: 5px;
-    position: relative;
-    overflow: hidden;
-
-
-    background-image: repeating-linear-gradient(-45deg, #fff, #fff 10px, #ccc 10px, #ccc 20px);
-    background-size: 28px 30px;
-    animation: progress 2s linear infinite;
-}*/
 
 @keyframes progress {
     0%   { background-position: 0 0; }
     100% { background-position: 28px 0; }
 }
-
-
-
-
-
-/*
-@-webkit-keyframes typing {
-    from {
-        width: 0
-    }
-    to {
-        width: 14.17em
-    }
-}
-
-@keyframes typing {
-    from {
-        width: 0
-    }
-    to {
-        width: 14.17em
-    }
-}
-
-@-webkit-keyframes caret {
-    from, to {
-        border-color: transparent
-    }
-    50% {
-        border-color: black
-    }
-}
-
-@keyframes caret {
-    from, to {
-        border-color: transparent
-    }
-    50% {
-        border-color: black
-    }
-}
-
-body {
-    font-family: Consolas;
-    font-size:16px;
-}
-
-h1{
-    font-size: 150%;
-    width: 14.1em;
-    white-space: nowrap;
-    overflow: hidden;
-    border-right: .1em solid #333;
-    -webkit-animation: typing 13s steps(26, end), caret 0.9s step-end infinite;
-    animation: typing 13s steps(26, end), caret 0.9s step-end infinite;
-}*/

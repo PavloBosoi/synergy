@@ -23,6 +23,30 @@ $(function () {
     }
 
 
+    //scroll to top functions
+    var scrollEl = $('.js-scroll-top');
+    function scrollToTop(el) {
+        $(window).scroll(function () {
+            checkScrollTopPosition($(this),el);
+        });
+        el.click(function () {
+            $('body,html').animate({
+                scrollTop: 0
+            }, 400);
+            return false;
+        });
+    }
+
+    function checkScrollTopPosition(scroll, el){
+        if (scroll.scrollTop() > 0) {
+            el.fadeIn();
+        } else {
+            el.fadeOut();
+        }
+    }
+    checkScrollTopPosition($(window),scrollEl);
+    scrollToTop(scrollEl);
+
     //add classes override items
     function overrideItem(item){
         item.on({
@@ -359,7 +383,7 @@ $(function () {
             onStringTyped: function(pos,self){
                 setTimeout(function(){
                     $(self.el).addClass('active');
-                },3000);
+                },1500);
             }
         });
     }

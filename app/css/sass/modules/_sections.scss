@@ -11,6 +11,19 @@ section{
     @include ptr(height,711);
     display: flex;
     align-items: center;
+    position: relative;
+}
+.top-rated-sign{
+    position: absolute;
+    @include ptr(bottom,20);
+    @include ptr(left,25);
+    /*@include ptr(width,162);*/
+    @include ptr(width,200);
+    line-height: 0;
+    svg{
+        color: #b9c2c7;
+        width: 100%;
+    }
 }
 
 /*===SECTION SKILLS===*/
@@ -213,6 +226,9 @@ section{
     p{
         @include ptr(margin,20 0 0 0);
     }
+    .btn-full{
+        @include ptr(margin,40 0 0 0);
+    }
 }
 .about-us-experience{
     @include ptr(margin,145 -10 0);
@@ -312,6 +328,14 @@ section{
             position: absolute;
             @include ptr(top,-2);
             left: 0;
+        }
+    }
+}
+.case-text{
+    p{
+        @include ptr(margin, 20 0 0 0);
+        &:first-child{
+            margin: 0;
         }
     }
 }
@@ -537,6 +561,7 @@ section{
 .contact-us{
     background-color: $color3;
     @include ptr(padding,100 0);
+    overflow: hidden;
 }
 .contact-parent{
     @include row(flex);
@@ -686,7 +711,8 @@ div.wpcf7-validation-errors,
 .screen-reader-response{
     display: none !important;
 }
-span.wpcf7-not-valid-tip {
+span.wpcf7-not-valid-tip,
+.progress-status{
     color: #f00;
     @include fluidFontSize(12px,14px,480px,1024px,18px,13px);
     font-weight: normal;
@@ -696,6 +722,9 @@ span.wpcf7-not-valid-tip {
     left: 0;
     line-height: normal;
     white-space: nowrap;
+}
+.progress-status{
+    @include ptr(bottom,-25);
 }
 .ajax-loader{
     opacity:0;

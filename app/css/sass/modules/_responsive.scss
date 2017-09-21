@@ -646,6 +646,36 @@
     }
     .main-carousel{
         @include ptr(margin,40 0 0 0);
+        .owl-controls{
+            position: relative;
+            width: 100%;
+            padding: 0;
+            margin-top: 60px !important;
+            text-align: center;
+        }
+        .owl-dots{
+            display: inline-block;
+        }
+        .owl-dots div{
+            width: 8px;
+            height: 8px;
+            @include ptr(margin, 0 8);
+            &:first-child{
+                @include ptr(margin, 0 8);
+            }
+        }
+        .owl-nav div{
+            margin: 0;
+            transform: rotate(-90deg);
+        }
+        .owl-nav .owl-prev {
+            top: -3px;
+            left: -5px;
+        }
+        .owl-nav .owl-next {
+            top: -3px;
+            right: -5px;
+        }
     }
     .main-carousel-item{
         @include ptr(padding, 40 0);
@@ -667,36 +697,6 @@
     }
     .main-carousel-description::after{
         @include ptr(bottom,-70);
-    }
-    .owl-controls{
-        position: relative;
-        width: 100%;
-        padding: 0;
-        margin-top: 60px !important;
-        text-align: center;
-    }
-    .owl-dots{
-        display: inline-block;
-    }
-    .owl-dots div{
-        width: 8px;
-        height: 8px;
-        @include ptr(margin, 0 8);
-        &:first-child{
-            @include ptr(margin, 0 8);
-        }
-    }
-    .owl-nav div{
-        margin: 0;
-        transform: rotate(-90deg);
-    }
-    .owl-nav .owl-prev {
-        top: -3px;
-        left: -5px;
-    }
-    .owl-nav .owl-next {
-        top: -3px;
-        right: -5px;
     }
     .popup-form{
         @include ptr(width, 450px);

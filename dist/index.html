@@ -52,12 +52,12 @@
 		                    <li><a href="#">Our Works</a></li>
 		                    <li><a href="#">Blog</a></li>
 		                    <li><a href="#">Testimonials</a></li>
-		                    <li><a href="#">Contact Us</a></li>
+		                    <li class="contacts-menu"><a href="#">Contact Us</a></li>
 		                </ul>
 		            </nav>
-		            <div class="h-estimate">
+		            <!--<div class="h-estimate">
 		                <a href="javascript:;" data-fancybox="modal" data-src="#modal" class="btn-empty">Estimate Project</a>
-		            </div>
+		            </div>-->
 		        </div>
 		    </div>
 		
@@ -71,6 +71,11 @@
 				<div class="title-main title-big js-effect-title-before">
 					<h1>Lorem ipsum dolor sit amet, <span class="js-change-text"></span> adipiscing elit.<br/>
 						Fusce vitae lacinia tellus. Morbi interdum arcu lectus.</h1>
+				</div>
+				<div class="top-rated-sign">
+					<svg class="icon-s icon-top-rated-s">
+						<use xlink:href="css/sprite-build/sprite.svg#top-rated-s"></use>
+					</svg>
 				</div>
 			</section>
 
@@ -513,6 +518,10 @@
 						<div class="contact-form js-effect-line">
 							<form action="#" method="post">
 								<div class="form-group js-form-group">
+									<input type="tel" id="js-name" class="validate-field"/>
+									<label for="js-name">Full name:</label>
+								</div>
+								<div class="form-group js-form-group">
 									<input type="text" id="js-mail" class="validate-field"/>
 									<label for="js-mail">Your Email:</label>
 								</div>
@@ -522,7 +531,7 @@
 								</div>
 								<div class="form-group form-group-last js-form-group">
 									<input type="text" id="js-message" class="validate-field"/>
-									<label for="js-message">How can we help you?</label>
+									<label for="js-message">Tell us about your project</label>
 								</div>
 								<label><input type="submit" value="Send" class="wpcf7-form-control wpcf7-submit"></label>
 								<div class="form-privacy">We respect your privacy, and will not share your information with any 3rd party without your permission.</div>
@@ -621,6 +630,13 @@
 	            <a href="#" class="btn-empty">meet us</a>
 	        </div>
 	    </div>
+	
+	    <div class="scroll-top js-scroll-top">
+	        <svg class="icon-s icon-arrow-s">
+	            <use xlink:href="css/sprite-build/sprite.svg#arrow-s"></use>
+	        </svg>
+	    </div>
+	
 	</footer><!-- .footer -->
 
 	</body>
