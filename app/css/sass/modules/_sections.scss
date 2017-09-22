@@ -1355,6 +1355,9 @@ span.wpcf7-not-valid-tip,
     font-weight: 300;
 }
 /*===PAGE POST-TYPE-ARCUS===*/
+.post-type-content{
+    @include ptr(padding-top, 90);
+}
 .post-type-part{
     position: relative;
     @include ptr(margin-top,60);

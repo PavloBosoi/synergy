@@ -269,6 +269,7 @@
         overflow: hidden;
         transition: $linear-f;
         .h-estimate{
+            display: block;
             position: absolute;
             padding: 0;
             @include ptr(top, 20);
@@ -331,6 +332,7 @@
                 width: 1px;
                 height: 0;
                 background-color: #69696a;
+                border: none;
                 z-index: 2;
                 transition: $linear-f;
             }
@@ -472,6 +474,9 @@
     .post-type-img {
         max-width: 75%;
         @include ptr(margin-top,50);
+    }
+    .contacts-menu{
+        display: none;
     }
 }
 
