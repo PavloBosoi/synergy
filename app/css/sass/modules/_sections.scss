@@ -11,6 +11,19 @@ section{
     @include ptr(height,711);
     display: flex;
     align-items: center;
+    position: relative;
+}
+.top-rated-sign{
+    position: absolute;
+    @include ptr(bottom,20);
+    @include ptr(left,25);
+    /*@include ptr(width,162);*/
+    @include ptr(width,200);
+    line-height: 0;
+    svg{
+        color: #b9c2c7;
+        width: 100%;
+    }
 }
 
 /*===SECTION SKILLS===*/
@@ -213,6 +226,9 @@ section{
     p{
         @include ptr(margin,20 0 0 0);
     }
+    .btn-full{
+        @include ptr(margin,40 0 0 0);
+    }
 }
 .about-us-experience{
     @include ptr(margin,145 -10 0);
@@ -312,6 +328,14 @@ section{
             position: absolute;
             @include ptr(top,-2);
             left: 0;
+        }
+    }
+}
+.case-text{
+    p{
+        @include ptr(margin, 20 0 0 0);
+        &:first-child{
+            margin: 0;
         }
     }
 }
@@ -463,6 +487,25 @@ section{
         }
     }
 }
+.estimation-join{
+    .btn-empty{
+        @include ptr(width,170);
+    }
+}
+
+.estimation-page__light{
+    @include ptr(padding,0 0 200 0);
+    background-color: transparent;
+    .title-intermediate{
+        color: $color2;
+    }
+    .btn-empty{
+        &:hover{
+            border: 1px solid $color1;
+            color: $color2;
+        }
+    }
+}
 
 /*===SECTION PARTNERS===*/
 .partners{
@@ -476,11 +519,11 @@ section{
 .partners-item{
     @include row(flex);
     flex-wrap: wrap;
-    align-items: center;
     @include col(2);
     @include col-xs(1);
     @include ptr(margin,0 0 130);
     .general-block-info{
+        display: block;
         @include col(2);
         @include col-lg(1.7);
     }
@@ -503,13 +546,12 @@ section{
         top: 0;
         left: 0;
         right: 0;
-        bottom: 0;
         margin: auto;
         opacity: 0;
         transition: $linear;
         &:first-child{
             opacity: 1;
-            position: relative;
+            /*position: relative;*/
         }
     }
 }
@@ -518,6 +560,7 @@ section{
 .contact-us{
     background-color: $color3;
     @include ptr(padding,100 0);
+    overflow: hidden;
 }
 .contact-parent{
     @include row(flex);
@@ -572,6 +615,7 @@ section{
     position: relative;
     @include ptr(margin, 60 0 0 0);
     border-bottom: 1px solid #b9c2c7;
+    line-height: 0;
     transition: $linear-f;
     &:first-child{
         margin: 0;
@@ -667,7 +711,8 @@ div.wpcf7-validation-errors,
 .screen-reader-response{
     display: none !important;
 }
-span.wpcf7-not-valid-tip {
+span.wpcf7-not-valid-tip,
+.progress-status{
     color: #f00;
     @include fluidFontSize(12px,14px,480px,1024px,18px,13px);
     font-weight: normal;
@@ -677,6 +722,9 @@ span.wpcf7-not-valid-tip {
     left: 0;
     line-height: normal;
     white-space: nowrap;
+}
+.progress-status{
+    @include ptr(bottom,-25);
 }
 .ajax-loader{
     opacity:0;
@@ -843,6 +891,7 @@ span.wpcf7-not-valid-tip {
     @include ptr(margin-top, 80);
     ul{
         @include ptr(margin, 30 0 0 20);
+        @include ptr(padding, 0 65 0 0);
         li{
             @include ptr(padding, 0 0 0 20);
             @include ptr(margin, 10 0 0 0);
@@ -863,6 +912,10 @@ span.wpcf7-not-valid-tip {
         }
     }
 }
+.join-s-info{
+    @include col(3,false);
+    @include col-sm(1,false);
+}
 .join-title{
     @include fluidFontSize(14px,26px,480px,1680px,30px,20px);
     font-weight: bold;
@@ -875,6 +928,9 @@ span.wpcf7-not-valid-tip {
     .btn-empty{
         @include ptr(width,170);
     }
+}
+.join-space{
+    @include ptr(margin, 180 0 0 0);
 }
 
 /*===PAGE SERVICE===*/
@@ -990,7 +1046,7 @@ span.wpcf7-not-valid-tip {
     overflow: hidden;
 }
 .works-btn{
-    @include ptr(margin,85 0 0 0);
+    @include ptr(margin,200 0 0 0);
     text-align: center;
 }
 /*
@@ -1077,7 +1133,7 @@ span.wpcf7-not-valid-tip {
 }
 .blog-title{
     position: relative;
-    @include fluidFontSize(16px,26px,480px,1680px,38px,22px);
+    @include fluidFontSize(16px,26px,480px,1680px,34px,22px);
     @include ptr(margin,40 0 0 0);
     font-weight: bold;
     a{
@@ -1298,7 +1354,65 @@ span.wpcf7-not-valid-tip {
     @include ptr(padding,0 0 0 120);
     font-weight: 300;
 }
-/*===PAGE POST-TYPE-ARCUS===*/
+
+/*Comment*/
+.deep-comments{
+    @include ptr(margin-top,90);
+    display: none;
+}
+.comment-form-comment{
+    border: 1px solid #000;
+}
+.comment-fields-parent{
+    display: flex;
+    justify-content: space-between;
+}
+.comment-message-field{
+    float: left;
+    width: calc(57% - 1rem);
+    textarea{
+        @include ptr(height,60);
+        resize: vertical;
+        line-height: normal;
+    }
+}
+.comment-author-field{
+    float: left;
+    width: calc(43% - 1rem);
+    margin: 0;
+}
+.comment-notes,
+.logged-in-as{
+    display: none;
+}
+
+.comments-area{
+    @include ptr(margin-top,90);
+}
+.comment-author{
+    cite{
+        @include fluidFontSize(15px,21px,480px,1680px,18px,24px);
+        font-weight: bold;
+        font-style: normal;
+    }
+}
+.comment-meta{
+    color: #b9c2c7;
+    @include fluidFontSize(14px,16px,480px,1680px,28px,15px);
+}
+.comment-body{
+    @include ptr(margin,15 0 0 0);
+}
+.comment{
+    @include ptr(margin,90 0 0 0);
+    &:first-child{
+        margin: 0;
+    }
+}
+    /*===PAGE POST-TYPE-ARCUS===*/
+.post-type-content{
+    @include ptr(padding-top, 90);
+}
 .post-type-part{
     position: relative;
     @include ptr(margin-top,60);
@@ -1388,6 +1502,7 @@ span.wpcf7-not-valid-tip {
 }
 .technology-item-2{
     @include col(2,false);
+    @include col-xs(1,false);
 }
 /*===PAGE POST-TYPE-METEOR===*/
 .meteor-truck-img{
@@ -1420,25 +1535,26 @@ span.wpcf7-not-valid-tip {
 /*===PAGE POST-TYPE-SCHOOL-MANAGER===*/
 .post-type-container-ipad{
     @include ptr(padding,0 100 0 170);
+    .post-type-slider{
+        position: relative;
+        display: inline-block;
+        float: right;
+        @include ptr(width,717);
+    }
     .post-type-carousel{
         position: absolute;
-        /*@include ptr(top,110);
-        @include ptr(right,74);*/
-        top: 110px;
+        top: 112px;
         right: 74px;
         width: 393px;
-        /* @include ptr(width,393);*/
+        @include ptr(top,112);
+        @include ptr(right,73);
+        @include ptr(width,393);
     }
     .post-type-ltext{
         /*@include ptr(width,780);*/
-        width: calc(100% - 720px);
+        width: calc(100% - 72rem);
         @include ptr(padding-right,160);
     }
-}
-.post-type-slider{
-    position: relative;
-    display: inline-block;
-    float: right;
 }
 .post-type-carousel .post-type-carousel-item,
 .post-type-slider{
@@ -1452,18 +1568,21 @@ span.wpcf7-not-valid-tip {
 /*===PAGE POST-TYPE-PUTTRO===*/
 .post-type-container-iphone{
     @include ptr(padding,0 270 0 170);
+    .post-type-slider{
+        position: relative;
+        display: inline-block;
+        float: right;
+        @include ptr(width,480);
+    }
     .post-type-carousel{
         position: absolute;
-        /*@include ptr(top,110);
-        @include ptr(right,74);*/
-        top: 141px;
-        right: 35px;
-        width: 277px;
-        /* @include ptr(width,393);*/
+        @include ptr(top,141);
+        @include ptr(right,35);
+        @include ptr(width,277);
     }
     .post-type-ltext{
         /*@include ptr(width,780);*/
-        width: calc(100% - 480px);
+        width: calc(100% - 48rem);
         @include ptr(padding-right,160);
     }
 }

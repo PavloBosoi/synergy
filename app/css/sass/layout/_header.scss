@@ -48,11 +48,12 @@
 .menu{
     >ul{
         display: flex;
+        align-items: center;
         >li{
             position: relative;
             >a{
                 @include fluidFontSize(14px,18px,480px,1680px,22px,16px);
-                @include ptr(padding,0 38);
+                @include ptr(padding,0 57);
                 @include ptr(height,115);
                 display: flex;
                 align-items: center;
@@ -111,6 +112,25 @@
                     top: 100%;
                     z-index: -1;
                 }
+            }
+        }
+    }
+    .contacts-menu{
+        a{
+            @include ptr(padding, 0 30);
+            @include ptr(height, 60);
+            @include ptr(line-height, 60);
+            @include ptr(font-size, 14);
+            text-align: center;
+            display: inline-block;
+            font-weight: bold;
+            border: 1px solid $color1;
+            color: $color2;
+            border-radius: 2px;
+            text-transform: uppercase;
+            &:hover{
+                background-color: $color1;
+                color: #fff;
             }
         }
     }
