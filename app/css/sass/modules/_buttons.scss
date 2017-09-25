@@ -92,7 +92,7 @@
 .btn-menu{
     display: none;
     position: absolute;
-    @include ptr(top,6);
+    @include ptr(top,16);
     @include ptr(right,50);
     overflow: hidden;
     padding: 0;

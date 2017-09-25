@@ -10,7 +10,7 @@
 
 @media only screen and (max-width: 1680px) {
     .menu > ul > li > a{
-        @include ptr(padding,0 25);
+        @include ptr(padding,0 38);
     }
     .menu > ul > li ul{
         @include ptr(margin,0 -15);
@@ -125,10 +125,10 @@
 
 @media only screen and (max-width: 1280px){
     .menu > ul > li > a{
-        @include ptr(padding,0 20);
+        @include ptr(padding,0 25);
     }
     .menu > ul > li ul{
-        @include ptr(margin,0 -20);
+        @include ptr(margin,0 -25);
     }
     .menu > ul > li ul li a{
         @include ptr(padding,0 40);
@@ -217,6 +217,9 @@
             padding: 0;
             @include ptr(margin-top,60);
         }
+    }
+    .works-btn{
+        @include ptr(margin,100 0 0 0);
     }
 }
 

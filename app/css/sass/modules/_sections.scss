@@ -519,11 +519,11 @@ section{
 .partners-item{
     @include row(flex);
     flex-wrap: wrap;
-    align-items: center;
     @include col(2);
     @include col-xs(1);
     @include ptr(margin,0 0 130);
     .general-block-info{
+        display: block;
         @include col(2);
         @include col-lg(1.7);
     }
@@ -546,13 +546,12 @@ section{
         top: 0;
         left: 0;
         right: 0;
-        bottom: 0;
         margin: auto;
         opacity: 0;
         transition: $linear;
         &:first-child{
             opacity: 1;
-            position: relative;
+            /*position: relative;*/
         }
     }
 }
@@ -616,6 +615,7 @@ section{
     position: relative;
     @include ptr(margin, 60 0 0 0);
     border-bottom: 1px solid #b9c2c7;
+    line-height: 0;
     transition: $linear-f;
     &:first-child{
         margin: 0;
@@ -1046,7 +1046,7 @@ span.wpcf7-not-valid-tip,
     overflow: hidden;
 }
 .works-btn{
-    @include ptr(margin,85 0 0 0);
+    @include ptr(margin,200 0 0 0);
     text-align: center;
 }
 /*
@@ -1354,7 +1354,62 @@ span.wpcf7-not-valid-tip,
     @include ptr(padding,0 0 0 120);
     font-weight: 300;
 }
-/*===PAGE POST-TYPE-ARCUS===*/
+
+/*Comment*/
+.deep-comments{
+    @include ptr(margin-top,90);
+    display: none;
+}
+.comment-form-comment{
+    border: 1px solid #000;
+}
+.comment-fields-parent{
+    display: flex;
+    justify-content: space-between;
+}
+.comment-message-field{
+    float: left;
+    width: calc(57% - 1rem);
+    textarea{
+        @include ptr(height,60);
+        resize: vertical;
+        line-height: normal;
+    }
+}
+.comment-author-field{
+    float: left;
+    width: calc(43% - 1rem);
+    margin: 0;
+}
+.comment-notes,
+.logged-in-as{
+    display: none;
+}
+
+.comments-area{
+    @include ptr(margin-top,90);
+}
+.comment-author{
+    cite{
+        @include fluidFontSize(15px,21px,480px,1680px,18px,24px);
+        font-weight: bold;
+        font-style: normal;
+    }
+}
+.comment-meta{
+    color: #b9c2c7;
+    @include fluidFontSize(14px,16px,480px,1680px,28px,15px);
+}
+.comment-body{
+    @include ptr(margin,15 0 0 0);
+}
+.comment{
+    @include ptr(margin,90 0 0 0);
+    &:first-child{
+        margin: 0;
+    }
+}
+    /*===PAGE POST-TYPE-ARCUS===*/
 .post-type-content{
     @include ptr(padding-top, 90);
 }

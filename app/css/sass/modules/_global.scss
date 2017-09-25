@@ -451,8 +451,46 @@
     background-image: repeating-linear-gradient(-45deg, $color1, $color1 5px, #f26368 5px, #f26368 10px);
     background-size: 28px 30px;
     animation: progress 2s linear infinite;
-    &.complete{
-        background-image: repeating-linear-gradient(-45deg, green, green 5px, #aed581 5px, #aed581 10px);
+}
+.progress.complete{
+    .progress-bar-line{
+        background: #8bc34a;
+        animation-play-state: paused;
+    }
+    .progress-status{
+        color: #8bc34a;
+        text-transform: capitalize;
+    }
+}
+.progress-close{
+    @include ptr(margin,10 0 0 0);
+    width: 10px;
+    height: 10px;
+    float: right;
+    position: relative;
+    cursor: pointer;
+    &::before,
+    &::after{
+        content: '';
+        position: absolute;
+        top: 5px;
+        right: 0;
+        width: 100%;
+        height: 1px;
+        background-color: #b9c2c7;
+        border-radius: 0;
+        outline: none;
+        transition: $linear-f;
+    }
+    &::before{
+        transform: rotate(45deg);
+    }
+    &::after{
+        transform: rotate(-45deg);
+    }
+    &:hover::before,
+    &:hover::after{
+        background-color: $color1;
     }
 }
 #upload-popup-file{
@@ -497,7 +535,7 @@
     display: none;
     position: fixed;
     @include ptr(bottom, 30);
-    @include ptr(right, 80);
+    @include ptr(right, 30);
     @include ptr(width, 60);
     @include ptr(height, 60);
     @include ptr(line-height, 60);
