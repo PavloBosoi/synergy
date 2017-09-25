@@ -434,6 +434,9 @@
     left: 0;
     width: 100%;
     height: 5px;
+    .progress-close{
+        display: none;
+    }
 }
 .progress-bar{
     width: 100%;
@@ -452,6 +455,11 @@
     background-size: 28px 30px;
     animation: progress 2s linear infinite;
 }
+.progress-status{
+    width: 100%;
+    white-space: normal;
+    padding-right: 15px;
+}
 .progress.complete{
     .progress-bar-line{
         background: #8bc34a;
@@ -461,9 +469,17 @@
         color: #8bc34a;
         text-transform: capitalize;
     }
+    .progress-close{
+        display: block;
+    }
+}
+.progress.in-progress{
+    .progress-close{
+        display: block;
+    }
 }
 .progress-close{
-    @include ptr(margin,10 0 0 0);
+    @include ptr(margin,8 0 0 0);
     width: 10px;
     height: 10px;
     float: right;
