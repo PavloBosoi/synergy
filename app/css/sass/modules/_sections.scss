@@ -13,16 +13,24 @@ section{
     align-items: center;
     position: relative;
 }
-.top-rated-sign{
-    position: absolute;
-    @include ptr(bottom,20);
-    @include ptr(left,25);
-    /*@include ptr(width,162);*/
-    @include ptr(width,200);
+
+/*===SECTION AWARDS===*/
+.awards{
+    background-color: $color3;
+    @include ptr(padding,30 0);
+}
+.awards-parent{
+    @include row(flex);
+    justify-content: space-between;
+    align-items: center;
+}
+.awards-item{
+    @include col(4);
     line-height: 0;
-    svg{
+    svg,img{
+        max-width: 100%;
+        @include ptr(max-height,35);
         color: #b9c2c7;
-        width: 100%;
     }
 }
 
@@ -427,10 +435,14 @@ section{
 .technologies{
     @include ptr(padding,200 0);
 }
-.technologies-parent{
+.technologies-parent,
+.technologies-ajax-parent{
     @include ptr(margin,140 0 0);
     @include row(flex);
     flex-wrap: wrap;
+}
+.technologies-ajax-parent{
+    margin-top: 0;
 }
 .technologies-item{
     @include col(4);
@@ -511,10 +523,14 @@ section{
 .partners{
     @include ptr(padding,200 0);
 }
-.partners-parent{
+.partners-parent,
+.partners-ajax-parent{
     @include row(flex);
     flex-wrap: wrap;
     @include ptr(padding,90 0 0);
+}
+.partners-ajax-parent{
+    padding-top: 0;
 }
 .partners-item{
     @include row(flex);
@@ -1366,6 +1382,7 @@ span.wpcf7-not-valid-tip,
 .comment-fields-parent{
     display: flex;
     justify-content: space-between;
+    width: 100%;
 }
 .comment-message-field{
     float: left;

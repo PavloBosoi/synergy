@@ -24,6 +24,7 @@ body{
     font-family: $font1;
     font-weight: 300;
     @include fluidFontSize(14px,18px,480px,1680px,28px,16px);
+    text-rendering: optimizeSpeed;
 }
 li{
     list-style-type: none;
