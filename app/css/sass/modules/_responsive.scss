@@ -3,9 +3,7 @@
    ======================= */
 
 @media only screen and (max-width: 1919px) {
-    .arcus-speed-img {
-        left: -12%;
-    }
+
 }
 
 @media only screen and (max-width: 1680px) {
@@ -30,9 +28,6 @@
             padding: 0;
         }
     }
-    .arcus-route-img {
-        left: -30%;
-    }
     .meteor-truck-img{
         left: -12%;
         @include ptr(bottom, -70);
@@ -42,18 +37,12 @@
         @include ptr(bottom, -70);
     }
     .case-img-vertical{
-        @include ptr(max-width,450);
+        img{
+            @include ptr(max-width,450);
+        }
     }
     .post-type-container-iphone{
         @include ptr(padding,0 140 0 170);
-        .post-type-ltext{
-            @include ptr(padding-right,40);
-        }
-    }
-    .post-type-container-ipad{
-        .post-type-ltext{
-            @include ptr(padding-right,40);
-        }
     }
     .post-type-ipad-vertical{
         @include clear;
@@ -219,7 +208,7 @@
         }
     }
     .works-btn{
-        @include ptr(margin,100 0 0 0);
+        @include ptr(margin,100 0);
     }
 }
 
@@ -481,6 +470,16 @@
     .contacts-menu{
         display: none;
     }
+    .post-type-container-iphone,
+    .post-type-container-ipad{
+        .post-type-ltext{
+            @include ptr(padding-right,40);
+        }
+    }
+    .partners-img i:first-child,
+    .partners-img img:first-child{
+        position: relative;
+    }
 }
 
 @media only screen and (max-width: 768px) {
@@ -586,8 +585,12 @@
     .blog-item-wrapper{
         padding-bottom: 0;
     }
-    .blog-desc{
+    .blog-desc,
+    .blog-item:nth-child(even) .blog-desc{
         position: static;
+        padding: 0;
+    }
+    .blog-info{
         padding: 0;
     }
     .related-item-wrapper{
@@ -607,6 +610,10 @@
             padding: 0;
             @include ptr(margin-top,60);
         }
+    }
+    .awards-item{
+        width: 50%;
+        text-align: center;
     }
     html{
         font-size: 8px;
@@ -895,6 +902,14 @@
         ul{
             padding: 0;
         }
+    }
+    .comment-fields-parent{
+        flex-wrap: wrap;
+    }
+    .comment-message-field,
+    .comment-author-field{
+        width: 100%;
+        @include ptr(margin, 20 0);
     }
     html {
         font-size: 7px;

@@ -17,15 +17,18 @@ section{
 /*===SECTION AWARDS===*/
 .awards{
     background-color: $color3;
-    @include ptr(padding,30 0);
+    @include ptr(padding,17 0);
 }
 .awards-parent{
-    @include row(flex);
+    display: flex;
+    @include ptr(margin-left, -10);
+    @include ptr(margin-right, -10);
     justify-content: space-between;
     align-items: center;
+    flex-wrap: wrap;
 }
 .awards-item{
-    @include col(4);
+    @include ptr(padding, 15 10);
     line-height: 0;
     svg,img{
         max-width: 100%;
@@ -554,7 +557,6 @@ section{
 .partners-img{
     @include col(2);
     @include col-lg(2.5);
-    display: flex;
     position: relative;
     text-align: center;
     i,img{
@@ -567,7 +569,8 @@ section{
         transition: $linear;
         &:first-child{
             opacity: 1;
-            /*position: relative;*/
+            position: relative;
+            margin: 0;
         }
     }
 }
@@ -1057,12 +1060,15 @@ span.wpcf7-not-valid-tip,
 }
 
 /*===PAGE OUR WORKS===*/
+.our-works.deep-page{
+    @include ptr(padding,270 0 0);
+}
 .works-parent{
     @include ptr(margin-top,70);
     overflow: hidden;
 }
 .works-btn{
-    @include ptr(margin,200 0 0 0);
+    @include ptr(margin,200 0);
     text-align: center;
 }
 /*
@@ -1488,13 +1494,13 @@ span.wpcf7-not-valid-tip,
 .arcus-route-img{
     top: auto;
     @include ptr(bottom,-150);
-    left: -50%;
+    left: -10%;
     width: 65%;
 }
 .arcus-speed-img{
     top: auto;
     @include ptr(bottom,-130);
-    left: -21%;
+    left: -12%;
     width: 45%;
 }
 

@@ -18,7 +18,7 @@
         @include ptr(margin, 90 0 40);
         text-align: left;
         &:first-child{
-            margin: 0;
+            @include ptr(margin, 0 0 40);
         }
     }
     h3{
@@ -28,7 +28,10 @@
         @include ptr(margin, 90 0 40);
         text-align: left;
         &:first-child{
-            margin: 0;
+            @include ptr(margin, 0 0 40);
+        }
+        & + h4{
+            margin-top: 0;
         }
     }
     h4{
@@ -38,15 +41,23 @@
         @include ptr(margin, 60 0 20);
         text-align: left;
         &:first-child{
-            margin: 0;
+            @include ptr(margin, 0 0 25);
         }
+    }
+    h2 + h3{
+        @include ptr(margin, 40 0);
     }
     p{
         font-family: $font1;
         @include fluidFontSize(14px,18px,480px,1680px,28px,16px);
-        @include ptr(margin,35 0 0 0);
+        @include ptr(margin,25 0 0 0);
         text-align: left;
         &:first-child{
+            margin: 0;
+        }
+    }
+    h1,h2,h3,h4{
+        & + p{
             margin: 0;
         }
     }
@@ -57,7 +68,7 @@
         font-weight: bold;
     }
     ul{
-        @include ptr(margin,35 0 0 20);
+        @include ptr(margin,25 0 0 20);
         text-align: left;
         li{
             list-style-type: none;

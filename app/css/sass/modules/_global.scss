@@ -233,9 +233,15 @@
     padding-bottom: 0;
 }
 
+.case-img-vertical{
+    img{
+        @include ptr(max-width,550);
+    }
+}
+
 /*---Category filter---*/
 .category-filter{
-    @include ptr(margin, 0 -20);
+    @include ptr(margin, 90 -20 0);
     text-align: center;
     li{
         display: inline-block;
