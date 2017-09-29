@@ -6,6 +6,8 @@
 
 //start font-size for rem
 $fz: 10;
+$min-media: 480;
+$max-media: 1680;
 
 // Fonts
 $font1: 'Circle', sans-serif;
@@ -130,14 +132,56 @@ $bezier-big-img: all .4s cubic-bezier(0.555, 0.205, 0.295, 0.975);
     }
 }
 
+
+// = Typography
+// -----------------------------
+//h1
+$h1-f-min: 22px;
+$h1-f-max: 52px;
+$h1-lh: 68px;
+$h1-fallback: 36px;
+//h2
+$h2-f-min: 16px;
+$h2-f-max: 42px;
+$h2-lh: 52px;
+$h2-fallback: 32px;
+//h3
+$h3-f-min: 18px;
+$h3-f-max: 36px;
+$h3-lh: 46px;
+$h3-fallback: 26px;
+//h4
+$h4-f-min: 16px;
+$h4-f-max: 26px;
+$h4-lh: 26px;
+$h4-fallback: 22px;
+//h5
+$h5-f-min: 15px;
+$h5-f-max: 18px;
+$h5-lh: 18px;
+$h5-fallback: 24px;
+//p
+$p-f-min: 14px;
+$p-f-max: 18px;
+$p-lh: 28px;
+$p-fallback: 16px;
+
+
 %fonts{
     @include fluidFontSize(22px,52px,480px,1680px,68px,36px);
+    @include fluidFontSize($h1-f-min,$h1-f-max,$min-media,$max-media,$h1-lh,$h1-fallback);
     @include fluidFontSize(16px,42px,480px,1680px,46px,32px);
+    @include fluidFontSize($h2-f-min,$h2-f-max,$min-media,$max-media,$h2-lh,$h2-fallback);
     @include fluidFontSize(18px,36px,480px,1680px,46px,26px);
+    @include fluidFontSize($h3-f-min,$h3-f-max,$min-media,$max-media,$h3-lh,$h3-fallback);
     @include fluidFontSize(16px,26px,480px,1680px,34px,22px);
+    @include fluidFontSize($h4-f-min,$h4-f-max,$min-media,$max-media,$h4-lh,$h4-fallback);
     @include fluidFontSize(15px,21px,480px,1680px,18px,24px);
     @include fluidFontSize(14px,18px,480px,1680px,30px,16px);
+    @include fluidFontSize($h5-f-min,$h5-f-max,$min-media,$max-media,$h5-lh,$h5-fallback);
     @include fluidFontSize(14px,16px,480px,1680px,28px,15px);
     @include fluidFontSize(12px,14px,480px,1680px,26px,13px);
     @include fluidFontSize(10px,12px,480px,1680px,24px,11px);
+
+    @include fluidFontSize($p-f-min,$p-f-max,$min-media,$max-media,$p-lh,$p-fallback);
 }

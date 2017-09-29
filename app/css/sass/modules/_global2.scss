@@ -1,0 +1,497 @@
+/* ==|====================
+   Module/Global
+   ======================= */
+
+
+
+
+.general-block-info{
+    display: flex;
+    flex-wrap: wrap;
+    @include ptr(padding,0 30 0 0);
+    h4{
+        @include fluidFontSize(16px,21px,480px,1680px,25px,18px);
+        font-weight: bold;
+        @include ptr(margin,0 0 15 0);
+    }
+}
+
+.sections-title{
+    @include fluidFontSize(19px,42px,480px,1680px,52px,32px);
+    font-weight: bold;
+    @include ptr(margin,90 0 0 0);
+}
+
+.deep-page{
+    @include ptr(padding,270 0 200);
+}
+
+
+//*---OWL-CAROUSEL---*/
+.main-carousel .owl-controls{
+    position: absolute;
+    top: 0;
+    right: 0;
+    @include ptr(padding,55 0);
+    width: 20px;
+}
+.main-carousel .owl-dots{
+    padding: 0 6px;
+}
+.main-carousel .owl-dots div{
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    @include ptr(margin,20 0 0 0);
+    &:first-child{
+        margin: 0;
+    }
+
+    background-color: #b9c2c7;
+    border-radius: 50%;
+    transition: $linear;
+}
+
+.main-carousel .owl-dots .active,
+.main-carousel .owl-dots div:hover{
+    background-color: $color1;
+}
+
+.main-carousel .owl-nav{
+    div{
+        position: absolute;
+        width: 20px;
+        height: 12px;
+        &::before,
+        &::after{
+            content: '';
+            position: absolute;
+            top: 5px;
+            width: 12px;
+            height: 1px;
+            background-color: #b9c2c7;
+            transition: $linear;
+        }
+        &:hover{
+            &::before,
+            &::after{
+                background-color: $color1;
+            }
+        }
+    }
+    .owl-prev{
+        top: 0;
+        &::before{
+            left: 0;
+            transform: rotate(135deg);
+        }
+        &::after{
+            right: 0;
+            transform: rotate(-135deg);
+        }
+    }
+    .owl-next{
+        bottom: 0;
+        &::before{
+            left: 0;
+            transform: rotate(45deg);
+        }
+        &::after{
+            right: 0;
+            transform: rotate(-45deg);
+        }
+    }
+}
+
+
+.js-view-all-parent{
+    overflow: hidden;
+}
+
+
+.section-lines{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    @include row(flex,false);
+    span{
+        display: block;
+        @include col(4,false);
+
+        height: 100%;
+        &:first-child{
+            border: none;
+        }
+    }
+}
+.section-lines-light{
+    span{
+        border-left: 1px solid #e8e8f0;
+    }
+}
+.section-lines-dark{
+    span{
+        border-left: 1px solid #29292c;
+    }
+}
+
+.grecaptcha-badge{
+    bottom: -100% !important;
+    opacity: 0;
+}
+
+.deep-space{
+    padding-bottom: 0;
+}
+
+.case-img-vertical{
+    img{
+        @include ptr(max-width,550);
+    }
+}
+
+/*---Category filter---*/
+.category-filter{
+    @include ptr(margin, 90 -20 0);
+    text-align: center;
+    li{
+        display: inline-block;
+        @include fluidFontSize(16px,26px,480px,1680px,38px,22px);
+        font-weight: bold;
+        color: #b9c2c7;
+        @include ptr(padding, 0 20);
+        @include ptr(margin, 0 0 20);
+        span{
+            position: relative;
+            display: block;
+            cursor: pointer;
+            transition: $linear-f;
+            &::before,
+            &::after{
+                content: '';
+                position: absolute;
+                bottom: 0;
+                z-index: 1;
+                width: 0;
+                height: 1px;
+                background-color: $color1;
+                transition: $linear-f;
+            }
+            &::before{
+                left: 50%;
+            }
+            &::after{
+                right: 50%;
+            }
+        }
+        &:hover span,
+        &.active span{
+            color: $color2;
+            &::before,
+            &::after{
+                width: 50%;
+            }
+        }
+    }
+}
+
+//animate items
+.override-item{
+    display: block;
+    position: relative;
+    @include ptr(padding,50 68 68 68);
+    width: 50%;
+    height: 400px;
+    float: left;
+    color: #fff;
+    overflow: hidden;
+    z-index: 3;
+    &::before{
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        background-color: rgba(0,0,0,.7);
+        opacity: 0;
+        z-index: 2;
+        transition: $linear-f;
+    }
+    &.dark-before::before{
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        opacity: 1;
+        background-color: rgba(0,0,0,.8);
+        z-index: 2;
+    }
+    &:hover::before{
+        opacity: 1;
+    }
+    &.fast-btn:hover .btn-full{
+        background-color: $color1;
+        color: #fff;
+        @include ptr(width, 237);
+        span{
+            opacity: 1;
+            position: static;
+            /*transition-delay: .1s;*/
+        }
+        svg{
+            animation-name: translate;
+            animation-duration: .5s;
+        }
+    }
+    &.show-wrapper:hover{
+        .override-wrapper{
+            opacity: 1;
+        }
+    }
+    &:hover .override-img{
+        transform: scale(1.2,1.2);
+    }
+    &.disabled .override-title,
+    &.disabled .override-text{
+        color: #69696a;
+    }
+    &.disabled .btn-full{
+        border: 1px solid #69696a;
+        color: #69696a;
+    }
+}
+.show-wrapper{
+    .override-wrapper{
+        opacity: 0;
+    }
+}
+.override-img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    background-size: cover;
+    transition: $linear-f;
+}
+.override-number{
+    &::before{
+        color: #69696a;
+        position: relative;
+        z-index: 3;
+        content: counter(counter-services, decimal-leading-zero);
+        counter-increment: counter-services;
+    }
+}
+.override-tags{
+    @include fluidFontSize(14px,16px,480px,1680px,28px,15px);
+    color: #757575;
+    @include ptr(margin,10 0 0 0);
+    z-index: 3;
+}
+.override-tags{
+    position: relative;
+    span{
+        position: relative;
+        display: inline-block;
+        text-transform: lowercase;
+        @include fluidFontSize(14px,16px,480px,1680px,28px,15px);
+        @include ptr(padding,0 0 0 15);
+        @include ptr(margin,0 0 0 10);
+        &:first-child{
+            padding: 0;
+            margin: 0;
+            &::before{
+                display: none;
+            }
+        }
+        &::before{
+            content: '/';
+            position: absolute;
+            @include ptr(top,0);
+            left: 0;
+        }
+    }
+}
+.override-title{
+    @include fluidFontSize(16px,26px,480px,1680px,20px,21px);
+    @include ptr(margin,40 0 0 0);
+    font-weight: bold;
+    position: relative;
+    color: #fff;
+    z-index: 3;
+    transition: $linear-f;
+}
+.override-text{
+    @include ptr(line-height,28);
+    @include ptr(width,320);
+    @include ptr(margin,30 0 0 0);
+    position: relative;
+    color: #fff;
+    z-index: 3;
+    transition: $linear-f;
+    p{
+        @include ptr(margin,20 0 0 0);
+        &:first-child{
+            margin: 0;
+        }
+    }
+}
+
+
+/*===progress===*/
+.progress{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    .progress-close{
+        display: none;
+    }
+}
+.progress-bar{
+    width: 100%;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+    z-index: 3;
+}
+.progress-bar-line{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background-image: repeating-linear-gradient(-45deg, $color1, $color1 5px, #f26368 5px, #f26368 10px);
+    background-size: 28px 30px;
+    animation: progress 2s linear infinite;
+}
+.progress-status{
+    width: 100%;
+    white-space: normal;
+    padding-right: 15px;
+}
+.progress.complete{
+    .progress-bar-line{
+        background: #8bc34a;
+        animation-play-state: paused;
+    }
+    .progress-status{
+        color: #8bc34a;
+        text-transform: capitalize;
+    }
+    .progress-close{
+        display: block;
+    }
+}
+.progress.in-progress{
+    .progress-close{
+        display: block;
+    }
+}
+.progress-close{
+    @include ptr(margin,8 0 0 0);
+    width: 10px;
+    height: 10px;
+    float: right;
+    position: relative;
+    cursor: pointer;
+    &::before,
+    &::after{
+        content: '';
+        position: absolute;
+        top: 5px;
+        right: 0;
+        width: 100%;
+        height: 1px;
+        background-color: #b9c2c7;
+        border-radius: 0;
+        outline: none;
+        transition: $linear-f;
+    }
+    &::before{
+        transform: rotate(45deg);
+    }
+    &::after{
+        transform: rotate(-45deg);
+    }
+    &:hover::before,
+    &:hover::after{
+        background-color: $color1;
+    }
+}
+#upload-popup-file{
+    opacity: 0;
+}
+.progress-status,
+.progress-total{
+    display: none;
+}
+.popup-block{
+    .form-file{
+        @include ptr(margin-top,40);
+    }
+}
+.form-file{
+    cursor: pointer;
+    @include ptr(height,61);
+    @include ptr(margin-top,60);
+    border-bottom: 1px solid #b9c2c7;
+    position: relative;
+    label{
+        position: absolute;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+        @include ptr(top,10);
+        left: 0;
+        @include fluidFontSize(16px,24px,480px,1640px,28px,20px);
+        font-weight: bold;
+        color: $color2;
+        line-height: normal;
+        svg{
+            @include ptr(width,24);
+            @include ptr(height,26);
+            color: #b9c2c7;
+        }
+    }
+}
+
+.scroll-top{
+    display: none;
+    position: fixed;
+    @include ptr(bottom, 30);
+    @include ptr(right, 30);
+    @include ptr(width, 60);
+    @include ptr(height, 60);
+    @include ptr(line-height, 60);
+    border: 1px solid #b9c2c7;
+    text-align: center;
+    color: #b9c2c7;
+    border-radius: 2px;
+    cursor: pointer;
+    z-index: 2;
+    transition: $linear-f;
+    &:hover{
+        border: 1px solid $color1;
+        background-color: $color1;
+        color: #fff;
+    }
+    svg{
+        transform: rotate(-90deg);
+    }
+}
+
+@keyframes progress {
+    0%   { background-position: 0 0; }
+    100% { background-position: 28px 0; }
+}

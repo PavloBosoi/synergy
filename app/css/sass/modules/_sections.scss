@@ -1580,7 +1580,8 @@ span.wpcf7-not-valid-tip,
     }
 }
 .post-type-carousel .post-type-carousel-item,
-.post-type-slider{
+.post-type-slider,
+.retina-pattern-img{
     img{
         display: none;
         &:first-child{

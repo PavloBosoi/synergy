@@ -160,10 +160,17 @@ gulp.task('fonts:dist', ['fontawesome'], function(){
 gulp.task('sprite', function (){
     var spriteData = gulp.src(path.app.sprite).pipe(spritesmith({
         imgName: 'sprite.png',
-        cssName: 'sprite.css',
+        cssName: 'spriter.scss',
+        cssFormat: 'css',
+        imgPath: '../images/sprite.png',
         padding: 5
     }));
-    return spriteData.pipe(gulp.dest(path.dist.sprite));
+    return spriteData.pipe(gulp.dest('app/css/sass/svg/symbol/'));
+});
+
+gulp.task('spriteImgTransfer', function () {
+    return gulp.src('app/css/sass/svg/symbol/*.png')
+        .pipe(gulp.dest(path.dist.img));
 });
 
 gulp.task('spritesvgBuild', function (){
@@ -224,6 +231,7 @@ gulp.task('dist', [
     'image:dist',
     'sprite',
     'spritesvg',
+    'spriteImgTransfer',
     'css:dist',
     'css:compressLibs',
     'html:dist'
@@ -250,6 +258,7 @@ gulp.task('watch', function(){
     });
     watch([path.watch.sprite], function(event, cb){
         gulp.start('sprite');
+        gulp.start('spriteImgTransfer');
     });
     watch([path.watch.spritesvg], function(event, cb){
         gulp.start('spritesvg');

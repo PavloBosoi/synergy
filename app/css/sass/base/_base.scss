@@ -1,8 +1,6 @@
 /* ===========================
    Base
    =========================== */
-@import "sprite-build/sprite.css";
-@import "sprite-build/sprite-svg.css";
 
 *{
     margin: 0;
@@ -19,6 +17,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, nav, 
     display: block;
 }
 body{
+    overflow: hidden;
     width: 100%;
     height: 100%;
     font-family: $font1;

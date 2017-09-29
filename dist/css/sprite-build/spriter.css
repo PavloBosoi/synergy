@@ -1,0 +1,251 @@
+/*
+Icon classes can be used entirely standalone. They are named after their original file names.
+
+Example usage in HTML:
+
+`display: block` sprite:
+<div class="icon-home"></div>
+
+To change `display` (e.g. `display: inline-block;`), we suggest using a common CSS class:
+
+// CSS
+.icon {
+  display: inline-block;
+}
+
+// HTML
+<i class="icon icon-home"></i>
+*/
+.icon-arrow {
+  background-image: url(../images/sprite.png);
+  background-position: -652px -202px;
+  width: 20px;
+  height: 7px; }
+
+.icon-partners-h1 {
+  background-image: url(../images/sprite.png);
+  background-position: 0px 0px;
+  width: 270px;
+  height: 83px; }
+
+.icon-partners-h2 {
+  background-image: url(../images/sprite.png);
+  background-position: -416px -112px;
+  width: 86px;
+  height: 86px; }
+
+.icon-partners1 {
+  background-image: url(../images/sprite.png);
+  background-position: 0px -175px;
+  width: 270px;
+  height: 82px; }
+
+.icon-partners2 {
+  background-image: url(../images/sprite.png);
+  background-position: -416px -203px;
+  width: 86px;
+  height: 86px; }
+
+.icon-partners3 {
+  background-image: url(../images/sprite.png);
+  background-position: -627px -322px;
+  width: 54px;
+  height: 76px; }
+
+.icon-partners4 {
+  background-image: url(../images/sprite.png);
+  background-position: 0px -88px;
+  width: 270px;
+  height: 82px; }
+
+.icon-technologies-h1 {
+  background-image: url(../images/sprite.png);
+  background-position: -568px -81px;
+  width: 147px;
+  height: 35px; }
+
+.icon-technologies-h10 {
+  background-image: url(../images/sprite.png);
+  background-position: 0px -500px;
+  width: 129px;
+  height: 46px; }
+
+.icon-technologies-h11 {
+  background-image: url(../images/sprite.png);
+  background-position: -416px -56px;
+  width: 147px;
+  height: 51px; }
+
+.icon-technologies-h12 {
+  background-image: url(../images/sprite.png);
+  background-position: -416px -344px;
+  width: 145px;
+  height: 45px; }
+
+.icon-technologies-h13 {
+  background-image: url(../images/sprite.png);
+  background-position: -568px -121px;
+  width: 63px;
+  height: 76px; }
+
+.icon-technologies-h14 {
+  background-image: url(../images/sprite.png);
+  background-position: -568px -322px;
+  width: 54px;
+  height: 76px; }
+
+.icon-technologies-h15 {
+  background-image: url(../images/sprite.png);
+  background-position: -507px -112px;
+  width: 53px;
+  height: 76px; }
+
+.icon-technologies-h16 {
+  background-image: url(../images/sprite.png);
+  background-position: -568px -262px;
+  width: 79px;
+  height: 55px; }
+
+.icon-technologies-h2 {
+  background-image: url(../images/sprite.png);
+  background-position: -275px -111px;
+  width: 136px;
+  height: 106px; }
+
+.icon-technologies-h3 {
+  background-image: url(../images/sprite.png);
+  background-position: -568px 0px;
+  width: 147px;
+  height: 36px; }
+
+.icon-technologies-h4 {
+  background-image: url(../images/sprite.png);
+  background-position: 0px -262px;
+  width: 147px;
+  height: 76px; }
+
+.icon-technologies-h5 {
+  background-image: url(../images/sprite.png);
+  background-position: -164px -343px;
+  width: 159px;
+  height: 60px; }
+
+.icon-technologies-h6 {
+  background-image: url(../images/sprite.png);
+  background-position: -568px -484px;
+  width: 61px;
+  height: 61px; }
+
+.icon-technologies-h7 {
+  background-image: url(../images/sprite.png);
+  background-position: -304px -454px;
+  width: 147px;
+  height: 37px; }
+
+.icon-technologies-h8 {
+  background-image: url(../images/sprite.png);
+  background-position: -152px -408px;
+  width: 147px;
+  height: 41px; }
+
+.icon-technologies-h9 {
+  background-image: url(../images/sprite.png);
+  background-position: 0px -408px;
+  width: 147px;
+  height: 41px; }
+
+.icon-technologies1 {
+  background-image: url(../images/sprite.png);
+  background-position: -568px -41px;
+  width: 147px;
+  height: 35px; }
+
+.icon-technologies10 {
+  background-image: url(../images/sprite.png);
+  background-position: -134px -500px;
+  width: 129px;
+  height: 46px; }
+
+.icon-technologies11 {
+  background-image: url(../images/sprite.png);
+  background-position: -416px 0px;
+  width: 147px;
+  height: 51px; }
+
+.icon-technologies12 {
+  background-image: url(../images/sprite.png);
+  background-position: -416px -294px;
+  width: 145px;
+  height: 45px; }
+
+.icon-technologies13 {
+  background-image: url(../images/sprite.png);
+  background-position: -636px -121px;
+  width: 63px;
+  height: 76px; }
+
+.icon-technologies14 {
+  background-image: url(../images/sprite.png);
+  background-position: -568px -403px;
+  width: 54px;
+  height: 76px; }
+
+.icon-technologies15 {
+  background-image: url(../images/sprite.png);
+  background-position: -627px -403px;
+  width: 53px;
+  height: 76px; }
+
+.icon-technologies16 {
+  background-image: url(../images/sprite.png);
+  background-position: -568px -202px;
+  width: 79px;
+  height: 55px; }
+
+.icon-technologies2 {
+  background-image: url(../images/sprite.png);
+  background-position: -275px 0px;
+  width: 136px;
+  height: 106px; }
+
+.icon-technologies3 {
+  background-image: url(../images/sprite.png);
+  background-position: -268px -500px;
+  width: 147px;
+  height: 36px; }
+
+.icon-technologies4 {
+  background-image: url(../images/sprite.png);
+  background-position: -152px -262px;
+  width: 147px;
+  height: 76px; }
+
+.icon-technologies5 {
+  background-image: url(../images/sprite.png);
+  background-position: 0px -343px;
+  width: 159px;
+  height: 60px; }
+
+.icon-technologies6 {
+  background-image: url(../images/sprite.png);
+  background-position: -634px -484px;
+  width: 61px;
+  height: 61px; }
+
+.icon-technologies7 {
+  background-image: url(../images/sprite.png);
+  background-position: -152px -454px;
+  width: 147px;
+  height: 37px; }
+
+.icon-technologies8 {
+  background-image: url(../images/sprite.png);
+  background-position: 0px -454px;
+  width: 147px;
+  height: 41px; }
+
+.icon-technologies9 {
+  background-image: url(../images/sprite.png);
+  background-position: -304px -408px;
+  width: 147px;
+  height: 41px; }

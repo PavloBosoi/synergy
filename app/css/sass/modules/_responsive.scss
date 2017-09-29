@@ -14,7 +14,7 @@
         @include ptr(margin,0 -15);
     }
     .menu > ul > li ul li a{
-        @include ptr(padding,0 40);
+        @include ptr(padding,0 50);
     }
     .main-carousel-info{
         @include ptr(width, 280);
@@ -582,7 +582,8 @@
     .blog-item{
         width: 100%;
     }
-    .blog-item-wrapper{
+    .blog-item-wrapper,
+    .blog-item:nth-child(even) .blog-item-wrapper{
         padding-bottom: 0;
     }
     .blog-desc,
@@ -928,8 +929,8 @@ only screen and (        min-device-pixel-ratio: 2),
 only screen and (                min-resolution: 192dpi),
 only screen and (                min-resolution: 2dppx) {
     .case-img,
-    .post-type-slider,
-    .post-type-carousel-item{
+    .post-type-carousel .post-type-carousel-item img,
+    .retina-pattern-img img{
         img{
             display: inline-block;
             &:first-child{

@@ -14,7 +14,7 @@
     h2{
         font-weight: bold;
         font-family: $font1;
-        @include fluidFontSize(16px,42px,480px,1680px,46px,32px);
+        @include fluidFontSize($h2-f-min,$h2-f-max,$min-media,$max-media,$h2-lh,$h2-fallback);
         @include ptr(margin, 90 0 40);
         text-align: left;
         &:first-child{
@@ -24,7 +24,7 @@
     h3{
         font-weight: bold;
         font-family: $font1;
-        @include fluidFontSize(18px,36px,480px,1680px,46px,26px);
+        @include fluidFontSize($h3-f-min,$h3-f-max,$min-media,$max-media,$h3-lh,$h3-fallback);
         @include ptr(margin, 90 0 40);
         text-align: left;
         &:first-child{
@@ -37,20 +37,30 @@
     h4{
         font-weight: bold;
         font-family: $font1;
-        @include fluidFontSize(16px,26px,480px,1680px,36px,22px);
-        @include ptr(margin, 60 0 20);
+        @include fluidFontSize($h4-f-min,$h4-f-max,$min-media,$max-media,$h4-lh,$h4-fallback);
+        @include ptr(margin, 60 0 30);
         text-align: left;
         &:first-child{
             @include ptr(margin, 0 0 25);
         }
     }
+    h5{
+        font-weight: bold;
+        font-family: $font1;
+        @include fluidFontSize($h5-f-min,$h5-f-max,$min-media,$max-media,$h5-lh,$h5-fallback);
+        @include ptr(margin, 40 0 20);
+        text-align: left;
+    }
     h2 + h3{
         @include ptr(margin, 40 0);
     }
+    h4 + h5{
+        @include ptr(margin-top, 30);
+    }
     p{
         font-family: $font1;
-        @include fluidFontSize(14px,18px,480px,1680px,28px,16px);
-        @include ptr(margin,25 0 0 0);
+        @include fluidFontSize($p-f-min,$p-f-max,$min-media,$max-media,$p-lh,$p-fallback);
+        @include ptr(margin,30 0 0 0);
         text-align: left;
         &:first-child{
             margin: 0;
@@ -68,12 +78,12 @@
         font-weight: bold;
     }
     ul{
-        @include ptr(margin,25 0 0 20);
+        @include ptr(margin,18 0 0 20);
         text-align: left;
         li{
             list-style-type: none;
             position: relative;
-            @include ptr(margin-top,10);
+            @include ptr(margin-top,18);
             @include ptr(padding-left,15);
             display: block;
             text-align: left;
@@ -99,7 +109,7 @@
         counter-reset: li;
         li{
             position: relative;
-            @include ptr(margin-top,10);
+            @include ptr(margin-top,26);
             @include ptr(padding-left,25);
             display: block;
             text-align: left;

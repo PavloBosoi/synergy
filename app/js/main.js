@@ -1,6 +1,12 @@
-'use strict';
-
 $(function () {
+    'use strict';
+
+    $('header').css({'opacity': '1'});
+    $('body').css({'overflow': 'visible'});
+    $(window).on('load',function () {
+        $('.preload-invisible').css({'opacity': '1'});
+    });
+
     var ScreenWidth = $(window).width(),
         ScreenHeight = $(window).height(),
         btnMenu = $(".js-menu");

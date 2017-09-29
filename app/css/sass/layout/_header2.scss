@@ -1,0 +1,154 @@
+/* ==|====================
+   Layout/Header
+   ======================= */
+.header{
+    opacity: 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #fff;
+    z-index: 5;
+    transition: $linear;
+    &::before,
+    &::after{
+        content: '';
+        position: absolute;
+        bottom: -1px;
+        width: 0;
+        height: 1px;
+        background-color: #e8e8f0;
+        z-index: 1;
+        transition: $linear;
+    }
+    &::before{
+        left: 50%;
+    }
+    &::after{
+        right: 50%;
+    }
+    .container-s{
+        background-color: #fff;
+    }
+}
+.header.active{
+    &::before,
+    &::after{
+        width: 50%;
+    }
+}
+.h-parent{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.logo{
+    img{
+        @include ptr(width,148);
+    }
+}
+.menu{
+    >ul{
+        display: flex;
+        align-items: center;
+        >li{
+            position: relative;
+            >a{
+                @include fluidFontSize(14px,18px,480px,1680px,22px,16px);
+                @include ptr(padding,0 57);
+                @include ptr(height,115);
+                display: flex;
+                align-items: center;
+                color: $color2;
+                font-weight: bold;
+                position: relative;
+                z-index: 2;
+                &:hover{
+                    color: $color1;
+                }
+            }
+            &.current-menu-item{
+                &>a{
+                    color: $color1;
+                }
+            }
+            ul{
+                display: flex;
+                opacity: 0;
+                position: absolute;
+                top: 40%;
+                left: 0;
+                @include ptr(margin,0 -20);
+                z-index: -1;
+                transition: all .2s linear .3s;
+                li{
+                    a{
+                        @include ptr(padding,0 76);
+                        @include ptr(height,60);
+                        color: $color2;
+                        font-weight: bold;
+                        display: flex;
+                        align-items: center;
+                        white-space: nowrap;
+                        text-transform: lowercase;
+                        &:hover{
+                            color: $color1;
+                        }
+                    }
+                }
+                &::before,
+                &::after{
+                    content: '';
+                    position: absolute;
+                    width: 1000%;
+                    height: 100%;
+                    top: 0;
+                    left: 0;
+                    border-bottom: 1px solid #e8e8f0;
+                    border-top: 1px solid #e8e8f0;
+                    background-color: $color3;
+                    z-index: -1;
+                }
+                &::after{
+                    left: auto;
+                    right: 0;
+                }
+            }
+            &:hover{
+                ul{
+                    opacity: 1;
+                    top: 100%;
+                    z-index: -1;
+                }
+            }
+        }
+    }
+    .contacts-menu{
+        a{
+            @include ptr(padding, 0 30);
+            @include ptr(height, 60);
+            @include ptr(line-height, 60);
+            @include ptr(font-size, 14);
+            text-align: center;
+            display: inline-block;
+            font-weight: bold;
+            border: 1px solid $color1;
+            color: $color2;
+            border-radius: 2px;
+            text-transform: uppercase;
+            &:hover{
+                background-color: $color1;
+                color: #fff;
+            }
+        }
+    }
+}
+.h-estimate{
+    text-align: right;
+    &.current-menu-item{
+        .btn-empty{
+            background-color: $color1;
+            color: #fff;
+        }
+    }
+}

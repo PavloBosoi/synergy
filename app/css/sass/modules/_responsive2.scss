@@ -1,0 +1,681 @@
+/* ==|====================
+   Module/Responsive
+   ======================= */
+
+@media only screen and (max-width: 1919px) {
+
+}
+
+@media only screen and (max-width: 1680px) {
+
+    .main-carousel-info{
+        @include ptr(width, 280);
+    }
+    .main-carousel-description{
+        width: 55%;
+    }
+    .join-block{
+        @include ptr(padding, 0 0 0 50);
+        &:first-child{
+            padding: 0;
+        }
+    }
+    .meteor-truck-img{
+        left: -12%;
+        @include ptr(bottom, -70);
+    }
+    .meteor-custodian-img{
+        left: 3%;
+        @include ptr(bottom, -70);
+    }
+    .case-img-vertical{
+        img{
+            @include ptr(max-width,450);
+        }
+    }
+    .post-type-container-iphone{
+        @include ptr(padding,0 140 0 170);
+    }
+    .post-type-ipad-vertical{
+        @include clear;
+    }
+    html{
+        font-size: 9px;
+    }
+}
+
+@media only screen and (max-width: 1366px) {
+    .override-text{
+        @include ptr(width,440);
+    }
+    .owl-dots {
+        padding: 0 7px;
+    }
+    .owl-dots div{
+        width: 6px;
+        height: 6px;
+    }
+    .benefits-description{
+        float: none;
+        margin: 0;
+    }
+    .related-position{
+        @include ptr(margin-bottom, 20);
+    }
+    .arcus-route-img{
+        position: static !important;
+        width: 100%;
+        @include ptr(margin-top, 40);
+    }
+    .meteor-box-img {
+        @include ptr(bottom, -20);
+        left: -7%;
+    }
+    .arcus-space{
+        @include ptr(margin, 0 0 100);
+    }
+    .blog-social{
+        span{
+            @include ptr(margin,0 0 0 20);
+        }
+    }
+    .blog-info{
+        @include ptr(margin,30 -10 0);
+        p{
+            @include ptr(padding,0 10);
+        }
+    }
+    .post-type-iphone-vertical{
+        @include clear;
+    }
+
+    html {
+        font-size: 8px;
+    }
+}
+
+@media only screen and (max-width: 1280px){
+    .contact-item{
+        @include ptr(margin-top, 35);
+        &:first-child{
+            @include ptr(margin, 0 10 0);
+        }
+    }
+    .join-info,
+    .join-btn{
+        @include ptr(margin-top, 40);
+    }
+    .join-btn{
+        padding: 0;
+    }
+    .team-btn{
+        margin: 0;
+    }
+    .blog-btn{
+        @include ptr(margin,-35 0 0 0);
+    }
+    .title-deep{
+        @include ptr(margin-bottom, 40);
+    }
+    .contact-item{
+        margin-bottom: 0;
+    }
+    .service-btn{
+        @include ptr(margin-top,110);
+    }
+    .service-post{
+        @include ptr(margin, 90 0 0 0);
+        .btn-full{
+            @include ptr(left,25);
+            @include ptr(bottom,25);
+        }
+    }
+    .service-wrapper{
+        @include ptr(padding,25);
+    }
+    .blog-item-wrapper,
+    .blog-item:nth-child(even) .blog-item-wrapper{
+        @include ptr(padding-left, 80);
+        @include ptr(padding-right, 80);
+    }
+    .blog-desc,
+    .blog-item:nth-child(even) .blog-desc{
+        @include ptr(padding-left, 80);
+        @include ptr(padding-right, 80);
+    }
+    .blog-post-img{
+        @include ptr(height, 550);
+    }
+    .deep-space{
+        padding-bottom: 0;
+    }
+    .related-posts{
+        @include ptr(margin,110 0 0 0);
+    }
+    .related-item{
+        &:nth-child(even){
+            .related-text{
+                padding: 0;
+            }
+        }
+    }
+    .related-text{
+        padding: 0;
+    }
+    .post-type-container-ipad {
+        .post-type-slider {
+            float: none;
+            display: block;
+            margin: 0 auto;
+        }
+        .post-type-ltext{
+            width: 100%;
+            padding: 0;
+            @include ptr(margin-top,60);
+        }
+    }
+    .works-btn{
+        @include ptr(margin,100 0);
+    }
+}
+
+@media only screen and (max-width: 1200px) {
+    .override-item{
+        @include ptr(padding, 50);
+    }
+}
+
+@media only screen and (max-width: 1024px) {
+    .about-us,
+    .benefits,
+    .technologies,
+    .partners{
+        @include ptr(padding, 100 0);
+    }
+    .main-carousel-description{
+        width: 55%;
+        @include ptr(margin,0 0 0 350);
+    }
+    .benefits-description{
+        width: 100%;
+    }
+    .override-text {
+        @include ptr(width, 320);
+    }
+    .partners-img{
+        width: 100%;
+    }
+    .partners-item .general-block-info{
+        width: 100%;
+        @include ptr(margin,40 0 0 0);
+    }
+    .join-item{
+        @include ptr(margin,80 0 0 0);
+    }
+    .success-message{
+        position: relative;
+        width: 100%;
+        @include ptr(padding,0 20);
+    }
+    .form-close{
+        @include ptr(top,10);
+        @include ptr(right,10);
+    }
+    .text-edit{
+        h1,h2,h3,h4{
+            padding: 0;
+        }
+    }
+    .service-text{
+        margin: 0;
+        flex-wrap: wrap;
+    }
+    .service-text-block{
+        width: 100%;
+        padding: 0;
+        text-align: center;
+    }
+    /*.split-half{
+        width: 100%;
+        padding-left: 0;
+        padding-right: 0;
+        margin: 0;
+        & + .split-half{
+            @include ptr(margin-top,90);
+        }
+    }*/
+    .service-post{
+        @include ptr(margin, 90 0 0 0);
+        &:first-child{
+            @include ptr(margin, 90 0 0 0);
+        }
+        .btn-full{
+            @include ptr(left,80);
+            @include ptr(bottom,60);
+        }
+    }
+    .service-wrapper{
+        @include ptr(padding,80);
+    }
+    .blog-post-container{
+        width: 100%;
+    }
+    .blog-post-info{
+        @include ptr(margin,0 -10);
+    }
+    .blog-info,
+    .blog-social{
+        @include ptr(padding,0 10);
+        p{
+            @include ptr(padding,0 10);
+        }
+    }
+    .arcus-space{
+        margin: 0;
+    }
+    .post-type-container,
+    .post-type-text__left,
+    .post-type-text__right{
+        @include ptr(padding,0 50);
+    }
+    .post-type-text{
+        width: 100%;
+    }
+    .post-type-img {
+        max-width: 75%;
+        @include ptr(margin-top,50);
+    }
+    .contacts-menu{
+        display: none;
+    }
+    .post-type-container-iphone,
+    .post-type-container-ipad{
+        .post-type-ltext{
+            @include ptr(padding-right,40);
+        }
+    }
+    .partners-img i:first-child,
+    .partners-img img:first-child{
+        position: relative;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .case{
+        display: block;
+        @include ptr(margin, 0 0 40 0);
+    }
+    .case-img{
+        width: 100%;
+        margin: 0;
+        text-align: center;
+    }
+    .case-info{
+        width: 100%;
+        @include ptr(padding, 50 60 0);
+        margin: 0;
+    }
+    .case:nth-child(even){
+        .case-info{
+            margin: 0;
+        }
+    }
+    .main-carousel-description{
+        width: 50%;
+        @include ptr(margin,0 0 0 280);
+    }
+    .main-carousel-info{
+        @include ptr(width,250);
+    }
+    .main-carousel-description::before{
+        @include ptr(top,-70);
+    }
+    .main-carousel-description::after{
+        @include ptr(bottom,-70);
+    }
+    .cases-parent{
+        @include ptr(margin, 40 0 0 0);
+    }
+    .team-row{
+        flex-wrap: wrap;
+    }
+    .team-parent{
+        display: flex;
+        flex-wrap: wrap;
+        @include ptr(margin-left, -10);
+        @include ptr(margin-right, -10);
+    }
+    .team-item{
+        width: 50%;
+        margin-left: 0;
+        margin-right: 0;
+        @include ptr(padding-left, 10);
+        @include ptr(padding-right, 10);
+    }
+    .team-img,
+    .team-img img{
+        width: 100%;
+    }
+    .join-block{
+        padding: 0;
+    }
+    .benefits-description{
+        @include ptr(padding,0 50);
+    }
+    .contact-parent{
+        flex-wrap: wrap-reverse;
+    }
+    .contact-form{
+        @include ptr(margin,40 0);
+    }
+    .contact-info{
+        @include ptr(margin,0 -10);
+    }
+    .contact-item{
+        @include ptr(margin-bottom,50);
+        margin-top: 0;
+    }
+    .blog-item{
+        width: 100%;
+    }
+    .blog-item-wrapper,
+    .blog-item:nth-child(even) .blog-item-wrapper{
+        padding-bottom: 0;
+    }
+    .blog-desc,
+    .blog-item:nth-child(even) .blog-desc{
+        position: static;
+        padding: 0;
+    }
+    .blog-info{
+        padding: 0;
+    }
+    .related-item-wrapper{
+        @include ptr(padding,30);
+    }
+    .arcus-speed-img{
+        @include ptr(bottom,-50);
+    }
+    .post-type-container-iphone{
+        .post-type-slider{
+            float: none;
+            display: block;
+            margin: 0 auto;
+        }
+        .post-type-ltext{
+            width: 100%;
+            padding: 0;
+            @include ptr(margin-top,60);
+        }
+    }
+    .awards-item{
+        width: 50%;
+        text-align: center;
+    }
+    html{
+        font-size: 8px;
+    }
+}
+
+@media only screen and (max-width: 640px){
+    .testimonials{
+        @include ptr(padding,100 0 50);
+    }
+    .override-item{
+        width: 100%;
+    }
+    .about-us-experience{
+        flex-wrap: wrap;
+        @include ptr(margin, 60 -10 0);
+    }
+    .experience-item{
+        width: 100%;
+        display: block;
+        text-align: center;
+        @include ptr(margin,20 0);
+        span{
+            position: relative;
+            &::before{
+                content: '+';
+                position: absolute;
+                top: 0;
+                @include ptr(right,-22);
+                font-size: 26px;
+            }
+        }
+    }
+    .experience-item-info{
+        padding: 0;
+        i{
+            display: none;
+        }
+    }
+    .main-carousel{
+        @include ptr(margin,40 0 0 0);
+        .owl-controls{
+            position: relative;
+            width: 100%;
+            padding: 0;
+            margin-top: 60px !important;
+            text-align: center;
+        }
+        .owl-dots{
+            display: inline-block;
+        }
+        .owl-dots div{
+            width: 8px;
+            height: 8px;
+            @include ptr(margin, 0 8);
+            &:first-child{
+                @include ptr(margin, 0 8);
+            }
+        }
+        .owl-nav div{
+            margin: 0;
+            transform: rotate(-90deg);
+        }
+        .owl-nav .owl-prev {
+            top: -3px;
+            left: -5px;
+        }
+        .owl-nav .owl-next {
+            top: -3px;
+            right: -5px;
+        }
+    }
+    .main-carousel-item{
+        @include ptr(padding, 40 0);
+    }
+    .main-carousel-info{
+        width: 100%;
+        float: none;
+        text-align: center;
+        img{
+            margin: 20px auto 0;
+        }
+    }
+    .main-carousel-description{
+        width: 100%;
+        @include ptr(margin, 60 0 0 0);
+    }
+    .main-carousel-description::before{
+        @include ptr(top,-50);
+    }
+    .main-carousel-description::after{
+        @include ptr(bottom,-70);
+    }
+    .popup-form{
+        @include ptr(width, 450px);
+    }
+    .success-message{
+        width: 100%;
+    }
+    .contact-info{
+        margin: 0;
+    }
+    .contact-item{
+        @include ptr(margin,30 0);
+        &:first-child{
+            margin: 0;
+        }
+    }
+    .blog-post-info{
+        margin: 0;
+        flex-wrap: wrap;
+    }
+    .blog-info,
+    .blog-social{
+        width: 100%;
+    }
+    .blog-social,
+    .blog-info,
+    .blog-social p{
+        padding: 0;
+    }
+    .post-type-container-ipad{
+        .post-type-slider{
+            width: 420px;
+        }
+        .post-type-carousel{
+            width: 255px;
+            top: 66px;
+            right: 18px;
+        }
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    .about-us-info{
+        width: 100%;
+        @include ptr(margin, 40 0 0 0);
+    }
+    .benefits-description{
+        @include ptr(padding,0 20);
+    }
+    .copy{
+        font-size: 12px;
+    }
+    .title-deep{
+        @include ptr(padding, 0 20);
+    }
+    .team-item{
+        width: 100%;
+        text-align: center;
+    }
+    .popup-form{
+        width: 100%;
+    }
+    .contact-parent{
+        width: 100%;
+        @include ptr(margin,40 0);
+    }
+    .general-block-info{
+        padding: 0;
+    }
+    .popup-summit-parent{
+        width: 100%;
+    }
+    .service-content{
+        @include ptr(margin-top,20);
+        p{
+            @include ptr(margin-top,20);
+        }
+    }
+    .text-edit{
+        blockquote{
+            @include ptr(padding, 20);
+        }
+    }
+    .service-post{
+        @include ptr(margin, 90 0 0 0);
+        .btn-full{
+            @include ptr(left,25);
+            @include ptr(bottom,25);
+        }
+    }
+    .service-wrapper{
+        @include ptr(padding,25);
+    }
+    .related-text{
+        display: none;
+    }
+    .blog-info{
+        @include ptr(margin, 30 0 0);
+    }
+    .blog-info,
+    .blog-social{
+        p{
+            @include ptr(padding, 0 5);
+        }
+    }
+    .post-type-container,
+    .post-type-text__left,
+    .post-type-text__right{
+        @include ptr(padding,0 20);
+    }
+    .post-type-technology-parent{
+        margin: 0;
+    }
+    .post-type-technology-item{
+        padding: 0;
+    }
+    .post-type-container-iphone{
+        .post-type-slider{
+            width: 248px;
+        }
+        .post-type-carousel{
+            width: 143px;
+            top: 73px;
+            right: 18px;
+        }
+    }
+    .post-type-container-ipad{
+        .post-type-slider{
+            width: 248px;
+        }
+        .post-type-carousel{
+            width: 136px;
+            top: 39px;
+            right: 26px;
+        }
+    }
+    .join-info{
+        ul{
+            padding: 0;
+        }
+    }
+    .comment-fields-parent{
+        flex-wrap: wrap;
+    }
+    .comment-message-field,
+    .comment-author-field{
+        width: 100%;
+        @include ptr(margin, 20 0);
+    }
+    html {
+        font-size: 7px;
+    }
+}
+
+/*@media only screen and (-webkit-min-device-pixel-ratio: 1.5),
+only screen and (min--moz-device-pixel-ratio: 1.5),
+only screen and (-o-min-device-pixel-ratio: 3/2),
+only screen and (min-resolution: 1.5dppx){*/
+@media
+only screen and (-webkit-min-device-pixel-ratio: 2),
+only screen and (   min--moz-device-pixel-ratio: 2),
+only screen and (     -o-min-device-pixel-ratio: 2/1),
+only screen and (        min-device-pixel-ratio: 2),
+only screen and (                min-resolution: 192dpi),
+only screen and (                min-resolution: 2dppx) {
+    .case-img,
+    .post-type-carousel .post-type-carousel-item img,
+    .retina-pattern-img img{
+        img{
+            display: inline-block;
+            &:first-child{
+                display: none;
+            }
+        }
+    }
+}

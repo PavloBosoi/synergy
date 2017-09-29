@@ -2,12 +2,14 @@
    Layout/Header
    ======================= */
 .header{
+    opacity: 0;
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     background-color: #fff;
     z-index: 5;
+    transition: $linear;
     &::before,
     &::after{
         content: '';
