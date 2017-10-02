@@ -1,6 +1,7 @@
 "use strict";
 
 var gulp = require('gulp'),
+    debug = require('gulp-debug'),
     spritesmith = require('gulp.spritesmith'),
     notify = require('gulp-notify'),
     autoprefixer = require('gulp-autoprefixer'),
@@ -46,7 +47,7 @@ var path = {
         libsCss: 'app/css/libs/',
         modulesJs: 'app/js/modules/*.js',
         libsIeJs: 'app/js/ie/*.js',
-        firstScreenCss: 'app/css/sass/layout/_first-screen.scss'
+        firstScreenCss: 'app/css/sass/first-screen/first-screen.scss'
     },
     watch: {
         html: 'app/**/*.html',
@@ -145,6 +146,7 @@ gulp.task('css:compressLibs', ['mainCSS'], function() {
 /* Compress Css for page speed */
 gulp.task('css:compressFirst', function () {
     return gulp.src(path.app.firstScreenCss)
+        .pipe(debug())
         .pipe(sass().on('error', sass.logError))
         .pipe(plumber())
         .pipe(autoprefixer({
@@ -168,7 +170,7 @@ gulp.task('css:compress', function () {
         .pipe(gulp.dest(path.app.libsCss))
         .pipe(notify("Done!"));
 });
-gulp.task('css:compressAll', ['mainCSS','css:compress','css:compressFirst'], function() {
+gulp.task('css:compressAll', ['mainCSS','css:compress'], function() {
     return gulp.src([
         path.app.libsCss + '*.css',
         path.app.libsCss +'main.css'
@@ -275,6 +277,7 @@ gulp.task('dist', [
     'css:dist',
     'css:compressLibs',
     'css:compressAll',//compress
+    'css:compressFirst',
     'html:dist'
 ]);
 
