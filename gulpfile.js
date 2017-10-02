@@ -45,7 +45,8 @@ var path = {
         libsJs: 'app/js/libs/',
         libsCss: 'app/css/libs/',
         modulesJs: 'app/js/modules/*.js',
-        libsIeJs: 'app/js/ie/*.js'
+        libsIeJs: 'app/js/ie/*.js',
+        firstScreenCss: 'app/css/sass/layout/_first-screen.scss'
     },
     watch: {
         html: 'app/**/*.html',
@@ -142,6 +143,18 @@ gulp.task('css:compressLibs', ['mainCSS'], function() {
 });
 
 /* Compress Css for page speed */
+gulp.task('css:compressFirst', function () {
+    return gulp.src(path.app.firstScreenCss)
+        .pipe(sass().on('error', sass.logError))
+        .pipe(plumber())
+        .pipe(autoprefixer({
+            browsers: ['last 3 versions'],
+            cascade: false
+        }))
+        .pipe(csscomb('.csscomb.json'))
+        .pipe(gcmq())
+        .pipe(gulp.dest(path.dist.css));
+});
 gulp.task('css:compress', function () {
     return gulp.src(path.app.css)
         .pipe(sass().on('error', sass.logError))
@@ -155,7 +168,7 @@ gulp.task('css:compress', function () {
         .pipe(gulp.dest(path.app.libsCss))
         .pipe(notify("Done!"));
 });
-gulp.task('css:compressAll', ['mainCSS','css:compress'], function() {
+gulp.task('css:compressAll', ['mainCSS','css:compress','css:compressFirst'], function() {
     return gulp.src([
         path.app.libsCss + '*.css',
         path.app.libsCss +'main.css'
