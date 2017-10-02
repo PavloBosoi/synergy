@@ -21,8 +21,7 @@
     "typed.js": "^2.0.2",
     "textillate": "^0.4.0",
     "fancybox": "^3.1.20",
-    "goodshare": "^4.0.6",
-    "jquery-migrate": "^3.0.0"
+    "goodshare": "^4.0.6"
   },
   "overrides": {
     "font-awesome": {

@@ -130,6 +130,7 @@ gulp.task('css:dist', function () {
         .pipe(gulp.dest(path.dist.css))
         .pipe(notify("Done!"));
 });
+
 gulp.task('css:compressLibs', ['mainCSS'], function() {
     return gulp.src([path.app.libsCss + '*.css'])
         .pipe(sourcemaps.init())
@@ -139,6 +140,32 @@ gulp.task('css:compressLibs', ['mainCSS'], function() {
         .pipe(sourcemaps.write())
         .pipe(gulp.dest(path.dist.css));
 });
+
+/* Compress Css for page speed */
+gulp.task('css:compress', function () {
+    return gulp.src(path.app.css)
+        .pipe(sass().on('error', sass.logError))
+        .pipe(plumber())
+        .pipe(autoprefixer({
+            browsers: ['last 3 versions'],
+            cascade: false
+        }))
+        .pipe(csscomb('.csscomb.json'))
+        .pipe(gcmq())
+        .pipe(gulp.dest(path.app.libsCss))
+        .pipe(notify("Done!"));
+});
+gulp.task('css:compressAll', ['mainCSS','css:compress'], function() {
+    return gulp.src([
+        path.app.libsCss + '*.css',
+        path.app.libsCss +'main.css'
+    ])
+        .pipe(concat('main.css'))
+        .pipe(cssnano())
+        .pipe(rename({suffix: '.min'}))
+        .pipe(gulp.dest(path.dist.css));
+});
+/* Compress Css */
 
 gulp.task('image:dist', function () {
     return gulp.src(path.app.img)
@@ -234,6 +261,7 @@ gulp.task('dist', [
     'spriteImgTransfer',
     'css:dist',
     'css:compressLibs',
+    'css:compressAll',//compress
     'html:dist'
 ]);
 
@@ -254,6 +282,7 @@ gulp.task('watch', function(){
     watch([path.watch.css], function(event, cb){
         setTimeout(function(){
             gulp.start('css:dist');
+            gulp.start('css:compressAll');
         },200);
     });
     watch([path.watch.sprite], function(event, cb){
