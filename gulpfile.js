@@ -170,7 +170,7 @@ gulp.task('css:compress', function () {
         .pipe(gulp.dest(path.app.libsCss))
         .pipe(notify("Done!"));
 });
-gulp.task('css:compressAll', ['mainCSS','css:compress'], function() {
+gulp.task('css:compressAll', ['mainCSS','css:compress','css:compressFirst'], function() {
     return gulp.src([
         path.app.libsCss + '*.css',
         path.app.libsCss +'main.css'
@@ -277,7 +277,6 @@ gulp.task('dist', [
     'css:dist',
     'css:compressLibs',
     'css:compressAll',//compress
-    'css:compressFirst',
     'html:dist'
 ]);
 

@@ -1,10 +1,6 @@
 /* ==|====================
    Module/Global
    ======================= */
-
-
-
-
 .general-block-info{
     display: flex;
     flex-wrap: wrap;
@@ -22,8 +18,19 @@
     @include ptr(margin,90 0 0 0);
 }
 
-.deep-page{
-    @include ptr(padding,270 0 200);
+
+.youtube-embed{
+    @include ptr(margin-top, 40);
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 */
+    height: 0;
+    iframe{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
 }
 
 
@@ -137,11 +144,6 @@
     }
 }
 
-.grecaptcha-badge{
-    bottom: -100% !important;
-    opacity: 0;
-}
-
 .deep-space{
     padding-bottom: 0;
 }
@@ -154,7 +156,6 @@
 
 /*---Category filter---*/
 .category-filter{
-    @include ptr(margin, 90 -20 0);
     text-align: center;
     li{
         display: inline-block;

@@ -421,6 +421,10 @@ To change `display` (e.g. `display: inline-block;`), we suggest using a common C
    Layout/Tools
    ======================= */
 
+html {
+  font-size: 10px;
+}
+
 .icon,
 .svg-arrow-s {
   display: inline-block;
@@ -543,9 +547,21 @@ To change `display` (e.g. `display: inline-block;`), we suggest using a common C
   line-height: 52px;
 }
 
-.deep-page {
-  padding: 270px 0 200px;
-  padding: 27rem 0rem 20rem;
+.youtube-embed {
+  position: relative;
+  /* 16:9 */
+  height: 0;
+  margin-top: 40px;
+  margin-top: 4rem;
+  padding-bottom: 56.25%;
+}
+
+.youtube-embed iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
 }
 
 .main-carousel .owl-controls {
@@ -668,11 +684,6 @@ To change `display` (e.g. `display: inline-block;`), we suggest using a common C
   border-left: 1px solid #29292c;
 }
 
-.grecaptcha-badge {
-  bottom: -100% !important;
-  opacity: 0;
-}
-
 .deep-space {
   padding-bottom: 0;
 }
@@ -685,8 +696,6 @@ To change `display` (e.g. `display: inline-block;`), we suggest using a common C
 /*---Category filter---*/
 
 .category-filter {
-  margin: 90px -20px 0;
-  margin: 9rem -2rem 0rem;
   text-align: center;
 }
 
@@ -1136,7 +1145,7 @@ To change `display` (e.g. `display: inline-block;`), we suggest using a common C
   margin: 9rem 0rem 4rem;
   font-weight: bold;
   font-size: 42px;
-  line-height: 52px;
+  line-height: 46px;
   font-family: "Circle", sans-serif;
   text-align: left;
 }
@@ -1170,7 +1179,7 @@ To change `display` (e.g. `display: inline-block;`), we suggest using a common C
   margin: 6rem 0rem 3rem;
   font-weight: bold;
   font-size: 26px;
-  line-height: 26px;
+  line-height: 34px;
   font-family: "Circle", sans-serif;
   text-align: left;
 }
@@ -1185,7 +1194,7 @@ To change `display` (e.g. `display: inline-block;`), we suggest using a common C
   margin: 4rem 0rem 2rem;
   font-weight: bold;
   font-size: 18px;
-  line-height: 18px;
+  line-height: 30px;
   font-family: "Circle", sans-serif;
   text-align: left;
 }
@@ -1386,7 +1395,7 @@ To change `display` (e.g. `display: inline-block;`), we suggest using a common C
   margin: 9rem 0rem 4rem;
   font-weight: bold;
   font-size: 42px;
-  line-height: 52px;
+  line-height: 46px;
   font-family: "Circle", sans-serif;
   text-align: left;
 }
@@ -1420,7 +1429,7 @@ To change `display` (e.g. `display: inline-block;`), we suggest using a common C
   margin: 6rem 0rem 3rem;
   font-weight: bold;
   font-size: 26px;
-  line-height: 26px;
+  line-height: 34px;
   font-family: "Circle", sans-serif;
   text-align: left;
 }
@@ -1435,7 +1444,7 @@ To change `display` (e.g. `display: inline-block;`), we suggest using a common C
   margin: 3rem 0rem 2rem;
   font-weight: bold;
   font-size: 18px;
-  line-height: 18px;
+  line-height: 30px;
   font-family: "Circle", sans-serif;
   text-align: left;
 }
@@ -3263,11 +3272,6 @@ span.wpcf7-not-valid-tip,
 
 /*===PAGE OUR WORKS===*/
 
-.our-works.deep-page {
-  padding: 270px 0 0;
-  padding: 27rem 0rem 0rem;
-}
-
 .works-parent {
   margin-top: 70px;
   margin-top: 7rem;
@@ -4297,6 +4301,41 @@ form.no-active {
     line-height: calc( 0.035 * 100vw + 9.2px);
   }
 
+  .text-edit h2 {
+    font-size: 32px;
+    font-size: calc( 0.02167 * 100vw + 5.6px);
+    line-height: 36px;
+    line-height: calc( 0.02167 * 100vw + 9.6px);
+  }
+
+  .text-edit h3 {
+    font-size: 26px;
+    font-size: calc( 0.015 * 100vw + 10.8px);
+    line-height: 30px;
+    line-height: calc( 0.02 * 100vw + 12.4px);
+  }
+
+  .text-edit h4 {
+    font-size: 22px;
+    font-size: calc( 0.00833 * 100vw + 12px);
+    line-height: 26px;
+    line-height: calc( 0.01167 * 100vw + 14.4px);
+  }
+
+  .text-edit h5 {
+    font-size: 16px;
+    font-size: calc( 0.00333 * 100vw + 12.4px);
+    line-height: 20px;
+    line-height: calc( 0.01 * 100vw + 13.2px);
+  }
+
+  .text-edit p {
+    font-size: 16px;
+    font-size: calc( 0.00333 * 100vw + 12.4px);
+    line-height: 20px;
+    line-height: calc( 0.00833 * 100vw + 14px);
+  }
+
   .text-edit blockquote {
     font-size: 22px;
     font-size: calc( 0.0125 * 100vw + 9px);
@@ -4323,6 +4362,41 @@ form.no-active {
     font-size: calc( 0.025 * 100vw + 10px);
     line-height: 40px;
     line-height: calc( 0.035 * 100vw + 9.2px);
+  }
+
+  .post-type-edit h2 {
+    font-size: 32px;
+    font-size: calc( 0.02167 * 100vw + 5.6px);
+    line-height: 36px;
+    line-height: calc( 0.02167 * 100vw + 9.6px);
+  }
+
+  .post-type-edit h3 {
+    font-size: 26px;
+    font-size: calc( 0.015 * 100vw + 10.8px);
+    line-height: 30px;
+    line-height: calc( 0.02 * 100vw + 12.4px);
+  }
+
+  .post-type-edit h4 {
+    font-size: 22px;
+    font-size: calc( 0.00833 * 100vw + 12px);
+    line-height: 26px;
+    line-height: calc( 0.01167 * 100vw + 14.4px);
+  }
+
+  .post-type-edit h5 {
+    font-size: 16px;
+    font-size: calc( 0.00333 * 100vw + 12.4px);
+    line-height: 20px;
+    line-height: calc( 0.01 * 100vw + 13.2px);
+  }
+
+  .post-type-edit p {
+    font-size: 16px;
+    font-size: calc( 0.00333 * 100vw + 12.4px);
+    line-height: 20px;
+    line-height: calc( 0.00833 * 100vw + 14px);
   }
 
   .post-type-edit blockquote {
@@ -4633,78 +4707,6 @@ form.no-active {
   }
 }
 
-@media only screen and (max-width: 1680) {
-  .text-edit h2 {
-    font-size: 32px;
-    font-size: calc( 0.02167 * 100vw + 5.6px);
-    line-height: 36px;
-    line-height: calc( 0.02667 * 100vw + 7.2px);
-  }
-
-  .text-edit h3 {
-    font-size: 26px;
-    font-size: calc( 0.015 * 100vw + 10.8px);
-    line-height: 30px;
-    line-height: calc( 0.02 * 100vw + 12.4px);
-  }
-
-  .text-edit h4 {
-    font-size: 22px;
-    font-size: calc( 0.00833 * 100vw + 12px);
-    line-height: 26px;
-    line-height: calc( 0.005 * 100vw + 17.6px);
-  }
-
-  .text-edit h5 {
-    font-size: 24px;
-    font-size: calc( 0.0025 * 100vw + 13.8px);
-    line-height: 28px;
-    line-height: calc( -0.00083 * 100vw + 19.4px);
-  }
-
-  .text-edit p {
-    font-size: 16px;
-    font-size: calc( 0.00333 * 100vw + 12.4px);
-    line-height: 20px;
-    line-height: calc( 0.00833 * 100vw + 14px);
-  }
-
-  .post-type-edit h2 {
-    font-size: 32px;
-    font-size: calc( 0.02167 * 100vw + 5.6px);
-    line-height: 36px;
-    line-height: calc( 0.02667 * 100vw + 7.2px);
-  }
-
-  .post-type-edit h3 {
-    font-size: 26px;
-    font-size: calc( 0.015 * 100vw + 10.8px);
-    line-height: 30px;
-    line-height: calc( 0.02 * 100vw + 12.4px);
-  }
-
-  .post-type-edit h4 {
-    font-size: 22px;
-    font-size: calc( 0.00833 * 100vw + 12px);
-    line-height: 26px;
-    line-height: calc( 0.005 * 100vw + 17.6px);
-  }
-
-  .post-type-edit h5 {
-    font-size: 24px;
-    font-size: calc( 0.0025 * 100vw + 13.8px);
-    line-height: 28px;
-    line-height: calc( -0.00083 * 100vw + 19.4px);
-  }
-
-  .post-type-edit p {
-    font-size: 16px;
-    font-size: calc( 0.00333 * 100vw + 12.4px);
-    line-height: 20px;
-    line-height: calc( 0.00833 * 100vw + 14px);
-  }
-}
-
 @media only screen and (max-width: 1640px) {
   .form-file label {
     font-size: 20px;
@@ -4880,11 +4882,6 @@ form.no-active {
   .blog-btn {
     margin: -35px 0 0 0;
     margin: -3.5rem 0rem 0rem 0rem;
-  }
-
-  .title-deep {
-    margin-bottom: 40px;
-    margin-bottom: 4rem;
   }
 
   .contact-item {
@@ -5616,6 +5613,31 @@ form.no-active {
     line-height: 26px;
   }
 
+  .text-edit h2 {
+    font-size: 16px;
+    line-height: 20px;
+  }
+
+  .text-edit h3 {
+    font-size: 18px;
+    line-height: 22px;
+  }
+
+  .text-edit h4 {
+    font-size: 16px;
+    line-height: 20px;
+  }
+
+  .text-edit h5 {
+    font-size: 14px;
+    line-height: 18px;
+  }
+
+  .text-edit p {
+    font-size: 14px;
+    line-height: 18px;
+  }
+
   .text-edit blockquote {
     font-size: 15px;
     line-height: 19px;
@@ -5634,6 +5656,31 @@ form.no-active {
   .post-type-edit h1 {
     font-size: 22px;
     line-height: 26px;
+  }
+
+  .post-type-edit h2 {
+    font-size: 16px;
+    line-height: 20px;
+  }
+
+  .post-type-edit h3 {
+    font-size: 18px;
+    line-height: 22px;
+  }
+
+  .post-type-edit h4 {
+    font-size: 16px;
+    line-height: 20px;
+  }
+
+  .post-type-edit h5 {
+    font-size: 14px;
+    line-height: 18px;
+  }
+
+  .post-type-edit p {
+    font-size: 14px;
+    line-height: 18px;
   }
 
   .post-type-edit blockquote {
@@ -5991,58 +6038,6 @@ form.no-active {
 
   html {
     font-size: 7px;
-  }
-}
-
-@media only screen and (max-width: 480) {
-  .text-edit h2 {
-    font-size: 16px;
-    line-height: 20px;
-  }
-
-  .text-edit h3 {
-    font-size: 18px;
-    line-height: 22px;
-  }
-
-  .text-edit h4 {
-    font-size: 16px;
-    line-height: 20px;
-  }
-
-  .text-edit h5 {
-    font-size: 15px;
-    line-height: 19px;
-  }
-
-  .text-edit p {
-    font-size: 14px;
-    line-height: 18px;
-  }
-
-  .post-type-edit h2 {
-    font-size: 16px;
-    line-height: 20px;
-  }
-
-  .post-type-edit h3 {
-    font-size: 18px;
-    line-height: 22px;
-  }
-
-  .post-type-edit h4 {
-    font-size: 16px;
-    line-height: 20px;
-  }
-
-  .post-type-edit h5 {
-    font-size: 15px;
-    line-height: 19px;
-  }
-
-  .post-type-edit p {
-    font-size: 14px;
-    line-height: 18px;
   }
 }
 

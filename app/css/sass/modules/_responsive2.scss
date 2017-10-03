@@ -114,9 +114,6 @@
     .blog-btn{
         @include ptr(margin,-35 0 0 0);
     }
-    .title-deep{
-        @include ptr(margin-bottom, 40);
-    }
     .contact-item{
         margin-bottom: 0;
     }

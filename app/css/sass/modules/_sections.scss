@@ -1060,9 +1060,6 @@ span.wpcf7-not-valid-tip,
 }
 
 /*===PAGE OUR WORKS===*/
-.our-works.deep-page{
-    @include ptr(padding,270 0 0);
-}
 .works-parent{
     @include ptr(margin-top,70);
     overflow: hidden;

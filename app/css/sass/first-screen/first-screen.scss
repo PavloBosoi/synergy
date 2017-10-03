@@ -2,6 +2,9 @@
 /* ==|====================
    First screen
    ======================= */
+html {
+    font-size: 10px;
+}
 .preload-invisible{
     opacity: 0;
     transition: $linear;
@@ -675,6 +678,19 @@ h1,h2,h3,h4,h5,h6{
     background-color: $color1;
 }
 
+.deep-page{
+    @include ptr(padding,270 0 200);
+}
+.our-works.deep-page{
+    @include ptr(padding,270 0 0);
+}
+.category-filter {
+    @include ptr(margin, 90 -20 0);
+}
+.grecaptcha-badge{
+    bottom: -100% !important;
+    opacity: 0;
+}
 
 @media only screen and (max-width: 1680px) {
     .menu > ul > li > a {
@@ -701,7 +717,6 @@ h1,h2,h3,h4,h5,h6{
             @include ptr(width, 130);
         }
     }
-
     html {
         font-size: 8px;
     }
@@ -722,6 +737,10 @@ h1,h2,h3,h4,h5,h6{
     .deep-page {
         @include ptr(padding, 100 0);
     }
+    .title-deep{
+        @include ptr(margin-bottom, 40);
+    }
+
 }
 @media only screen and (max-width: 1200px) {
     .container-s,
@@ -899,6 +918,9 @@ h1,h2,h3,h4,h5,h6{
     .m-info {
         @include ptr(height, 500);
     }
+    .category-filter{
+        @include ptr(margin,60 -20 0);
+    }
 }
 @media only screen and (max-width: 640px) {
     .title-big {
@@ -958,6 +980,9 @@ h1,h2,h3,h4,h5,h6{
     }
     .h-estimate {
         @include ptr(padding, 0 50 0 20);
+    }
+    html {
+        font-size: 7px;
     }
 }
 

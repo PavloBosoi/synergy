@@ -4,6 +4,10 @@
    First screen
    ======================= */
 
+html {
+  font-size: 10px;
+}
+
 .preload-invisible {
   opacity: 0;
   transition: all 0.5s linear;
@@ -824,6 +828,26 @@ h6 {
   transition-delay: 0s, 0.3s;
 }
 
+.deep-page {
+  padding: 270px 0 200px;
+  padding: 27rem 0rem 20rem;
+}
+
+.our-works.deep-page {
+  padding: 270px 0 0;
+  padding: 27rem 0rem 0rem;
+}
+
+.category-filter {
+  margin: 90px -20px 0;
+  margin: 9rem -2rem 0rem;
+}
+
+.grecaptcha-badge {
+  bottom: -100% !important;
+  opacity: 0;
+}
+
 /* ==|====================
    First screen
    ======================= */
@@ -946,6 +970,11 @@ h6 {
   .deep-page {
     padding: 100px 0;
     padding: 10rem 0rem;
+  }
+
+  .title-deep {
+    margin-bottom: 40px;
+    margin-bottom: 4rem;
   }
 }
 
@@ -1165,6 +1194,11 @@ h6 {
     height: 500px;
     height: 50rem;
   }
+
+  .category-filter {
+    margin: 60px -20px 0;
+    margin: 6rem -2rem 0rem;
+  }
 }
 
 @media only screen and (max-width: 640px) {
@@ -1288,5 +1322,9 @@ h6 {
   .h-estimate {
     padding: 0 50px 0 20px;
     padding: 0rem 5rem 0rem 2rem;
+  }
+
+  html {
+    font-size: 7px;
   }
 }
