@@ -5,7 +5,8 @@
 html {
     font-size: 10px;
 }
-.preload-invisible{
+.preload-invisible,
+.m-info{
     opacity: 0;
     transition: $linear;
 }

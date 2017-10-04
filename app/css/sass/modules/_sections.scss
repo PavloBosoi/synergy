@@ -17,7 +17,7 @@ section{
 /*===SECTION AWARDS===*/
 .awards{
     background-color: $color3;
-    @include ptr(padding,17 0);
+    @include ptr(padding,5 0);
 }
 .awards-parent{
     display: flex;
@@ -32,7 +32,7 @@ section{
     line-height: 0;
     svg,img{
         max-width: 100%;
-        @include ptr(max-height,35);
+        @include ptr(max-height,60);
         color: #b9c2c7;
     }
 }
@@ -1549,6 +1549,22 @@ span.wpcf7-not-valid-tip,
     @include ptr(bottom, -70);
     left: -10%;
     width: 12%;
+}
+/*===PAGE POST-TYPE-DAMBORG===*/
+.damborg-table-img{
+    @include ptr(bottom, -100);
+    left: -15%;
+    width: 25%;
+}
+.damberg-popup-img{
+    @include ptr(bottom, -120);
+    right: -4%;
+    width: 40%;
+}
+.damborg-search-img{
+    @include ptr(bottom,-100);
+    left: -4%;
+    width: 41%;
 }
 
 
