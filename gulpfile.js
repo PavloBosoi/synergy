@@ -150,7 +150,7 @@ gulp.task('css:compressFirst', function () {
         .pipe(sass().on('error', sass.logError))
         .pipe(plumber())
         .pipe(autoprefixer({
-            browsers: ['last 3 versions'],
+            browsers: ['last 5 versions'],
             cascade: false
         }))
         .pipe(csscomb('.csscomb.json'))
@@ -162,7 +162,7 @@ gulp.task('css:compress', function () {
         .pipe(sass().on('error', sass.logError))
         .pipe(plumber())
         .pipe(autoprefixer({
-            browsers: ['last 3 versions'],
+            browsers: ['last 5 versions'],
             cascade: false
         }))
         .pipe(csscomb('.csscomb.json'))
@@ -173,7 +173,7 @@ gulp.task('css:compress', function () {
 gulp.task('css:compressAll', ['mainCSS','css:compress','css:compressFirst'], function() {
     return gulp.src([
         path.app.libsCss + '*.css',
-        path.app.libsCss +'main.css'
+        path.app.libsCss + 'main.css'
     ])
         .pipe(concat('main.css'))
         .pipe(cssnano())

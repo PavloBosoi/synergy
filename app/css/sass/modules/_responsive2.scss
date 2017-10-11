@@ -146,9 +146,6 @@
     .deep-space{
         padding-bottom: 0;
     }
-    .related-posts{
-        @include ptr(margin,110 0 0 0);
-    }
     .related-item{
         &:nth-child(even){
             .related-text{
@@ -173,6 +170,9 @@
     }
     .works-btn{
         @include ptr(margin,100 0);
+    }
+    .estimation__light{
+        @include ptr(padding,0 0 100);
     }
 }
 
@@ -649,6 +649,9 @@
         width: 100%;
         @include ptr(margin, 20 0);
     }
+    .page-404-img{
+        width: 100%;
+    }
     html {
         font-size: 7px;
     }
@@ -666,7 +669,7 @@ only screen and (        min-device-pixel-ratio: 2),
 only screen and (                min-resolution: 192dpi),
 only screen and (                min-resolution: 2dppx) {
     .case-img,
-    .post-type-carousel .post-type-carousel-item img,
+    .post-type-carousel.owl-carousel .post-type-carousel-item img,
     .retina-pattern-img img{
         img{
             display: inline-block;

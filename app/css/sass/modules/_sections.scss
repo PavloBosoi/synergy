@@ -489,8 +489,7 @@ section{
     }
 }
 .estimation__light{
-    padding: 0;
-    @include ptr(margin-top,160);
+    @include ptr(padding,0 0 200);
     background-color: transparent;
     .title-intermediate{
         color: $color2;
@@ -1275,7 +1274,6 @@ span.wpcf7-not-valid-tip,
     margin: 0 auto;
 }
 .related-posts{
-    @include ptr(margin,200 0 0 0);
     overflow: hidden;
 }
 .related-item{
@@ -1592,7 +1590,7 @@ span.wpcf7-not-valid-tip,
         @include ptr(padding-right,160);
     }
 }
-.post-type-carousel .post-type-carousel-item,
+.post-type-carousel.owl-carousel .post-type-carousel-item,
 .post-type-slider,
 .retina-pattern-img{
     img{
@@ -1622,4 +1620,37 @@ span.wpcf7-not-valid-tip,
         width: calc(100% - 48rem);
         @include ptr(padding-right,160);
     }
+}
+
+
+/*===PAGE-404===*/
+.page-404{
+    @include ptr(padding,200 0 0 0);
+    @include ptr(margin-bottom, -45);
+}
+.page-404-img{
+    text-align: center;
+    @include ptr(width, 380);
+    margin: 0 auto;
+}
+.title-404{
+    @include fluidFontSize(18px,36px,480px,1680px,46px,26px);
+    @include ptr(margin-top, 80);
+    text-align: center;
+    h1,h2,h3,h4{
+        font-weight: bold;
+    }
+    p{
+        @include fluidFontSize(14px,18px,480px,1680px,30px,16px);
+    }
+}
+.page-404-btn{
+    text-align: center;
+    @include ptr(margin-top, 40);
+}
+.footer-404-img{
+    line-height: 0;
+    font-size: 0;
+    text-align: right;
+    @include ptr(padding, 0 45 25);
 }
